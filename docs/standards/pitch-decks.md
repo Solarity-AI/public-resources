@@ -104,17 +104,17 @@ Assume a skeptical but open-minded audience.
 ## Versioning and Audience Targeting
 
 Pitch decks must be versioned by:
+
 - Audience
 - Use case
 - Major narrative changes
 
 Examples:
-```
 
+```text
 investor-deck-v2.pdf
 partner-deck-enterprise-v1.pdf
 internal-strategy-deck-v3.pdf
-
 ```
 
 Never overwrite a deck that has been shared externally.
@@ -126,6 +126,7 @@ Never overwrite a deck that has been shared externally.
 Only approved decks may be used externally.
 
 A pitch deck represents:
+
 - The company
 - The leadership
 - The strategy

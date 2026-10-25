@@ -1,6 +1,6 @@
 # Solarity AI: company one-pager
 
-<img src="../../brand/logos/solarity-sun-mark-192.png" alt="Solarity AI sun mark" width="72">
+<img src="../../brand/logos/solarity-sun-mark-on-dark-192.png" alt="Solarity AI sun mark" width="72">
 
 **Building for human potential.** Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.
 

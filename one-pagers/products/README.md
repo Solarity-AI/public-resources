@@ -4,10 +4,10 @@
 
 | | App | Focus | What it does | On the App Store since |
 | --- | --- | --- | --- | --- |
-| <img src="../../press-kit/images/app-icons/looks-max-icon.png" width="40" alt=""> | **Looks Max** | Appearance & self-care | Personalized appearance insights, daily habits, and a place to follow your progress. | June 23, 2026 |
-| <img src="../../press-kit/images/app-icons/iq-max-icon.png" width="40" alt=""> | **IQ Max** | Cognitive practice | Focused cognitive exercises, adaptive difficulty, and a daily routine you control. | September 11, 2026 |
-| <img src="../../press-kit/images/app-icons/sleep-max-icon.png" width="40" alt=""> | **Sleep Max** | Sleep & daily routines | A sleep diary, habit tracking, and coaching to support a more consistent routine. | September 16, 2026 |
-| <img src="../../press-kit/images/app-icons/fitness-max-icon.png" width="40" alt=""> | **Fitness Max** (listed as *Only Fitness*) | Fitness & nutrition | Meal insights, training logs, and AI coaching to help you follow your fitness routine. | August 15, 2026 |
+| <img src="../../press-kit/images/app-icons/thumbs/looks-max-icon-96.png" width="40" alt=""> | **Looks Max** | Appearance & self-care | Personalized appearance insights, daily habits, and a place to follow your progress. | June 23, 2026 |
+| <img src="../../press-kit/images/app-icons/thumbs/iq-max-icon-96.png" width="40" alt=""> | **IQ Max** | Cognitive practice | Focused cognitive exercises, adaptive difficulty, and a daily routine you control. | September 11, 2026 |
+| <img src="../../press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" width="40" alt=""> | **Sleep Max** | Sleep & daily routines | A sleep diary, habit tracking, and coaching to support a more consistent routine. | September 16, 2026 |
+| <img src="../../press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" width="40" alt=""> | **Fitness Max** (listed as *Only Fitness*) | Fitness & nutrition | Meal insights, training logs, and AI coaching to help you follow your fitness routine. | August 15, 2026 |
 
 ## Key features
 

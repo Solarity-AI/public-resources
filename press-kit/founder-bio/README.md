@@ -4,7 +4,7 @@
 
 ## Ata Turhan, Founder & CEO
 
-**AI Engineer & Manager at HP · Founder & CEO, Solarity AI · Dallas, Texas**
+AI Engineer & Manager at HP · Founder & CEO, Solarity AI · Dallas, Texas
 
 ### 1 line
 

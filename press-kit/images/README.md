@@ -13,10 +13,12 @@ These are the official files from the [solarityai.com press kit](https://solarit
 
 | | App | File |
 | --- | --- | --- |
-| <img src="app-icons/looks-max-icon.png" width="48" alt=""> | Looks Max | [`app-icons/looks-max-icon.png`](app-icons/looks-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/iq-max-icon.png" width="48" alt=""> | IQ Max | [`app-icons/iq-max-icon.png`](app-icons/iq-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/sleep-max-icon.png" width="48" alt=""> | Sleep Max | [`app-icons/sleep-max-icon.png`](app-icons/sleep-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/fitness-max-icon.png" width="48" alt=""> | Fitness Max (listed as Only Fitness) | [`app-icons/fitness-max-icon.png`](app-icons/fitness-max-icon.png) · PNG · 1024 × 1024 |
+| <img src="app-icons/thumbs/looks-max-icon-96.png" width="48" alt=""> | Looks Max | [`app-icons/looks-max-icon.png`](app-icons/looks-max-icon.png) · PNG · 1024 × 1024 |
+| <img src="app-icons/thumbs/iq-max-icon-96.png" width="48" alt=""> | IQ Max | [`app-icons/iq-max-icon.png`](app-icons/iq-max-icon.png) · PNG · 1024 × 1024 |
+| <img src="app-icons/thumbs/sleep-max-icon-96.png" width="48" alt=""> | Sleep Max | [`app-icons/sleep-max-icon.png`](app-icons/sleep-max-icon.png) · PNG · 1024 × 1024 |
+| <img src="app-icons/thumbs/fitness-max-icon-96.png" width="48" alt=""> | Fitness Max (listed as Only Fitness) | [`app-icons/fitness-max-icon.png`](app-icons/fitness-max-icon.png) · PNG · 1024 × 1024 |
+
+The 96 × 96 previews in [`app-icons/thumbs/`](app-icons/thumbs/) are for embedding in pages. For anything else, use the 1024 px masters.
 
 ## Product screens
 

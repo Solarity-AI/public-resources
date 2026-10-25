@@ -10,6 +10,8 @@ The **Solarity AI sun mark** is the company's logo. The master file is the offic
 | [`solarity-sun-mark-192.png`](solarity-sun-mark-192.png) | 192 px wide, transparent | App and web icons |
 | [`solarity-sun-mark-64.png`](solarity-sun-mark-64.png) | 64 px wide, transparent | Favicons, small UI |
 | [`solarity-sun-mark-on-dark.png`](solarity-sun-mark-on-dark.png) | 1200 × 1200, on `#0F0D0B` | Profile pictures, square placements |
+| [`solarity-sun-mark-on-dark-512.png`](solarity-sun-mark-on-dark-512.png) | 512 × 512, on `#0F0D0B` | Light pages and documents where the transparent mark loses contrast |
+| [`solarity-sun-mark-on-dark-192.png`](solarity-sun-mark-on-dark-192.png) | 192 × 192, on `#0F0D0B` | Small placements on light backgrounds, such as GitHub in light mode |
 
 The smaller files are scaled-down copies of the master. They are not redrawn or recolored.
 
