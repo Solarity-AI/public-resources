@@ -1,0 +1,23 @@
+name: Report outdated or incorrect information
+description: Something here doesn't match solarityai.com, or a link or file is broken.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: File or folder
+      placeholder: press-kit/company-bio/README.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong
+      description: Quote the incorrect text or describe the broken link or file.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Correct information (with a solarityai.com link if possible)

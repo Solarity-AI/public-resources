@@ -1,133 +1,20 @@
-# Pitch Decks – Standards and Guidelines
+# Pitch decks and investor materials
 
-This folder contains **official Solarity AI pitch decks**.
+The current investor overview is published at **[solarityai.com/investors-partners](https://solarityai.com/investors-partners/)**. It covers the portfolio, the shipping record, the company at a glance, the business model, partnership areas, and common questions. To get a PDF, open the page and choose **Print or save as PDF**.
 
-A pitch deck is a **structured narrative** designed to persuade a specific audience to take a specific action, such as investing, partnering, or approving a decision.
+## Request the deck
 
-Every pitch deck must follow the standards defined below.
+The pitch deck is shared on request. Email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) with a short introduction, or [book a conversation](https://solarityai.com/contact/) with the founder.
 
----
+| You are | Start here |
+| --- | --- |
+| An investor | [Investor inquiry](https://solarityai.com/contact/?type=Investor#prepare-inquiry) |
+| A strategic partner | [Partnership inquiry](https://solarityai.com/contact/?type=Strategic+partner#prepare-inquiry) |
+| An accelerator, incubator, or grant program | [Program inquiry](https://solarityai.com/contact/?type=Program#prepare-inquiry) |
 
-## Purpose of a Pitch Deck
+## Also useful
 
-A Solarity AI pitch deck must:
+- [Company one-pager](../one-pagers/company/)
+- [Company facts and approved descriptions](../press-kit/company-bio/)
 
-- Tell a coherent, compelling story
-- Be audience-specific
-- Lead to a clear decision or next step
-- Balance vision with credibility
-- Scale from live presentation to async review
-
-A deck is not a document dump. It is a guided narrative.
-
----
-
-## What a Perfect Pitch Deck Looks Like
-
-A perfect pitch deck is:
-
-- 10 to 15 slides maximum
-- One idea per slide
-- Visually consistent and minimal
-- Structured logically
-- Defensible under scrutiny
-
-Every slide must justify its existence.
-
----
-
-## Required Core Narrative
-
-All pitch decks must answer these questions, in order:
-
-1. Why now?
-2. What problem exists?
-3. Who experiences this problem?
-4. How big is the opportunity?
-5. What is the solution?
-6. Why is this solution superior?
-7. Why Solarity AI?
-8. Why will this win?
-9. What is the ask?
-
----
-
-## Standard Slide Structure
-
-While decks may vary by audience, the following structure is the baseline:
-
-1. Cover
-2. Vision or Thesis
-3. Problem
-4. Current Alternatives
-5. Solution
-6. Product or Platform Overview
-7. Differentiation / Moat
-8. Market Opportunity
-9. Traction or Validation
-10. Business Model or Impact
-11. Go-To-Market
-12. Roadmap
-13. Team
-14. Ask
-15. Closing
-
-Not all decks need all slides, but deviations must be intentional.
-
----
-
-## Slide Design Rules
-
-- One key message per slide
-- Headlines must state conclusions, not topics
-- Minimal text
-- Visuals must support the narrative
-- No dense paragraphs
-- No unreadable charts
-
-If a slide requires explanation to be understood, it is poorly designed.
-
----
-
-## Tone and Content Guidelines
-
-- Confident, not aggressive
-- Precise, not vague
-- Honest about unknowns
-- Clear about assumptions
-- No hype without evidence
-
-Assume a skeptical but open-minded audience.
-
----
-
-## Versioning and Audience Targeting
-
-Pitch decks must be versioned by:
-- Audience
-- Use case
-- Major narrative changes
-
-Examples:
-```
-
-investor-deck-v2.pdf
-partner-deck-enterprise-v1.pdf
-internal-strategy-deck-v3.pdf
-
-```
-
-Never overwrite a deck that has been shared externally.
-
----
-
-## Approval Rule
-
-Only approved decks may be used externally.
-
-A pitch deck represents:
-- The company
-- The leadership
-- The strategy
-
-Treat it accordingly.
+Building a deck? Follow the [pitch deck standards](../docs/standards/pitch-decks.md).

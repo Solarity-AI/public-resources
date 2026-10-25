@@ -1,0 +1,19 @@
+name: Request an asset
+description: Ask for a logo format, image size, or other material that isn't here yet.
+title: "[Asset request] "
+labels: ["asset-request"]
+body:
+  - type: textarea
+    id: asset
+    attributes:
+      label: What do you need?
+      placeholder: For example, an SVG version of the sun mark, or a single-color logo for print.
+    validations:
+      required: true
+  - type: textarea
+    id: use
+    attributes:
+      label: How will you use it?
+      description: The publication, event, or placement, and any size or format requirements.
+    validations:
+      required: true

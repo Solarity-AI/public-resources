@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Investor, partnership, or press inquiry
+    url: https://solarityai.com/contact/
+    about: Write to the founder directly or book a conversation.
+  - name: Careers
+    url: https://solarityai.com/careers/
+    about: See open roles and apply.
+  - name: Report a security issue
+    url: https://github.com/Solarity-AI/public-resources/security/advisories/new
+    about: Please report security issues privately, not as public issues.
