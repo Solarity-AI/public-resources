@@ -2,6 +2,14 @@
 
 Notable changes to Solarity AI's public resources.
 
+## 2026-10-25
+
+### Changed
+- Rewrote the founder bio from [ataturhan.com](https://ataturhan.com/): 1-line, short, and long bios, plus facts, education, achievements, speaking topics, contacts, and profiles
+- Founder references now link to the bio and ataturhan.com, and the root README and company one-pager say "Founder & CEO"
+- Added key app features from ataturhan.com/solarity-ai to the mobile apps one-pager
+- Added the founder's profiles to `brand/social-media/`
+
 ## 2026-10-24
 
 ### Added

@@ -16,7 +16,7 @@
 | --- | --- |
 | **Company** | Solarity AI LLC |
 | **Based in** | Dallas, Texas, United States |
-| **Founder** | Ata Turhan |
+| **Founder** | Ata Turhan ([bio](../founder-bio/) · [ataturhan.com](https://ataturhan.com/)) |
 | **Team** | Hasan Ak, Ali Yılmaz, Emrecan Özkan, Eren Öz, Melik Kaplan, Batuhan Yücetürk |
 | **Mobile apps** | 4 on the App Store and Google Play, launched in 12 weeks from June 23, 2026 |
 | **SaaS products** | Engineering Max (early access), Management Max (early access), Marketing Max (early access) |

@@ -9,6 +9,15 @@
 | <img src="../../press-kit/images/app-icons/sleep-max-icon.png" width="40" alt=""> | **Sleep Max** | Sleep & daily routines | A sleep diary, habit tracking, and coaching to support a more consistent routine. | September 16, 2026 |
 | <img src="../../press-kit/images/app-icons/fitness-max-icon.png" width="40" alt=""> | **Fitness Max** (listed as *Only Fitness*) | Fitness & nutrition | Meal insights, training logs, and AI coaching to help you follow your fitness routine. | August 15, 2026 |
 
+## Key features
+
+- **Looks Max:** AI-generated facial assessments, personalized grooming suggestions, and daily habits, with an activity calendar and journal.
+- **IQ Max:** daily exercises in memory, reaction time, and attention, with adaptive difficulty, session results, and streaks.
+- **Sleep Max:** a sleep diary with a Sleep Score, habits and streaks, soundscapes, and an AI sleep coach.
+- **Fitness Max:** an AI fitness and nutrition coach with voice or text logging, photo-based meal analysis, coaching reports, and progress photos.
+
+Source: [ataturhan.com/solarity-ai](https://ataturhan.com/solarity-ai).
+
 ## Get the apps
 
 | App | App Store | Google Play | Product page |

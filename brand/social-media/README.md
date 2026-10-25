@@ -20,6 +20,10 @@
 
 An account that is not in this list is not an official Solarity AI channel.
 
+## Founder
+
+Ata Turhan, Founder & CEO: [ataturhan.com](https://ataturhan.com/) · [LinkedIn](https://www.linkedin.com/in/ataturhan/) · [Instagram](https://www.instagram.com/ataturhan21) · [Facebook](https://www.facebook.com/ataturhan21) · [Medium](https://medium.com/@ataturhan21) · [GitHub](https://github.com/ataturhan21). The full list is in the [founder bio](../../press-kit/founder-bio/#profiles).
+
 ## Images
 
 | File | Size | Use |
