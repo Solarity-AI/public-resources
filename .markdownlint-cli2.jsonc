@@ -1,0 +1,11 @@
+{
+  // Rules tuned for a docs repo rendered on GitHub.
+  "config": {
+    "default": true,
+    "MD013": false, // prose lines are not wrapped
+    "MD033": false, // inline <img>, <p>, <picture> are intentional
+    "MD041": false, // root README opens with the banner
+    "MD024": { "siblings_only": true } // CHANGELOG repeats Added/Changed per release
+  },
+  "ignores": ["node_modules/**"]
+}

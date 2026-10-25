@@ -15,11 +15,11 @@ Approved descriptions, company facts, and images for articles, program pages, an
 
 ## Descriptions
 
-**1 line**
+### 1 line
 
 > Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.
 
-**Short**
+### Short
 
 > Solarity AI LLC, based in Dallas, Texas, builds AI-powered self-improvement apps: Looks Max, IQ Max, Sleep Max, and Fitness Max (listed in the app stores as Only Fitness), all on iOS and Android. Building them shaped 3 SaaS products for teams that build mobile apps: Engineering Max, Management Max, and Marketing Max. Founder: Ata Turhan.
 

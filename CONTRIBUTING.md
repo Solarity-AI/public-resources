@@ -32,7 +32,7 @@ If you're unsure whether something belongs here, ask before adding it.
 
 1. Create a branch: `type/short-description`, for example `brand/add-svg-logo` or `careers/update-roles`.
 2. Make the change and follow the rules below.
-3. Open a pull request using the template. A code owner must approve it before it is merged into `main`.
+3. Open a pull request using the template. The **Docs check** workflow runs Markdown lint and `scripts/check_docs.py`, which checks links, file names, file sizes, and empty READMEs. Both must pass, and a code owner must approve the PR before it is merged into `main`.
 4. Add a line to [CHANGELOG.md](CHANGELOG.md).
 
 Use clear commit messages, such as `Add 512px sun mark export`. Avoid messages like "Add files via upload".

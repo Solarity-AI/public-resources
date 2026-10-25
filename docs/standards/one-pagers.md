@@ -47,35 +47,42 @@ It should answer the following questions immediately:
 Every one-pager must follow this structure, in this order:
 
 ### 1. Header
+
 - Company logo
 - Product or solution name
 - One-sentence positioning statement
 
 ### 2. Problem
+
 - Clear, concrete problem statement
 - Written from the customer’s perspective
 - No buzzwords
 
 ### 3. Solution
+
 - What we offer
 - How it directly addresses the problem
 - Outcome-oriented language
 
 ### 4. Key Value Propositions
+
 - 3 to 5 bullet points
 - Benefits, not features
 - Quantified where possible
 
 ### 5. Target Audience
+
 - Explicitly stated
 - Narrow and specific
 
 ### 6. Differentiation
+
 - Why Solarity AI
 - What makes this hard to replicate
 - No competitor name-dropping unless necessary
 
 ### 7. Call to Action
+
 - What the reader should do next
 - Contact, demo, pilot, or follow-up
 
@@ -113,11 +120,10 @@ Design should support clarity, not distract from it.
 - Use versioned folders or filenames
 
 Example:
-```
 
+```text
 company-one-pager-v1.pdf
 company-one-pager-v2.pdf
-
 ```
 
 ---
@@ -125,6 +131,7 @@ company-one-pager-v2.pdf
 ## Approval Rule
 
 No one-pager may be shared externally unless it is:
+
 - Complete
 - Reviewed
 - Consistent with current company messaging

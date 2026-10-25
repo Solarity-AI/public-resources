@@ -53,7 +53,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 | Careers | [careers@solarityai.com](mailto:careers@solarityai.com) · [solarityai.com/careers](https://solarityai.com/careers/) |
 | Security issues | See [SECURITY.md](SECURITY.md) |
 
-**Follow us:** [LinkedIn](https://www.linkedin.com/company/solarity-ai-company) · [X](https://x.com/solarity_ai) · [Instagram](https://www.instagram.com/solarity_ai) · [YouTube](https://www.youtube.com/@solarity_ai) · [Medium](https://medium.com/solarity-ai) · [TikTok](https://www.tiktok.com/@solarityai) · [more](brand/social-media/)
+**Follow us:** [LinkedIn](https://www.linkedin.com/company/solarity-ai-company) · [X](https://x.com/solarity_ai) · [Instagram](https://www.instagram.com/solarity_ai) · [YouTube](https://www.youtube.com/@solarity_ai) · [Medium](https://medium.com/solarity-ai) · [TikTok](https://www.tiktok.com/@solarityai) · [all channels](brand/social-media/)
 
 ## Using these materials
 
