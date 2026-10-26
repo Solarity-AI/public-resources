@@ -11,7 +11,7 @@ Solarity AI's visual identity, as used on [solarityai.com](https://solarityai.co
 | [`social-media/`](social-media/) | Official social channels and the default share image |
 | [`brand-guidelines/`](brand-guidelines/) | Rules for using the name, mark, and descriptions |
 
-**The rules in brief:**
+## Rules in brief
 
 - Write the name as **Solarity AI**: two words, with "AI" in capitals.
 - Use the sun mark as supplied. Don't recolor, stretch, or redraw it.

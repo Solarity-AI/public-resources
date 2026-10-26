@@ -11,9 +11,13 @@
 | Engineering | **Full Stack Engineer** | Full-time / Part-time / Internship | Fully remote |
 | Marketing | **Marketing Specialist** | Full-time / Part-time / Internship | Fully remote |
 
-**Full Stack Engineer.** Interested in the work behind a focused digital product? Show us what you have built and tell us where you would like to contribute.
+### Full Stack Engineer
 
-**Marketing Specialist.** Help connect products with the people they are built for. Share work that shows how you approach a message, an audience, or a campaign.
+Interested in the work behind a focused digital product? Show us what you have built and tell us where you would like to contribute.
+
+### Marketing Specialist
+
+Help connect products with the people they are built for. Share work that shows how you approach a message, an audience, or a campaign.
 
 ## Why join
 

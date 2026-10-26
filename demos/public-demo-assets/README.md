@@ -4,12 +4,10 @@ You can try all 4 apps today. Of the SaaS products, Management Max has a free pl
 
 ## Mobile apps (iOS and Android)
 
-| App | App Store | Google Play |
-| --- | --- | --- |
-| Looks Max | [App Store](https://apps.apple.com/us/app/looks-max-look-your-best/id6778990308) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlylooksmax) |
-| IQ Max | [App Store](https://apps.apple.com/us/app/iq-max-smarter-every-day/id6803826639) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.iqmax) |
-| Sleep Max | [App Store](https://apps.apple.com/us/app/sleep-max-rest-best/id6806709872) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.sleepmax) |
-| Fitness Max (listed as Only Fitness) | [App Store](https://apps.apple.com/us/app/only-fitness-ai-coach/id6789095658) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlyfitness) |
+- **Looks Max**: [App Store](https://apps.apple.com/us/app/looks-max-look-your-best/id6778990308) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlylooksmax)
+- **IQ Max**: [App Store](https://apps.apple.com/us/app/iq-max-smarter-every-day/id6803826639) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.iqmax)
+- **Sleep Max**: [App Store](https://apps.apple.com/us/app/sleep-max-rest-best/id6806709872) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.sleepmax)
+- **Fitness Max** (listed as Only Fitness): [App Store](https://apps.apple.com/us/app/only-fitness-ai-coach/id6789095658) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlyfitness)
 
 ## SaaS products (web, early access)
 

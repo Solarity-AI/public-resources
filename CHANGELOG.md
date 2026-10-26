@@ -15,6 +15,7 @@ Notable changes to Solarity AI's public resources.
 - App icons in tables now set their height too, so they no longer collapse to 0 × 0 on phones or shrink on desktop
 - The products table folds the icon and App Store date into the App column, and the colors tables merge HEX and RGB into one column, so both fit at 375 px with less sideways scrolling
 - The screenshots page shows 300 px thumbnails linked to the full-size screens
+- Accessibility pass (WCAG 2.2 AA): store links share a list item with their app name, key–value tables have real headers, "Download" links fetch the file, the banner and app icons link text matches their destinations, screenshot alt text describes each screen, careers roles and the brand rules are real headings, founder profiles are a list, and the color swatches are marked decorative
 
 - Wording pass: counts use digits as on solarityai.com, and Fitness Max is written one way, "Fitness Max (listed as Only Fitness)"
 - Quick-download and press image links say what they open instead of showing repository paths

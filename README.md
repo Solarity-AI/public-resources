@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://solarityai.com/"><img src="brand/banner/solarity-ai-banner-1280x640.png" alt="Solarity AI — Building for human potential." width="720"></a>
+  <a href="https://solarityai.com/"><img src="brand/banner/solarity-ai-banner-1280x640.png" alt="Solarity AI: Building for human potential. Visit solarityai.com" width="720"></a>
 </p>
 
 # Solarity AI public resources
@@ -14,10 +14,10 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 
 | Asset | Format | Link |
 | --- | --- | --- |
-| Sun mark | PNG, 1024 × 1026, transparent | [Download sun mark](brand/logos/solarity-sun-mark.png) |
-| Sun mark on dark background | PNG, 1200 × 1200 | [Download sun mark on dark](brand/logos/solarity-sun-mark-on-dark.png) |
-| Banner | PNG, 1280 × 640 | [Download banner](brand/banner/solarity-ai-banner-1280x640.png) |
-| Founder photo, Ata Turhan | JPEG, 800 × 800 | [Download founder photo](press-kit/images/ata-turhan-founder.jpg) |
+| Sun mark | PNG, 1024 × 1026, transparent | [Download sun mark](brand/logos/solarity-sun-mark.png?raw=true) |
+| Sun mark on dark background | PNG, 1200 × 1200 | [Download sun mark on dark](brand/logos/solarity-sun-mark-on-dark.png?raw=true) |
+| Banner | PNG, 1280 × 640 | [Download banner](brand/banner/solarity-ai-banner-1280x640.png?raw=true) |
+| Founder photo, Ata Turhan | JPEG, 800 × 800 | [Download founder photo](press-kit/images/ata-turhan-founder.jpg?raw=true) |
 | App icons | PNG, 1024 × 1024 | [Browse app icons](press-kit/images/app-icons/) |
 | Product screens | JPEG | [Browse product screens](press-kit/images/screens/) |
 | Full press kit | ZIP, 3.1 MB | [Download press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) |
@@ -37,9 +37,9 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 
 ## Solarity AI at a glance
 
-<a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/looks-max-icon-96.png" alt="Looks Max" width="56" height="56"></a> <a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/iq-max-icon-96.png" alt="IQ Max" width="56" height="56"></a> <a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" alt="Sleep Max" width="56" height="56"></a> <a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" alt="Fitness Max" width="56" height="56"></a>
+<a href="https://solarityai.com/apps/looks-max/"><img src="press-kit/images/app-icons/thumbs/looks-max-icon-96.png" alt="Looks Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/iq-max/"><img src="press-kit/images/app-icons/thumbs/iq-max-icon-96.png" alt="IQ Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/sleep-max/"><img src="press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" alt="Sleep Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/fitness-max/"><img src="press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" alt="Fitness Max" width="56" height="56"></a>
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | **Company** | Solarity AI LLC, Dallas, Texas, United States |
 | **Founder & CEO** | [Ata Turhan](press-kit/founder-bio/) · [ataturhan.com](https://ataturhan.com/) |

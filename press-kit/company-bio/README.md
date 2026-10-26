@@ -12,7 +12,7 @@
 
 ## Facts
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | **Company** | Solarity AI LLC |
 | **Based in** | Dallas, Texas, United States |

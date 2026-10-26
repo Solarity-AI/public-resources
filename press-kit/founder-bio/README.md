@@ -24,7 +24,7 @@ AI Engineer & Manager at HP · Founder & CEO, Solarity AI · Dallas, Texas
 
 ## Facts
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | **Roles** | Founder & CEO, Solarity AI · AI Engineer & Manager, HP |
 | **Based in** | Dallas, Texas, United States |
@@ -55,6 +55,14 @@ Performance, consciousness, entrepreneurship, and the future of AI. Ata Turhan i
 
 ## Profiles
 
-[LinkedIn](https://www.linkedin.com/in/ataturhan/) · [Instagram](https://www.instagram.com/ataturhan21) · [Facebook](https://www.facebook.com/ataturhan21) · [Medium](https://medium.com/@ataturhan21) · [GitHub](https://github.com/ataturhan21) · [LeetCode](https://leetcode.com/u/ataturhan/) · [HackerRank](https://www.hackerrank.com/profile/ataturhan) · [Spotify](https://open.spotify.com/user/kuantum21fizik) · [Grokipedia](https://grokipedia.com/page/Ata_Turhan)
+- [LinkedIn](https://www.linkedin.com/in/ataturhan/)
+- [Instagram](https://www.instagram.com/ataturhan21)
+- [Facebook](https://www.facebook.com/ataturhan21)
+- [Medium](https://medium.com/@ataturhan21)
+- [GitHub](https://github.com/ataturhan21)
+- [LeetCode](https://leetcode.com/u/ataturhan/)
+- [HackerRank](https://www.hackerrank.com/profile/ataturhan)
+- [Spotify](https://open.spotify.com/user/kuantum21fizik)
+- [Grokipedia](https://grokipedia.com/page/Ata_Turhan)
 
 Source: [ataturhan.com](https://ataturhan.com/), including its [journey](https://ataturhan.com/story), [achievements](https://ataturhan.com/achievements), and [contact](https://ataturhan.com/contact) pages. Company facts come from [solarityai.com](https://solarityai.com/company/).

@@ -37,7 +37,7 @@ for root, dirs, files in os.walk("."):
                 url = match.group(1) or match.group(2)
                 if url.startswith(("http://", "https://", "mailto:", "#")):
                     continue
-                target = os.path.normpath(os.path.join(root, url.split("#")[0]))
+                target = os.path.normpath(os.path.join(root, url.split("#")[0].split("?")[0]))
                 if not os.path.exists(target):
                     errors.append(f"{rel}: broken link to {url}")
 
