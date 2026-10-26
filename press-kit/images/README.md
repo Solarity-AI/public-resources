@@ -4,6 +4,8 @@ These are the official files from the [solarityai.com press kit](https://solarit
 
 ## People and logo
 
+<img src="ata-turhan-founder.jpg" alt="Ata Turhan, founder and CEO of Solarity AI" width="120" height="120"> <img src="../../brand/logos/solarity-sun-mark-on-dark-192.png" alt="Solarity AI sun mark on the dark brand background" width="120" height="120">
+
 | Image | File | Format |
 | --- | --- | --- |
 | Ata Turhan, founder | [`ata-turhan-founder.jpg`](ata-turhan-founder.jpg) | JPEG · 800 × 800 |
@@ -11,18 +13,22 @@ These are the official files from the [solarityai.com press kit](https://solarit
 
 ## App icons
 
-| | App | File |
-| --- | --- | --- |
-| <img src="app-icons/thumbs/looks-max-icon-96.png" width="48" alt=""> | Looks Max | [`looks-max-icon.png`](app-icons/looks-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/thumbs/iq-max-icon-96.png" width="48" alt=""> | IQ Max | [`iq-max-icon.png`](app-icons/iq-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/thumbs/sleep-max-icon-96.png" width="48" alt=""> | Sleep Max | [`sleep-max-icon.png`](app-icons/sleep-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/thumbs/fitness-max-icon-96.png" width="48" alt=""> | Fitness Max (listed as Only Fitness) | [`fitness-max-icon.png`](app-icons/fitness-max-icon.png) · PNG · 1024 × 1024 |
+| App | File |
+| --- | --- |
+| <img src="app-icons/thumbs/looks-max-icon-96.png" width="48" height="48" alt=""><br>Looks Max | [`looks-max-icon.png`](app-icons/looks-max-icon.png) · PNG · 1024 × 1024 |
+| <img src="app-icons/thumbs/iq-max-icon-96.png" width="48" height="48" alt=""><br>IQ Max | [`iq-max-icon.png`](app-icons/iq-max-icon.png) · PNG · 1024 × 1024 |
+| <img src="app-icons/thumbs/sleep-max-icon-96.png" width="48" height="48" alt=""><br>Sleep Max | [`sleep-max-icon.png`](app-icons/sleep-max-icon.png) · PNG · 1024 × 1024 |
+| <img src="app-icons/thumbs/fitness-max-icon-96.png" width="48" height="48" alt=""><br>Fitness Max (listed as Only Fitness) | [`fitness-max-icon.png`](app-icons/fitness-max-icon.png) · PNG · 1024 × 1024 |
 
 The 96 × 96 previews in [`app-icons/thumbs/`](app-icons/thumbs/) are for embedding in pages. For anything else, use the 1024 px masters.
 
 ## Product screens
 
 The app screens are official App Store images with sample content. The SaaS screens come from each product's own site.
+
+<a href="screens/looks-max-screen.jpg"><img src="screens/thumbs/looks-max-screen-300.jpg" alt="Looks Max app screen" width="100" height="216"></a> <a href="screens/iq-max-screen.jpg"><img src="screens/thumbs/iq-max-screen-300.jpg" alt="IQ Max app screen" width="100" height="216"></a> <a href="screens/sleep-max-screen.jpg"><img src="screens/thumbs/sleep-max-screen-300.jpg" alt="Sleep Max app screen" width="100" height="216"></a> <a href="screens/fitness-max-screen.jpg"><img src="screens/thumbs/fitness-max-screen-300.jpg" alt="Fitness Max app screen" width="100" height="216"></a>
+
+The 300 px previews in [`screens/thumbs/`](screens/thumbs/) are for embedding in pages. For anything else, use the full-size files.
 
 | Product | File | Notes |
 | --- | --- | --- |

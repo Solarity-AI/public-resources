@@ -4,7 +4,17 @@ Notable changes to Solarity AI's public resources.
 
 ## 2026-10-26
 
+### Added
+
+- Previews on the asset pages: the sun mark on the logos page, both banners, a Newsreader and Manrope type specimen, the share image, and founder and screen thumbnails in the press images page
+- A row of app icons in the README's "at a glance" section
+- 300 px screen thumbnails (`press-kit/images/screens/thumbs/`)
+
 ### Changed
+
+- App icons in tables now set their height too, so they no longer collapse to 0 × 0 on phones or shrink on desktop
+- The products table folds the icon and App Store date into the App column, and the colors tables merge HEX and RGB into one column, so both fit at 375 px with less sideways scrolling
+- The screenshots page shows 300 px thumbnails linked to the full-size screens
 
 - Wording pass: counts use digits as on solarityai.com, and Fitness Max is written one way, "Fitness Max (listed as Only Fitness)"
 - Quick-download and press image links say what they open instead of showing repository paths

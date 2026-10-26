@@ -2,6 +2,10 @@
 
 Wide banners in the [solarityai.com](https://solarityai.com/) style: the sun mark, the name in Newsreader, and the tagline in Manrope on the brand background.
 
+<img src="solarity-ai-banner-1280x640.png" alt="Banner, 1280 by 640: the sun mark beside Solarity AI and Building for human potential" width="640" height="320">
+
+<img src="solarity-ai-banner-1500x500.png" alt="Banner, 1500 by 500: the same layout in a wider format" width="640" height="213">
+
 | File | Size | Use |
 | --- | --- | --- |
 | [`solarity-ai-banner-1280x640.png`](solarity-ai-banner-1280x640.png) | 1280 × 640 | GitHub social preview, README headers, link previews |

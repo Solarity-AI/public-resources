@@ -2,6 +2,8 @@
 
 [solarityai.com](https://solarityai.com/) uses 2 typefaces. Both are free under the SIL Open Font License.
 
+<img src="solarity-ai-type-specimen.png" alt="Type specimen: Newsreader headline Building for human potential, and Manrope body text in weights 400 to 700, on the dark brand background" width="640" height="300">
+
 | Role | Typeface | Fallbacks | Get it |
 | --- | --- | --- | --- |
 | Display and headings | **Newsreader** (serif) | Georgia, serif | [Google Fonts](https://fonts.google.com/specimen/Newsreader) |
