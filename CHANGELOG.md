@@ -27,6 +27,7 @@ Notable changes to Solarity AI's public resources.
 
 ### Security
 
+- README and CONTRIBUTING describe the actual review model: required automated checks, and the founder as sole code owner
 - Hardened the CI workflow and scripts: actions are pinned to commit SHAs, the checkout token isn't persisted, npx skips install scripts, downloaded fonts are verified against SHA-256 hashes, release ZIPs get a `.sha256` checksum, and Dependabot watches GitHub Actions and pip
 
 ## 2026-10-25

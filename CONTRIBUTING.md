@@ -34,7 +34,7 @@ If you're unsure whether something belongs here, ask before adding it.
 2. Make the change and follow the rules below.
 3. Run the checks locally: `python scripts/check.py`. On Windows, use `py -3.12 scripts/check.py` if `python` isn't found. This runs exactly what CI runs: Markdown lint, `scripts/check_docs.py` (links, file names, file sizes, and empty READMEs), and the script tests in `tests/`. Install `requirements.txt` to run the image-generation test as well. You need Node.js 22 (`.nvmrc`) for `npx` and Python 3.12 (`.python-version`).
 4. Add a line to [CHANGELOG.md](CHANGELOG.md).
-5. Open a pull request using the template. The **Docs check** workflow must pass, and a code owner must approve the PR before it is merged into `main`.
+5. Open a pull request using the template. The **Docs check** workflow must pass before it is merged into `main`. The founder is the sole code owner and approves every merge.
 
 Use clear commit messages, such as `Add 512px sun mark export`. Avoid messages like "Add files via upload".
 
