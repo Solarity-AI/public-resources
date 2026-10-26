@@ -1,14 +1,16 @@
 <p align="center">
-  <a href="https://solarityai.com/"><img src="brand/banner/solarity-ai-banner-1280x640.png" alt="Solarity AI: Building for human potential. Visit solarityai.com" width="720"></a>
+  <a href="https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=readme"><img src="brand/banner/solarity-ai-banner-1280x640.png" alt="Solarity AI: Building for human potential. Visit solarityai.com" width="720"></a>
 </p>
 
 # Solarity AI public resources
 
-Official, approved public materials for **Solarity AI LLC**: brand assets, press kit, company and product one-pagers, careers information, and links to our public policies.
+Official, approved public materials for **Solarity AI LLC**, for press, partners, investors, and candidates: brand assets, press kit, company and product one-pagers, careers information, and links to our public policies.
+
+**Start here:** [Download the press kit (ZIP)](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) · [Brand assets](brand/) · [Contact the founder](mailto:ata.turhan@solarityai.com)
 
 > Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.
 
-Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the source of truth. If this repository and the website ever disagree, the website wins. Please [open an issue](https://github.com/Solarity-AI/public-resources/issues/new/choose) so we can fix it.
+Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=readme)**, the source of truth. If this repository and the website ever disagree, the website wins. Please [open an issue](https://github.com/Solarity-AI/public-resources/issues/new/choose) so we can fix it.
 
 ## Quick downloads
 
@@ -20,6 +22,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 | Founder photo, Ata Turhan | JPEG, 800 × 800 | [Download founder photo](press-kit/images/ata-turhan-founder.jpg?raw=true) |
 | App icons | PNG, 1024 × 1024 | [Browse app icons](press-kit/images/app-icons/) |
 | Product screens | JPEG | [Browse product screens](press-kit/images/screens/) |
+| Brand guidelines | Read before using the mark | [Read the brand rules](brand/brand-guidelines/) |
 | Full press kit | ZIP, 3.1 MB | [Download press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) |
 
 ## What's inside
@@ -37,7 +40,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 
 ## Solarity AI at a glance
 
-<a href="https://solarityai.com/apps/looks-max/"><img src="press-kit/images/app-icons/thumbs/looks-max-icon-96.png" alt="Looks Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/iq-max/"><img src="press-kit/images/app-icons/thumbs/iq-max-icon-96.png" alt="IQ Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/sleep-max/"><img src="press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" alt="Sleep Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/fitness-max/"><img src="press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" alt="Fitness Max" width="56" height="56"></a>
+<a href="https://solarityai.com/apps/looks-max/?utm_source=github&utm_medium=public-resources&utm_campaign=readme"><img src="press-kit/images/app-icons/thumbs/looks-max-icon-96.png" alt="Looks Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/iq-max/?utm_source=github&utm_medium=public-resources&utm_campaign=readme"><img src="press-kit/images/app-icons/thumbs/iq-max-icon-96.png" alt="IQ Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/sleep-max/?utm_source=github&utm_medium=public-resources&utm_campaign=readme"><img src="press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" alt="Sleep Max" width="56" height="56"></a> <a href="https://solarityai.com/apps/fitness-max/?utm_source=github&utm_medium=public-resources&utm_campaign=readme"><img src="press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" alt="Fitness Max" width="56" height="56"></a>
 
 | Fact | Detail |
 | --- | --- |
@@ -51,8 +54,8 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 
 | Topic | Where |
 | --- | --- |
-| Investors, partners, press, programs | [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) · [book a conversation](https://solarityai.com/contact/) |
-| Careers | [careers@solarityai.com](mailto:careers@solarityai.com) · [solarityai.com/careers](https://solarityai.com/careers/) |
+| Investors, partners, press, programs | [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) · [book a conversation](https://solarityai.com/contact/?utm_source=github&utm_medium=public-resources&utm_campaign=readme) |
+| Careers | [careers@solarityai.com](mailto:careers@solarityai.com) · [solarityai.com/careers](https://solarityai.com/careers/?utm_source=github&utm_medium=public-resources&utm_campaign=readme) |
 | Security issues | See [SECURITY.md](SECURITY.md) |
 
 **Follow us:** [LinkedIn](https://www.linkedin.com/company/solarity-ai-company) · [X](https://x.com/solarity_ai) · [Instagram](https://www.instagram.com/solarity_ai) · [YouTube](https://www.youtube.com/@solarity_ai) · [Medium](https://medium.com/solarity-ai) · [TikTok](https://www.tiktok.com/@solarityai) · [all channels](brand/social-media/)
@@ -61,4 +64,4 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 
 Press, partners, and program organizers may use the materials in `brand/` and `press-kit/` to write about Solarity AI, as long as they follow the [brand rules](brand/brand-guidelines/). Everything else is © Solarity AI LLC, all rights reserved. See [LICENSE.md](LICENSE.md).
 
-Want to propose a change? Read [CONTRIBUTING.md](CONTRIBUTING.md). All changes go through a reviewed pull request.
+See what changed recently in the [changelog](CHANGELOG.md). Want to propose a change? Read [CONTRIBUTING.md](CONTRIBUTING.md). All changes go through a reviewed pull request.

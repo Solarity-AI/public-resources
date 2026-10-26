@@ -18,3 +18,7 @@ You can try all 4 apps today. Of the SaaS products, Management Max has a free pl
 | Marketing Max | [marketingmax.solarityai.com](https://marketingmax.solarityai.com/) | Request access on its site |
 
 For a guided demo, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

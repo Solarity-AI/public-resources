@@ -39,3 +39,7 @@ The 300 px previews in [`screens/thumbs/`](screens/thumbs/) are for embedding in
 | Engineering Max | [`engineering-max-screen.jpg`](screens/engineering-max-screen.jpg) | JPEG · 1800 × 662 · its scan of Solarity AI's Sleep Max |
 | Management Max | [`management-max-screen.jpg`](screens/management-max-screen.jpg) | JPEG · 1160 × 1280 · sample apps and figures |
 | Marketing Max | [`marketing-max-screen.jpg`](screens/marketing-max-screen.jpg) | JPEG · 2880 × 1800 · sample data |
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

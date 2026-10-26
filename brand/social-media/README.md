@@ -39,3 +39,7 @@ Ata Turhan, Founder & CEO: [ataturhan.com](https://ataturhan.com/) · [LinkedIn]
 Use the approved one-line description:
 
 > Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

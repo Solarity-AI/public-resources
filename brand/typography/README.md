@@ -21,3 +21,7 @@
 font-family: Newsreader, Georgia, serif;      /* headings */
 font-family: Manrope, Arial, sans-serif;      /* body */
 ```
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

@@ -10,3 +10,7 @@ Official product screens live in the press kit so there is only one copy of each
 </p>
 
 The app screens are official App Store images with sample content. The SaaS screens ([Engineering Max](../../press-kit/images/screens/engineering-max-screen.jpg), [Management Max](../../press-kit/images/screens/management-max-screen.jpg), [Marketing Max](../../press-kit/images/screens/marketing-max-screen.jpg)) come from each product's own site and show sample data.
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

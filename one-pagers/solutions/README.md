@@ -37,4 +37,8 @@ Finds the Reels that performed, writes the caption and the on-screen line in the
 
 ## Next step
 
-To discuss a SaaS product for your team or portfolio, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) or see [solarityai.com/platform](https://solarityai.com/platform/).
+To discuss a SaaS product for your team or portfolio, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) or see [solarityai.com/platform](https://solarityai.com/platform/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers-solutions).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

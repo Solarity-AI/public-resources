@@ -14,3 +14,7 @@ Wide banners in the [solarityai.com](https://solarityai.com/) style: the sun mar
 The tagline, *Building for human potential.*, is the headline on the solarityai.com home page.
 
 The previous navy "SOLARITY / ALWAYS BETTER" banner and logo have been retired. Don't use them. They are kept only in the [`legacy-brand-2026.04`](https://github.com/Solarity-AI/public-resources/releases/tag/legacy-brand-2026.04) release for reference.
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

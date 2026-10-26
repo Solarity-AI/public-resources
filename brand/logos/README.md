@@ -23,3 +23,7 @@ The smaller files are scaled-down copies of the master. They are not redrawn or 
 - Leave clear space around it equal to at least a quarter of its width.
 - It works best on the dark brand background (`#0F0D0B`) or other dark, plain backgrounds.
 - No vector (SVG) or single-color version has been published yet. For one, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

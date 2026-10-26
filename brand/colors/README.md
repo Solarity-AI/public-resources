@@ -46,3 +46,7 @@ Sun yellow belongs to the logo. Use it in the mark only, not as an interface col
   --ember: #1A140E;
 }
 ```
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

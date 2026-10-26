@@ -66,3 +66,7 @@ Performance, consciousness, entrepreneurship, and the future of AI. Ata Turhan i
 - [Grokipedia](https://grokipedia.com/page/Ata_Turhan)
 
 Source: [ataturhan.com](https://ataturhan.com/), including its [journey](https://ataturhan.com/story), [achievements](https://ataturhan.com/achievements), and [contact](https://ataturhan.com/contact) pages. Company facts come from [solarityai.com](https://solarityai.com/company/).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

@@ -2,6 +2,8 @@
 
 Approved descriptions, company facts, and images for articles, program pages, and event listings. This is the same content as [solarityai.com/press](https://solarityai.com/press/).
 
+**Download everything:** [solarity-ai-press-kit.zip](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) (3.1 MB)
+
 **Press contact:** [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)
 
 | Folder | Contents |
@@ -10,8 +12,6 @@ Approved descriptions, company facts, and images for articles, program pages, an
 | [`founder-bio/`](founder-bio/) | Founder bios (1 line, short, long), facts, achievements, and contacts |
 | [`images/`](images/) | Founder photo, app icons, and product screens |
 | [`press-releases/`](press-releases/) | Press releases (none published yet) |
-
-**Download everything:** [solarity-ai-press-kit.zip](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) (3.1 MB)
 
 ## Descriptions
 
@@ -29,3 +29,7 @@ Approved descriptions, company facts, and images for articles, program pages, an
 - Use the sun mark as supplied. Don't recolor, stretch, or redraw it.
 - Fitness Max appears in the app stores as **Only Fitness**. Name both when you link to its listing.
 - Describe products with the facts on [solarityai.com](https://solarityai.com/). **Ask before stating numbers, users, or results.**
+
+---
+
+[← All public resources](../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)
