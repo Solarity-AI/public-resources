@@ -1,22 +1,22 @@
 # Founder bio
 
-<img src="../images/ata-turhan-founder.jpg" alt="Ata Turhan, founder and CEO of Solarity AI" width="200">
+<img src="../images/ata-turhan-founder.jpg" alt="Ata Turhan, founder of Solarity AI" width="200">
 
-## Ata Turhan, Founder & CEO
+## Ata Turhan, Founder
 
-AI Engineer & Manager at HP · Founder & CEO, Solarity AI · Dallas, Texas
+AI Engineer & Manager at HP · Founder, Solarity AI · Dallas, Texas
 
 ### 1 line
 
-> Ata Turhan is an AI engineer and the founder and CEO of Solarity AI, a Dallas, Texas company that builds AI self-improvement apps.
+> Ata Turhan is an AI engineer and the founder of Solarity AI, a Dallas, Texas company that builds AI self-improvement apps.
 
 ### Short
 
-> Ata Turhan is an AI engineer and founder based in Dallas, Texas. He is an AI Engineer & Manager at HP and the founder and CEO of Solarity AI, which builds AI self-improvement apps. His personal framework is built on mastering body, mind, and spirit.
+> Ata Turhan is an AI engineer and founder based in Dallas, Texas. He is an AI Engineer & Manager at HP and the founder of Solarity AI, which builds AI self-improvement apps. His personal framework is built on mastering body, mind, and spirit.
 
 ### Long
 
-> Ata Turhan is an AI engineer and founder based in Dallas, Texas. He is an AI Engineer & Manager at HP and the founder and CEO of Solarity AI LLC, which builds AI self-improvement apps for iOS and Android: Looks Max, IQ Max, Sleep Max, and Fitness Max. The team shipped all 4 in 12 weeks, starting June 23, 2026. Solarity AI also builds 3 SaaS products for mobile app teams: Engineering Max, Management Max, and Marketing Max.
+> Ata Turhan is an AI engineer and founder based in Dallas, Texas. He is an AI Engineer & Manager at HP and the founder of Solarity AI LLC, which builds AI self-improvement apps for iOS and Android: Looks Max, IQ Max, Sleep Max, and Fitness Max. The team shipped all 4 in 12 weeks, starting June 23, 2026. Solarity AI also builds 3 SaaS products for mobile app teams: Engineering Max, Management Max, and Marketing Max.
 >
 > He is Turkey's first undergraduate AI Engineering graduate. He earned a B.S. in Artificial Intelligence Engineering from TOBB University of Economics and Technology (TOBB ETÜ) as valedictorian with a 4.0 GPA, then an M.S. in Computer Science from Maharishi International University, again as valedictorian with a 4.0 GPA. Before that, he studied medicine at Istanbul Medeniyet University from 2016 to 2019, after placing in the top 0.01% of Turkey's national university exam.
 >
@@ -26,7 +26,7 @@ AI Engineer & Manager at HP · Founder & CEO, Solarity AI · Dallas, Texas
 
 | Fact | Detail |
 | --- | --- |
-| **Roles** | Founder & CEO, Solarity AI · AI Engineer & Manager, HP |
+| **Roles** | Founder, Solarity AI · AI Engineer & Manager, HP |
 | **Based in** | Dallas, Texas, United States |
 | **Education** | B.S. in Artificial Intelligence Engineering, TOBB University of Economics and Technology (valedictorian, 4.0 GPA) · M.S. in Computer Science, Maharishi International University (valedictorian, 4.0 GPA) · Medicine, Istanbul Medeniyet University (2016–2019) |
 | **Expertise** | Artificial intelligence, machine learning, deep learning, large language models, retrieval-augmented generation, MLOps, computer vision, natural language processing, generative AI, AI strategy, entrepreneurship, personal development |
@@ -40,7 +40,7 @@ AI Engineer & Manager at HP · Founder & CEO, Solarity AI · Dallas, Texas
 3. Undergraduate valedictorian, TOBB ETÜ, with a 4.0 GPA
 4. M.S. in Computer Science valedictorian, Maharishi International University, with a 4.0 GPA
 5. AI Engineer & Manager at HP
-6. Founder & CEO of Solarity AI, which shipped 4 apps to iOS and Android in 12 weeks
+6. Founder of Solarity AI, which shipped 4 apps to iOS and Android in 12 weeks
 
 ## Speaking and media topics
 
