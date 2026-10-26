@@ -12,6 +12,7 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 
 - **Logo background is navy, not the dark website color.** The sun mark, banners, and profile pictures sit on the navy glow from the original Solarity logo: `#1F225C` at the center to `#0D1120` at the edges. Files: `brand/logos/solarity-sun-mark-on-navy*.png`.
 - Never recolor, stretch, or redraw the sun mark (`brand/logos/solarity-sun-mark.png` is the master).
+- Ata Turhan's title is **Founder**. Never write "CEO" or "Founder & CEO" (founder's request, 2026-10-26).
 - Write **Solarity AI** (two words). Write "Fitness Max (listed as Only Fitness)" inline.
 - Counts use digits ("4 apps", "3 SaaS products"), as on the website.
 - The website palette (Night `#0F0D0B`, Cream, Stone, Gold) and the fonts (Newsreader, Manrope) are documented in `brand/colors/` and `brand/typography/`.

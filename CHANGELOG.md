@@ -16,6 +16,7 @@ Notable changes to Solarity AI's public resources.
 
 ### Changed
 
+- The founder's title is "Founder" everywhere (founder's request); "Founder & CEO" is removed
 - The sun mark, banners, and profile pictures sit on the navy glow from the original Solarity logo (`#1F225C` at the center to `#0D1120` at the edges), replacing the dark website background. `solarity-sun-mark-on-dark*.png` are replaced by `solarity-sun-mark-on-navy.png`, `-512`, and `-192`
 - Wording: counts use digits as on solarityai.com, and Fitness Max is written one way, "Fitness Max (listed as Only Fitness)"
 - Wording: links say what they open instead of showing repository paths, the careers apply line, remote benefit, and job posters link are clearer, "Ahead" is now "Planned", the demo page is titled "Try the products", the README title is sentence case, and the correction form hint moved into the field description

@@ -29,7 +29,7 @@
 | Fact | Detail |
 | --- | --- |
 | Company | Solarity AI LLC, Dallas, Texas |
-| Founder & CEO | [Ata Turhan](../../press-kit/founder-bio/) |
+| Founder | [Ata Turhan](../../press-kit/founder-bio/) |
 | Team | 7 people, founder-led |
 | Planned | Mobile versions of the 3 SaaS products, and a commercial version of Marketing Max for other teams |
 

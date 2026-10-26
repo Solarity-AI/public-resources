@@ -46,7 +46,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 | Fact | Detail |
 | --- | --- |
 | **Company** | Solarity AI LLC, Dallas, Texas, United States |
-| **Founder & CEO** | [Ata Turhan](press-kit/founder-bio/) · [ataturhan.com](https://ataturhan.com/) |
+| **Founder** | [Ata Turhan](press-kit/founder-bio/) · [ataturhan.com](https://ataturhan.com/) |
 | **Team** | 7 people, founder-led |
 | **Mobile apps** | Looks Max, IQ Max, Sleep Max, Fitness Max (listed as Only Fitness), all on the App Store and Google Play. 4 apps in 12 weeks, from June 23, 2026 |
 | **SaaS products** | Engineering Max, Management Max, Marketing Max (all in early access) |
