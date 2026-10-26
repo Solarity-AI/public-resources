@@ -8,3 +8,7 @@ solarityai.com does not publish separate website terms of service.
 | Engineering Max, Management Max, Marketing Max | Published on each product's own site |
 
 Questions: [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

@@ -37,3 +37,7 @@ These rules come from the [solarityai.com press kit](https://solarityai.com/pres
 - A dark, warm background (`#0F0D0B`), cream text, and gold accents. See [`../colors/`](../colors/).
 - Newsreader for headlines and Manrope for text. See [`../typography/`](../typography/).
 - Calm and direct. Short headlines, plain sentences, no hype.
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

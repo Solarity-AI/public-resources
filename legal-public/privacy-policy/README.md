@@ -13,3 +13,7 @@
 To see, correct, or delete your information, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
 
 *This summary is for convenience only. If it differs from the policy on solarityai.com, the policy on the website applies.*
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

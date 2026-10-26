@@ -10,3 +10,7 @@ Solarity AI's policies are published on [solarityai.com](https://solarityai.com/
 | [Terms of service](terms-of-service/) | Per product | Store and product terms |
 
 **Legal entity:** Solarity AI LLC, Dallas, Texas, United States · [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)
+
+---
+
+[← All public resources](../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

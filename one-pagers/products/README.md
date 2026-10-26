@@ -20,11 +20,15 @@ Source: [ataturhan.com/solarity-ai](https://ataturhan.com/solarity-ai).
 
 ## Get the apps
 
-- **Looks Max**: [App Store](https://apps.apple.com/us/app/looks-max-look-your-best/id6778990308) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlylooksmax) · [Details](https://solarityai.com/apps/looks-max/)
-- **IQ Max**: [App Store](https://apps.apple.com/us/app/iq-max-smarter-every-day/id6803826639) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.iqmax) · [Details](https://solarityai.com/apps/iq-max/)
-- **Sleep Max**: [App Store](https://apps.apple.com/us/app/sleep-max-rest-best/id6806709872) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.sleepmax) · [Details](https://solarityai.com/apps/sleep-max/)
-- **Fitness Max** (listed as Only Fitness): [App Store](https://apps.apple.com/us/app/only-fitness-ai-coach/id6789095658) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlyfitness) · [Details](https://solarityai.com/apps/fitness-max/)
+- **Looks Max**: [App Store](https://apps.apple.com/us/app/looks-max-look-your-best/id6778990308) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlylooksmax) · [Details](https://solarityai.com/apps/looks-max/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers-products)
+- **IQ Max**: [App Store](https://apps.apple.com/us/app/iq-max-smarter-every-day/id6803826639) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.iqmax) · [Details](https://solarityai.com/apps/iq-max/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers-products)
+- **Sleep Max**: [App Store](https://apps.apple.com/us/app/sleep-max-rest-best/id6806709872) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.sleepmax) · [Details](https://solarityai.com/apps/sleep-max/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers-products)
+- **Fitness Max** (listed as Only Fitness): [App Store](https://apps.apple.com/us/app/only-fitness-ai-coach/id6789095658) · [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlyfitness) · [Details](https://solarityai.com/apps/fitness-max/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers-products)
 
 **Business model:** subscriptions and in-app purchases. Current plans, prices, and terms are on each store listing. Each app's privacy policy is linked from its store listing.
 
 **Partnerships:** to discuss distribution or a collaboration around one of the apps, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

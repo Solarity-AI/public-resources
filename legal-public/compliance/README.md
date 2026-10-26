@@ -24,3 +24,7 @@ Full details: [solarityai.com/website-data](https://solarityai.com/website-data/
 ## Privacy
 
 See the [privacy policy summary](../privacy-policy/).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

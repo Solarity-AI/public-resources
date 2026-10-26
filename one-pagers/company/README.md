@@ -37,4 +37,8 @@
 
 We welcome investors and collaborators interested in consumer software, product distribution, and tools for teams that build mobile apps.
 
-**[ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)** · [Book a conversation](https://solarityai.com/contact/) · [Investor overview](https://solarityai.com/investors-partners/)
+**[ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)** · [Book a conversation](https://solarityai.com/contact/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers-company) · [Investor overview](https://solarityai.com/investors-partners/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers-company)
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

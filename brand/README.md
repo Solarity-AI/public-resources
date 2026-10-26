@@ -18,3 +18,7 @@ Solarity AI's visual identity, as used on [solarityai.com](https://solarityai.co
 - Describe products only with the facts on [solarityai.com](https://solarityai.com/).
 
 Full rules are in [`brand-guidelines/`](brand-guidelines/).
+
+---
+
+[← All public resources](../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

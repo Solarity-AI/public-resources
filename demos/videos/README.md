@@ -9,3 +9,7 @@ Product videos and updates are posted on Solarity AI's channels:
 - [TikTok](https://www.tiktok.com/@solarityai)
 
 The App Store and Google Play listings also show each app in use. See [Get the apps](../../one-pagers/products/#get-the-apps).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

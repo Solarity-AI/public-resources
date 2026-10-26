@@ -6,12 +6,15 @@ Notable changes to Solarity AI's public resources.
 
 ### Added
 
+- Growth pass: a "Start here" line and the intended audience at the top of the README, a brand guidelines row in the quick downloads, a changelog link, and a footer on every sub-page linking back to all resources and to a contact
+- Links to solarityai.com pages carry `utm_source=github` campaign tags, because GitHub strips the referrer
 - Previews on the asset pages: the sun mark on the logos page, both banners, a Newsreader and Manrope type specimen, the share image, and founder and screen thumbnails in the press images page
 - A row of app icons in the README's "at a glance" section
 - 300 px screen thumbnails (`press-kit/images/screens/thumbs/`)
 
 ### Changed
 
+- The press kit page puts the ZIP download first
 - App icons in tables now set their height too, so they no longer collapse to 0 × 0 on phones or shrink on desktop
 - The products table folds the icon and App Store date into the App column, and the colors tables merge HEX and RGB into one column, so both fit at 375 px with less sideways scrolling
 - The screenshots page shows 300 px thumbnails linked to the full-size screens

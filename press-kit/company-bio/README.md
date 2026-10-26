@@ -47,3 +47,7 @@ Dates are App Store release dates. Every app is also on Google Play.
 | Batuhan Yücetürk | Marketing engineer |
 
 Source: [solarityai.com/press](https://solarityai.com/press/) and [solarityai.com/company](https://solarityai.com/company/).
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)
