@@ -32,8 +32,9 @@ If you're unsure whether something belongs here, ask before adding it.
 
 1. Create a branch: `type/short-description`, for example `brand/add-svg-logo` or `careers/update-roles`.
 2. Make the change and follow the rules below.
-3. Open a pull request using the template. The **Docs check** workflow runs Markdown lint and `scripts/check_docs.py`, which checks links, file names, file sizes, and empty READMEs. Both must pass, and a code owner must approve the PR before it is merged into `main`.
+3. Run the checks locally: `python scripts/check.py`. On Windows, use `py -3.12 scripts/check.py` if `python` isn't found. This runs exactly what CI runs: Markdown lint, plus `scripts/check_docs.py`, which checks links, file names, file sizes, and empty READMEs. You need Node.js 22 (`.nvmrc`) for `npx` and Python 3.12 (`.python-version`).
 4. Add a line to [CHANGELOG.md](CHANGELOG.md).
+5. Open a pull request using the template. The **Docs check** workflow must pass, and a code owner must approve the PR before it is merged into `main`.
 
 Use clear commit messages, such as `Add 512px sun mark export`. Avoid messages like "Add files via upload".
 
@@ -44,6 +45,24 @@ Use clear commit messages, such as `Add 512px sun mark export`. Avoid messages l
 - **Formats:** PNG for logos and icons (transparent), JPEG or WebP for photos, PDF for documents, SVG for vector logos.
 - **Every folder** has a `README.md` that lists its files and how to use them.
 - **Placeholders:** don't add empty folders or empty READMEs. Every README should say something useful, even if it's "None published yet."
+
+### Regenerating images
+
+Exports, banners, thumbnails, the type specimen, and the color swatches are generated from the masters. Don't edit them by hand.
+
+```sh
+pip install -r requirements.txt
+python scripts/generate_assets.py
+```
+
+The script downloads Newsreader and Manrope once, from a pinned Google Fonts commit, into `.cache/fonts/`. To change a color, the navy glow, or a banner layout, edit the script, re-run it, and commit the images it changes.
+
+### Cutting a release
+
+1. Merge all changes to `main` and make sure the Docs check passes.
+2. Build the kit: `python scripts/build_press_kit.py <version>`, for example `2026.11`. This writes `dist/solarity-ai-brand-and-press-kit-<version>.zip`.
+3. Add a `CHANGELOG.md` entry for the release.
+4. Publish it with the founder's approval: `gh release create brand-press-kit-<version> dist/solarity-ai-brand-and-press-kit-<version>.zip --latest --title "Brand and press kit, <Month Year>"`.
 
 ### Standards
 
