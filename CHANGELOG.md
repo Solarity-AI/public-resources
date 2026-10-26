@@ -4,44 +4,30 @@ Notable changes to Solarity AI's public resources.
 
 ## 2026-10-26
 
-### Security
-
-- Hardened the CI workflow and scripts: actions are pinned to commit SHAs, the checkout token isn't persisted, npx skips install scripts, downloaded fonts are verified against SHA-256 hashes, release ZIPs get a `.sha256` checksum, and Dependabot watches GitHub Actions and pip
-
-### Added (developer experience)
-
-- `scripts/check.py` runs everything CI runs, on any OS, and CI now calls it
-- `scripts/generate_assets.py` regenerates every derived image from the masters, with fonts pinned to a Google Fonts commit
-- `scripts/build_press_kit.py` builds the release ZIP, and CONTRIBUTING covers running checks, regenerating images, and cutting a release
-- Version pins (`.nvmrc`, `.python-version`, `requirements.txt`), `.editorconfig`, `.gitignore`, VS Code recommendations, and `CLAUDE.md` for AI agents
-
-### Changed (logo background)
-
-- The sun mark, banners, and profile pictures now sit on the navy glow from the original Solarity logo (`#1F225C` at the center to `#0D1120` at the edges), replacing the dark website background. `solarity-sun-mark-on-dark*.png` are replaced by `solarity-sun-mark-on-navy.png`, `-512`, and `-192`.
-- Logo navy is documented in `brand/colors/` and the brand guidelines.
-
 ### Added
 
-- Growth pass: a "Start here" line and the intended audience at the top of the README, a brand guidelines row in the quick downloads, a changelog link, and a footer on every sub-page linking back to all resources and to a contact
-- Links to solarityai.com pages carry `utm_source=github` campaign tags, because GitHub strips the referrer
+- README: a "Start here" line, the intended audience, a row of app icons, a brand guidelines row in the quick downloads, and a changelog link
+- A footer on every sub-page linking back to all resources and to a contact
 - Previews on the asset pages: the sun mark on the logos page, both banners, a Newsreader and Manrope type specimen, the share image, and founder and screen thumbnails in the press images page
-- A row of app icons in the README's "at a glance" section
 - 300 px screen thumbnails (`press-kit/images/screens/thumbs/`)
+- Logo navy documented in `brand/colors/` and the brand guidelines
+- Developer tooling: `scripts/check.py` (everything CI runs, on any OS), `scripts/generate_assets.py` (regenerates every derived image from the masters), `scripts/build_press_kit.py` (release ZIP with `.sha256`), tests for all three in `tests/`, and CONTRIBUTING sections on running checks, regenerating images, and cutting a release
+- Version pins (`.nvmrc`, `.python-version`, `requirements.txt`), `.editorconfig`, `.gitignore`, VS Code recommendations, and `CLAUDE.md` for AI agents
 
 ### Changed
 
-- The press kit page puts the ZIP download first
-- App icons in tables now set their height too, so they no longer collapse to 0 × 0 on phones or shrink on desktop
-- The products table folds the icon and App Store date into the App column, and the colors tables merge HEX and RGB into one column, so both fit at 375 px with less sideways scrolling
-- The screenshots page shows 300 px thumbnails linked to the full-size screens
-- Accessibility pass (WCAG 2.2 AA): store links share a list item with their app name, key–value tables have real headers, "Download" links fetch the file, the banner and app icons link text matches their destinations, screenshot alt text describes each screen, careers roles and the brand rules are real headings, founder profiles are a list, and the color swatches are marked decorative
-
-- Wording pass: counts use digits as on solarityai.com, and Fitness Max is written one way, "Fitness Max (listed as Only Fitness)"
-- Quick-download and press image links say what they open instead of showing repository paths
-- Clearer careers apply line, remote benefit, and job posters link
-- "Ahead" is now "Planned" in the company one-pager, the demo page is titled "Try the products", and the README title is sentence case
-- The correction form hint moved from the field label into its description
+- The sun mark, banners, and profile pictures sit on the navy glow from the original Solarity logo (`#1F225C` at the center to `#0D1120` at the edges), replacing the dark website background. `solarity-sun-mark-on-dark*.png` are replaced by `solarity-sun-mark-on-navy.png`, `-512`, and `-192`
+- Wording: counts use digits as on solarityai.com, and Fitness Max is written one way, "Fitness Max (listed as Only Fitness)"
+- Wording: links say what they open instead of showing repository paths, the careers apply line, remote benefit, and job posters link are clearer, "Ahead" is now "Planned", the demo page is titled "Try the products", the README title is sentence case, and the correction form hint moved into the field description
 - The demos page no longer says every product can be tried live: the apps can be tried today, Management Max has a free plan, and Engineering Max and Marketing Max take access requests
+- Design: app icons in tables set their height, so they no longer collapse on phones; the products and colors tables fit better at 375 px; the screenshots page uses 300 px thumbnails; the press kit page puts the ZIP download first
+- Accessibility (WCAG 2.2 AA): store links share a list item with their app name, key–value tables have real headers, "Download" links fetch the file, link text matches destinations, screenshot alt text describes each screen, careers roles and the brand rules are real headings, founder profiles are a list, and the color swatches are marked decorative
+- Links to solarityai.com pages carry `utm_source=github` campaign tags, because GitHub strips the referrer
+- CI uses the pinned Python version and runs the script tests; `scripts/check.py` explains what to install when Node is missing, and the font download times out after 30 s with a clear message
+
+### Security
+
+- Hardened the CI workflow and scripts: actions are pinned to commit SHAs, the checkout token isn't persisted, npx skips install scripts, downloaded fonts are verified against SHA-256 hashes, release ZIPs get a `.sha256` checksum, and Dependabot watches GitHub Actions and pip
 
 ## 2026-10-25
 

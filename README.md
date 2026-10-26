@@ -6,7 +6,7 @@
 
 Official, approved public materials for **Solarity AI LLC**, for press, partners, investors, and candidates: brand assets, press kit, company and product one-pagers, careers information, and links to our public policies.
 
-**Start here:** [Download the press kit (ZIP)](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) · [Brand assets](brand/) · [Contact the founder](mailto:ata.turhan@solarityai.com)
+**Start here:** [Download the press kit (ZIP)](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) · [Full brand kit (release)](https://github.com/Solarity-AI/public-resources/releases/latest) · [Brand assets](brand/) · [Contact the founder](mailto:ata.turhan@solarityai.com)
 
 > Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.
 
@@ -37,6 +37,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 | [`demos/`](demos/) | Where to see the products: store listings, screens, and SaaS sites |
 | [`legal-public/`](legal-public/) | Privacy policy, website data, accessibility, and terms |
 | [`docs/standards/`](docs/standards/) | Internal standards for pitch decks and one-pagers |
+| [`scripts/`](scripts/) | Checks, image generation, and release tooling. See [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 ## Solarity AI at a glance
 
