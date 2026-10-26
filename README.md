@@ -37,6 +37,8 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 
 ## Solarity AI at a glance
 
+<a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/looks-max-icon-96.png" alt="Looks Max" width="56" height="56"></a> <a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/iq-max-icon-96.png" alt="IQ Max" width="56" height="56"></a> <a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" alt="Sleep Max" width="56" height="56"></a> <a href="one-pagers/products/"><img src="press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" alt="Fitness Max" width="56" height="56"></a>
+
 | | |
 | --- | --- |
 | **Company** | Solarity AI LLC, Dallas, Texas, United States |

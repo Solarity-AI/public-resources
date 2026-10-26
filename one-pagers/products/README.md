@@ -2,12 +2,12 @@
 
 **Self-care, cognitive practice, sleep, and fitness.** 4 focused apps for the routines you choose to build. Each is on iOS and Android, with in-app purchases.
 
-| | App | Focus | What it does | On the App Store since |
-| --- | --- | --- | --- | --- |
-| <img src="../../press-kit/images/app-icons/thumbs/looks-max-icon-96.png" width="40" alt=""> | **Looks Max** | Appearance & self-care | Personalized appearance insights, daily habits, and a place to follow your progress. | June 23, 2026 |
-| <img src="../../press-kit/images/app-icons/thumbs/iq-max-icon-96.png" width="40" alt=""> | **IQ Max** | Cognitive practice | Focused cognitive exercises, adaptive difficulty, and a daily routine you control. | September 11, 2026 |
-| <img src="../../press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" width="40" alt=""> | **Sleep Max** | Sleep & daily routines | A sleep diary, habit tracking, and coaching to support a more consistent routine. | September 16, 2026 |
-| <img src="../../press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" width="40" alt=""> | **Fitness Max** (listed as Only Fitness) | Fitness & nutrition | Meal insights, training logs, and AI coaching to help you follow your fitness routine. | August 15, 2026 |
+| App | Focus | What it does |
+| --- | --- | --- |
+| <img src="../../press-kit/images/app-icons/thumbs/looks-max-icon-96.png" width="40" height="40" alt=""><br>**Looks Max**<br>On the App Store since June 23, 2026 | Appearance & self-care | Personalized appearance insights, daily habits, and a place to follow your progress. |
+| <img src="../../press-kit/images/app-icons/thumbs/iq-max-icon-96.png" width="40" height="40" alt=""><br>**IQ Max**<br>On the App Store since September 11, 2026 | Cognitive practice | Focused cognitive exercises, adaptive difficulty, and a daily routine you control. |
+| <img src="../../press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" width="40" height="40" alt=""><br>**Sleep Max**<br>On the App Store since September 16, 2026 | Sleep & daily routines | A sleep diary, habit tracking, and coaching to support a more consistent routine. |
+| <img src="../../press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" width="40" height="40" alt=""><br>**Fitness Max** (listed as Only Fitness)<br>On the App Store since August 15, 2026 | Fitness & nutrition | Meal insights, training logs, and AI coaching to help you follow your fitness routine. |
 
 ## Key features
 
@@ -22,10 +22,10 @@ Source: [ataturhan.com/solarity-ai](https://ataturhan.com/solarity-ai).
 
 | App | App Store | Google Play | Product page |
 | --- | --- | --- | --- |
-| Looks Max | [App Store](https://apps.apple.com/us/app/looks-max-look-your-best/id6778990308) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlylooksmax) | [solarityai.com/apps/looks-max](https://solarityai.com/apps/looks-max/) |
-| IQ Max | [App Store](https://apps.apple.com/us/app/iq-max-smarter-every-day/id6803826639) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.iqmax) | [solarityai.com/apps/iq-max](https://solarityai.com/apps/iq-max/) |
-| Sleep Max | [App Store](https://apps.apple.com/us/app/sleep-max-rest-best/id6806709872) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.sleepmax) | [solarityai.com/apps/sleep-max](https://solarityai.com/apps/sleep-max/) |
-| Fitness Max (listed as Only Fitness) | [App Store](https://apps.apple.com/us/app/only-fitness-ai-coach/id6789095658) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlyfitness) | [solarityai.com/apps/fitness-max](https://solarityai.com/apps/fitness-max/) |
+| Looks Max | [App Store](https://apps.apple.com/us/app/looks-max-look-your-best/id6778990308) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlylooksmax) | [Details](https://solarityai.com/apps/looks-max/) |
+| IQ Max | [App Store](https://apps.apple.com/us/app/iq-max-smarter-every-day/id6803826639) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.iqmax) | [Details](https://solarityai.com/apps/iq-max/) |
+| Sleep Max | [App Store](https://apps.apple.com/us/app/sleep-max-rest-best/id6806709872) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.sleepmax) | [Details](https://solarityai.com/apps/sleep-max/) |
+| Fitness Max (listed as Only Fitness) | [App Store](https://apps.apple.com/us/app/only-fitness-ai-coach/id6789095658) | [Google Play](https://play.google.com/store/apps/details?id=com.solarityai.onlyfitness) | [Details](https://solarityai.com/apps/fitness-max/) |
 
 **Business model:** subscriptions and in-app purchases. Current plans, prices, and terms are on each store listing. Each app's privacy policy is linked from its store listing.
 

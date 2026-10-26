@@ -26,6 +26,8 @@ Ata Turhan, Founder & CEO: [ataturhan.com](https://ataturhan.com/) · [LinkedIn]
 
 ## Images
 
+<img src="solarity-ai-og-default.jpg" alt="Default link preview: a person climbing mountain steps toward a golden sunrise above the clouds" width="480" height="252">
+
 | File | Size | Use |
 | --- | --- | --- |
 | [`solarity-ai-og-default.jpg`](solarity-ai-og-default.jpg) | 1200 × 630 | The website's default link-preview image: a person climbing mountain steps toward a golden sunrise above the clouds |
