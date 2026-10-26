@@ -8,15 +8,19 @@ Masters (never generated): brand/logos/solarity-sun-mark.png, press-kit/images/a
 press-kit/images/screens/*.jpg, press-kit/images/ata-turhan-founder.jpg.
 """
 import glob
+import hashlib
 import math
 import os
 import urllib.request
 
 from PIL import Image, ImageDraw, ImageFont
 
+# (URL at a pinned google/fonts commit, expected SHA-256 of the file)
 FONTS = {
-    "Newsreader.ttf": "https://raw.githubusercontent.com/google/fonts/991ce1de6075188e6b8977a5aa9fcd3610a4e946/ofl/newsreader/Newsreader%5Bopsz,wght%5D.ttf",
-    "Manrope.ttf": "https://raw.githubusercontent.com/google/fonts/b31870aff700ab7a1d74fa0c6887d95beb9e0037/ofl/manrope/Manrope%5Bwght%5D.ttf",
+    "Newsreader.ttf": ("https://raw.githubusercontent.com/google/fonts/991ce1de6075188e6b8977a5aa9fcd3610a4e946/ofl/newsreader/Newsreader%5Bopsz,wght%5D.ttf",
+                       "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"),
+    "Manrope.ttf": ("https://raw.githubusercontent.com/google/fonts/b31870aff700ab7a1d74fa0c6887d95beb9e0037/ofl/manrope/Manrope%5Bwght%5D.ttf",
+                    "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"),
 }
 FONT_DIR = os.path.join(".cache", "fonts")
 
@@ -39,13 +43,22 @@ NAVY_STOPS = [(0.00, (0x1F, 0x22, 0x5C)), (0.14, (0x1D, 0x20, 0x58)), (0.29, (0x
               (0.86, (0x0D, 0x11, 0x20)), (1.00, (0x0D, 0x10, 0x1C))]
 
 
+def sha256(path):
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
 def fetch_fonts():
     os.makedirs(FONT_DIR, exist_ok=True)
-    for name, url in FONTS.items():
+    for name, (url, digest) in FONTS.items():
         path = os.path.join(FONT_DIR, name)
         if not os.path.exists(path):
             print(f"Downloading {name}")
-            urllib.request.urlretrieve(url, path)
+            urllib.request.urlretrieve(url, path + ".part")
+            os.replace(path + ".part", path)
+        if sha256(path) != digest:
+            os.remove(path)
+            raise SystemExit(f"{name}: SHA-256 mismatch, file deleted. Refusing to use an unverified font.")
 
 
 def font(name, size, weight):

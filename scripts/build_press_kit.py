@@ -4,6 +4,7 @@ Run from the repository root: python scripts/build_press_kit.py <version>
 Example: python scripts/build_press_kit.py 2026.10 → dist/solarity-ai-brand-and-press-kit-2026.10.zip
 """
 import glob
+import hashlib
 import os
 import sys
 import zipfile
@@ -52,7 +53,12 @@ def main():
         z.writestr(f"{root}/README.txt", README.format(version=version))
         for f in files:
             z.write(f, f"{root}/" + f.replace(os.sep, "/"))
+    with open(out, "rb") as f:
+        digest = hashlib.sha256(f.read()).hexdigest()
+    with open(out + ".sha256", "w", encoding="utf-8", newline="\n") as f:
+        f.write(f"{digest}  {os.path.basename(out)}\n")
     print(f"{out}: {len(files)} files + README.txt, {os.path.getsize(out) / 1024 / 1024:.1f} MB")
+    print(f"SHA-256 {digest} (written to {out}.sha256)")
 
 
 if __name__ == "__main__":
