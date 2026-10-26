@@ -16,8 +16,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - name: Markdown lint
-        run: npx --yes markdownlint-cli2@0.18.1 "**/*.md"
-      - name: Links, file names, sizes, and READMEs
-        run: python3 scripts/check_docs.py
+          node-version-file: .nvmrc
+      - name: Markdown lint, links, file names, sizes, and READMEs
+        run: python3 scripts/check.py

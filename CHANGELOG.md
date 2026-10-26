@@ -4,6 +4,13 @@ Notable changes to Solarity AI's public resources.
 
 ## 2026-10-26
 
+### Added (developer experience)
+
+- `scripts/check.py` runs everything CI runs, on any OS, and CI now calls it
+- `scripts/generate_assets.py` regenerates every derived image from the masters, with fonts pinned to a Google Fonts commit
+- `scripts/build_press_kit.py` builds the release ZIP, and CONTRIBUTING covers running checks, regenerating images, and cutting a release
+- Version pins (`.nvmrc`, `.python-version`, `requirements.txt`), `.editorconfig`, `.gitignore`, VS Code recommendations, and `CLAUDE.md` for AI agents
+
 ### Changed (logo background)
 
 - The sun mark, banners, and profile pictures now sit on the navy glow from the original Solarity logo (`#1F225C` at the center to `#0D1120` at the edges), replacing the dark website background. `solarity-sun-mark-on-dark*.png` are replaced by `solarity-sun-mark-on-navy.png`, `-512`, and `-192`.
