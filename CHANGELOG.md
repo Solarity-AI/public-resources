@@ -11,6 +11,7 @@ Notable changes to Solarity AI's public resources.
 - Clearer careers apply line, remote benefit, and job posters link
 - "Ahead" is now "Planned" in the company one-pager, the demo page is titled "Try the products", and the README title is sentence case
 - The correction form hint moved from the field label into its description
+- The demos page no longer says every product can be tried live: the apps can be tried today, Management Max has a free plan, and Engineering Max and Marketing Max take access requests
 
 ## 2026-10-25
 

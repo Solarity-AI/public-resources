@@ -1,6 +1,6 @@
 # Try the products
 
-Every Solarity AI product can be tried live.
+You can try all 4 apps today. Of the SaaS products, Management Max has a free plan, and Engineering Max and Marketing Max take access requests on their sites.
 
 ## Mobile apps (iOS and Android)
 
@@ -15,8 +15,8 @@ Every Solarity AI product can be tried live.
 
 | Product | Site | Access |
 | --- | --- | --- |
-| Engineering Max | [engineeringmax.solarityai.com](https://engineeringmax.solarityai.com/) | Free during early access |
-| Management Max | [managementmax.solarityai.com](https://managementmax.solarityai.com/) | Free for 1 app and 2 seats |
+| Engineering Max | [engineeringmax.solarityai.com](https://engineeringmax.solarityai.com/) | Request access on its site (free during early access) |
+| Management Max | [managementmax.solarityai.com](https://managementmax.solarityai.com/) | Free plan for 1 app and 2 seats |
 | Marketing Max | [marketingmax.solarityai.com](https://marketingmax.solarityai.com/) | Request access on its site |
 
 For a guided demo, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
