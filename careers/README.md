@@ -2,7 +2,7 @@
 
 **Good work. Shared ambition.** Help build focused products for human potential. Bring your craft to engineering or marketing at Solarity AI, full-time, part-time, or as an intern.
 
-**Apply:** [solarityai.com/careers](https://solarityai.com/careers/) · or email [careers@solarityai.com](mailto:careers@solarityai.com)
+**Apply** on [solarityai.com/careers](https://solarityai.com/careers/) or email [careers@solarityai.com](mailto:careers@solarityai.com).
 
 ## Open roles
 
@@ -18,14 +18,14 @@
 ## Why join
 
 - **Generous profit sharing.** Share in the value you help create. We'll discuss the arrangement for your role during the hiring process.
-- **Fully remote.** The conversation centers on the work and how you collaborate.
+- **Fully remote.** Work from anywhere. We focus on your work and how you collaborate.
 - **Respect for talent.** Bring your perspective, your skills, and the care you put into your work.
 
 ## How to apply
 
-The [careers form](https://solarityai.com/careers/) asks for four things: your name, your email, the role, and the work arrangement you prefer. A LinkedIn profile, a portfolio or GitHub link, and a short note on where you'd contribute are optional.
+The [careers form](https://solarityai.com/careers/) asks for 4 things: your name, your email, the role, and the work arrangement you prefer. A LinkedIn profile, a portfolio or GitHub link, and a short note on where you'd contribute are optional.
 
-Job posters: [Google Drive folder](https://drive.google.com/drive/folders/1iOew815DHxi_TDBWtbpUp_433V-bamws)
+Want more detail before applying? [View the job posters](https://drive.google.com/drive/folders/1iOew815DHxi_TDBWtbpUp_433V-bamws) on Google Drive.
 
 ## Students and event attendees
 

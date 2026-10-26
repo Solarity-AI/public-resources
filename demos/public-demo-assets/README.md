@@ -1,4 +1,4 @@
-# Public demo assets
+# Try the products
 
 Every Solarity AI product can be tried live.
 

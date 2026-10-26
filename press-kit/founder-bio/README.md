@@ -16,7 +16,7 @@ AI Engineer & Manager at HP · Founder & CEO, Solarity AI · Dallas, Texas
 
 ### Long
 
-> Ata Turhan is an AI engineer and founder based in Dallas, Texas. He is an AI Engineer & Manager at HP and the founder and CEO of Solarity AI LLC, which builds AI self-improvement apps for iOS and Android: Looks Max, IQ Max, Sleep Max, and Fitness Max. The team shipped all four in 12 weeks, starting June 23, 2026. Solarity AI also builds three SaaS products for mobile app teams: Engineering Max, Management Max, and Marketing Max.
+> Ata Turhan is an AI engineer and founder based in Dallas, Texas. He is an AI Engineer & Manager at HP and the founder and CEO of Solarity AI LLC, which builds AI self-improvement apps for iOS and Android: Looks Max, IQ Max, Sleep Max, and Fitness Max. The team shipped all 4 in 12 weeks, starting June 23, 2026. Solarity AI also builds 3 SaaS products for mobile app teams: Engineering Max, Management Max, and Marketing Max.
 >
 > He is Turkey's first undergraduate AI Engineering graduate. He earned a B.S. in Artificial Intelligence Engineering from TOBB University of Economics and Technology (TOBB ETÜ) as valedictorian with a 4.0 GPA, then an M.S. in Computer Science from Maharishi International University, again as valedictorian with a 4.0 GPA. Before that, he studied medicine at Istanbul Medeniyet University from 2016 to 2019, after placing in the top 0.01% of Turkey's national university exam.
 >

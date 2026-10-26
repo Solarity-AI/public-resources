@@ -1,6 +1,6 @@
 # One-pagers
 
-Short overviews you can read in two minutes.
+Short overviews you can read in 2 minutes.
 
 | One-pager | For |
 | --- | --- |
