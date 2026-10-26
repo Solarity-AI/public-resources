@@ -54,7 +54,13 @@ def fetch_fonts():
         path = os.path.join(FONT_DIR, name)
         if not os.path.exists(path):
             print(f"Downloading {name}")
-            urllib.request.urlretrieve(url, path + ".part")
+            try:
+                with urllib.request.urlopen(url, timeout=30) as r, open(path + ".part", "wb") as f:
+                    f.write(r.read())
+            except OSError as e:
+                if os.path.exists(path + ".part"):
+                    os.remove(path + ".part")
+                raise SystemExit(f"Couldn't download {name} ({e}). Check your connection, or save {url} as {path} and run again.")
             os.replace(path + ".part", path)
         if sha256(path) != digest:
             os.remove(path)
