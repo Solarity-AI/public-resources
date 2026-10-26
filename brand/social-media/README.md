@@ -13,7 +13,7 @@
 | Pinterest | [solarity_ai](https://www.pinterest.com/solarity_ai) |
 | Medium | [solarity-ai](https://medium.com/solarity-ai) |
 | Telegram | [solarity_ai](https://t.me/solarity_ai) |
-| WhatsApp | [Channel](https://whatsapp.com/channel/0029Vb6z14n42DcffGUs9x3R) |
+| WhatsApp | [Solarity AI channel](https://whatsapp.com/channel/0029Vb6z14n42DcffGUs9x3R) |
 | GitHub | [Solarity-AI](https://github.com/Solarity-AI) |
 
 **Developer accounts:** [App Store](https://apps.apple.com/us/developer/solarity-ai-llc/id1870988348) · [Google Play](https://play.google.com/store/apps/developer?id=Solarity+AI+LLC)

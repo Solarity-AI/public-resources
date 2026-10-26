@@ -26,7 +26,7 @@
 
 ## At a glance
 
-| | |
+| Fact | Detail |
 | --- | --- |
 | Company | Solarity AI LLC, Dallas, Texas |
 | Founder & CEO | [Ata Turhan](../../press-kit/founder-bio/) |
