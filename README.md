@@ -17,7 +17,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 | Asset | Format | Link |
 | --- | --- | --- |
 | Sun mark | PNG, 1024 × 1026, transparent | [Download sun mark](brand/logos/solarity-sun-mark.png?raw=true) |
-| Sun mark on dark background | PNG, 1200 × 1200 | [Download sun mark on dark](brand/logos/solarity-sun-mark-on-dark.png?raw=true) |
+| Sun mark on navy | PNG, 1200 × 1200 | [Download sun mark on navy](brand/logos/solarity-sun-mark-on-navy.png?raw=true) |
 | Banner | PNG, 1280 × 640 | [Download banner](brand/banner/solarity-ai-banner-1280x640.png?raw=true) |
 | Founder photo, Ata Turhan | JPEG, 800 × 800 | [Download founder photo](press-kit/images/ata-turhan-founder.jpg?raw=true) |
 | App icons | PNG, 1024 × 1024 | [Browse app icons](press-kit/images/app-icons/) |

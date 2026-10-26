@@ -1,6 +1,6 @@
 # Banners
 
-Wide banners in the [solarityai.com](https://solarityai.com/) style: the sun mark, the name in Newsreader, and the tagline in Manrope on the brand background.
+Wide banners in the [solarityai.com](https://solarityai.com/) style: the sun mark, the name in Newsreader, and the tagline in Manrope on the navy logo background.
 
 <img src="solarity-ai-banner-1280x640.png" alt="Banner, 1280 by 640: the sun mark beside Solarity AI and Building for human potential" width="640" height="320">
 

@@ -12,7 +12,7 @@ These rules come from the [solarityai.com press kit](https://solarityai.com/pres
 
 - Use it as supplied, from [`../logos/`](../logos/).
 - Don't recolor, stretch, rotate, outline, add effects to, or redraw it.
-- Don't put it on busy images or light backgrounds where the yellow loses contrast.
+- Its background is the navy glow (`#1F225C` to `#0D1120`). Use the navy versions from [`../logos/`](../logos/) rather than placing the mark on light or busy backgrounds.
 
 ## Product names
 
@@ -34,7 +34,8 @@ These rules come from the [solarityai.com press kit](https://solarityai.com/pres
 
 ## Visual style
 
-- A dark, warm background (`#0F0D0B`), cream text, and gold accents. See [`../colors/`](../colors/).
+- Logo, banners, and profile pictures: the sun mark on the navy glow.
+- Website: a dark, warm background (`#0F0D0B`), cream text, and gold accents. See [`../colors/`](../colors/).
 - Newsreader for headlines and Manrope for text. See [`../typography/`](../typography/).
 - Calm and direct. Short headlines, plain sentences, no hype.
 
