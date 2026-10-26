@@ -4,6 +4,10 @@ Notable changes to Solarity AI's public resources.
 
 ## 2026-10-26
 
+### Security
+
+- Hardened the CI workflow and scripts: actions are pinned to commit SHAs, the checkout token isn't persisted, npx skips install scripts, downloaded fonts are verified against SHA-256 hashes, release ZIPs get a `.sha256` checksum, and Dependabot watches GitHub Actions and pip
+
 ### Added (developer experience)
 
 - `scripts/check.py` runs everything CI runs, on any OS, and CI now calls it

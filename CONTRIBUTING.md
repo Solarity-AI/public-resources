@@ -60,9 +60,9 @@ The script downloads Newsreader and Manrope once, from a pinned Google Fonts com
 ### Cutting a release
 
 1. Merge all changes to `main` and make sure the Docs check passes.
-2. Build the kit: `python scripts/build_press_kit.py <version>`, for example `2026.11`. This writes `dist/solarity-ai-brand-and-press-kit-<version>.zip`.
+2. Build the kit: `python scripts/build_press_kit.py <version>`, for example `2026.11`. This writes `dist/solarity-ai-brand-and-press-kit-<version>.zip` and its `.sha256` checksum file.
 3. Add a `CHANGELOG.md` entry for the release.
-4. Publish it with the founder's approval: `gh release create brand-press-kit-<version> dist/solarity-ai-brand-and-press-kit-<version>.zip --latest --title "Brand and press kit, <Month Year>"`.
+4. Publish it with the founder's approval: `gh release create brand-press-kit-<version> dist/solarity-ai-brand-and-press-kit-<version>.zip dist/solarity-ai-brand-and-press-kit-<version>.zip.sha256 --latest --title "Brand and press kit, <Month Year>"`, and quote the SHA-256 in the release notes.
 
 ### Standards
 
