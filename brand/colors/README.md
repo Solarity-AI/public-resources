@@ -1,6 +1,6 @@
 # Colors
 
-The palette used on [solarityai.com](https://solarityai.com/): a warm, dark background, cream text, and gold accents.
+The palette used on [solarityai.com](https://solarityai.com/): a warm, dark background, cream text, and gold accents. The logo has its own navy background.
 
 ## Core
 
@@ -21,6 +21,15 @@ The palette used on [solarityai.com](https://solarityai.com/): a warm, dark back
 | <img src="swatches/bronze.png" width="24" height="24" alt=""> | Bronze | `#9C7446`<br>RGB 156, 116, 70 | Subtle accents |
 | <img src="swatches/umber.png" width="24" height="24" alt=""> | Umber | `#2A231C`<br>RGB 42, 35, 28 | Borders, dividers |
 | <img src="swatches/ember.png" width="24" height="24" alt=""> | Ember | `#1A140E`<br>RGB 26, 20, 14 | Raised surfaces |
+
+## Logo navy
+
+The background of the sun mark, banners, and profile pictures: a glow from Navy at the center to Deep navy at the edges, taken from the original Solarity logo.
+
+| Swatch | Name | Value | Use |
+| --- | --- | --- | --- |
+| <img src="swatches/navy.png" width="24" height="24" alt=""> | Navy | `#1F225C`<br>RGB 31, 34, 92 | Center of the logo glow |
+| <img src="swatches/navy-deep.png" width="24" height="24" alt=""> | Deep navy | `#0D1120`<br>RGB 13, 17, 32 | Edges of the logo glow |
 
 ## Sun mark
 
@@ -44,6 +53,8 @@ Sun yellow belongs to the logo. Use it in the mark only, not as an interface col
   --bronze: #9C7446;
   --umber: #2A231C;
   --ember: #1A140E;
+  --navy: #1F225C;
+  --navy-deep: #0D1120;
 }
 ```
 

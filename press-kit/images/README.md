@@ -4,7 +4,7 @@ These are the official files from the [solarityai.com press kit](https://solarit
 
 ## People and logo
 
-<img src="ata-turhan-founder.jpg" alt="Ata Turhan, founder and CEO of Solarity AI" width="120" height="120"> <img src="../../brand/logos/solarity-sun-mark-on-dark-192.png" alt="Solarity AI sun mark on the dark brand background" width="120" height="120">
+<img src="ata-turhan-founder.jpg" alt="Ata Turhan, founder and CEO of Solarity AI" width="120" height="120"> <img src="../../brand/logos/solarity-sun-mark-on-navy-192.png" alt="Solarity AI sun mark on its navy background" width="120" height="120">
 
 | Image | File | Format |
 | --- | --- | --- |

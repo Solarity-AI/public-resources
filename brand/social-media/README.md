@@ -31,7 +31,7 @@ Ata Turhan, Founder & CEO: [ataturhan.com](https://ataturhan.com/) · [LinkedIn]
 | File | Size | Use |
 | --- | --- | --- |
 | [`solarity-ai-og-default.jpg`](solarity-ai-og-default.jpg) | 1200 × 630 | The website's default link-preview image: a person climbing mountain steps toward a golden sunrise above the clouds |
-| [`../logos/solarity-sun-mark-on-dark.png`](../logos/solarity-sun-mark-on-dark.png) | 1200 × 1200 | Profile picture |
+| [`../logos/solarity-sun-mark-on-navy.png`](../logos/solarity-sun-mark-on-navy.png) | 1200 × 1200 | Profile picture |
 | [`../banner/solarity-ai-banner-1500x500.png`](../banner/solarity-ai-banner-1500x500.png) | 1500 × 500 | Profile header |
 
 ## Profile bio

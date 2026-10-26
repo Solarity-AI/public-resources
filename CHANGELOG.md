@@ -4,6 +4,11 @@ Notable changes to Solarity AI's public resources.
 
 ## 2026-10-26
 
+### Changed (logo background)
+
+- The sun mark, banners, and profile pictures now sit on the navy glow from the original Solarity logo (`#1F225C` at the center to `#0D1120` at the edges), replacing the dark website background. `solarity-sun-mark-on-dark*.png` are replaced by `solarity-sun-mark-on-navy.png`, `-512`, and `-192`.
+- Logo navy is documented in `brand/colors/` and the brand guidelines.
+
 ### Added
 
 - Growth pass: a "Start here" line and the intended audience at the top of the README, a brand guidelines row in the quick downloads, a changelog link, and a footer on every sub-page linking back to all resources and to a contact

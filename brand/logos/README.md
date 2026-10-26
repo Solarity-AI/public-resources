@@ -2,7 +2,7 @@
 
 The **Solarity AI sun mark** is the company's logo. The master file is the official press-kit file from [solarityai.com/press](https://solarityai.com/press/).
 
-<img src="solarity-sun-mark-on-dark-512.png" alt="The Solarity AI sun mark, a yellow sun with a lightning bolt, on the dark brand background" width="160" height="160">
+<img src="solarity-sun-mark-on-navy-512.png" alt="The Solarity AI sun mark, a yellow sun with a lightning bolt, on its navy background" width="160" height="160">
 
 | File | Size | Use |
 | --- | --- | --- |
@@ -11,9 +11,9 @@ The **Solarity AI sun mark** is the company's logo. The master file is the offic
 | [`solarity-sun-mark-256.png`](solarity-sun-mark-256.png) | 256 px wide, transparent | Avatars, listings |
 | [`solarity-sun-mark-192.png`](solarity-sun-mark-192.png) | 192 px wide, transparent | App and web icons |
 | [`solarity-sun-mark-64.png`](solarity-sun-mark-64.png) | 64 px wide, transparent | Favicons, small UI |
-| [`solarity-sun-mark-on-dark.png`](solarity-sun-mark-on-dark.png) | 1200 × 1200, on `#0F0D0B` | Profile pictures, square placements |
-| [`solarity-sun-mark-on-dark-512.png`](solarity-sun-mark-on-dark-512.png) | 512 × 512, on `#0F0D0B` | Light pages and documents where the transparent mark loses contrast |
-| [`solarity-sun-mark-on-dark-192.png`](solarity-sun-mark-on-dark-192.png) | 192 × 192, on `#0F0D0B` | Small placements on light backgrounds, such as GitHub in light mode |
+| [`solarity-sun-mark-on-navy.png`](solarity-sun-mark-on-navy.png) | 1200 × 1200, on navy | Profile pictures (GitHub, LinkedIn, X), square placements |
+| [`solarity-sun-mark-on-navy-512.png`](solarity-sun-mark-on-navy-512.png) | 512 × 512, on navy | Light pages and documents where the transparent mark loses contrast |
+| [`solarity-sun-mark-on-navy-192.png`](solarity-sun-mark-on-navy-192.png) | 192 × 192, on navy | Small placements on light backgrounds, such as GitHub in light mode |
 
 The smaller files are scaled-down copies of the master. They are not redrawn or recolored.
 
@@ -21,7 +21,7 @@ The smaller files are scaled-down copies of the master. They are not redrawn or 
 
 - Use the mark as supplied. Don't recolor, stretch, rotate, outline, or redraw it.
 - Leave clear space around it equal to at least a quarter of its width.
-- It works best on the dark brand background (`#0F0D0B`) or other dark, plain backgrounds.
+- Its background is the navy glow (`#1F225C` to `#0D1120`), taken from the original Solarity logo. Use the navy versions wherever the mark needs a background.
 - No vector (SVG) or single-color version has been published yet. For one, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
 
 ---
