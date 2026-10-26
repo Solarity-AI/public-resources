@@ -23,4 +23,4 @@ Full details: [solarityai.com/website-data](https://solarityai.com/website-data/
 
 ## Privacy
 
-See [privacy-policy](../privacy-policy/).
+See the [privacy policy summary](../privacy-policy/).

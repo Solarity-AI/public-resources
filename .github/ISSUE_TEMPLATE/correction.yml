@@ -20,4 +20,5 @@ body:
   - type: input
     id: source
     attributes:
-      label: Correct information (with a solarityai.com link if possible)
+      label: Correct information
+      description: Add a solarityai.com link if you can.

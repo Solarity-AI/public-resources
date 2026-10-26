@@ -1,6 +1,6 @@
 # SaaS products: one-pager
 
-**The app factory.** Three SaaS products for the engineering, management, and marketing work behind mobile products, built alongside Solarity AI's own apps. All three run on the web today and are in early access. Mobile versions are planned.
+**The app factory.** 3 SaaS products for the engineering, management, and marketing work behind mobile products, built alongside Solarity AI's own apps. All 3 run on the web today and are in early access. Mobile versions are planned.
 
 | Stage | Product | Built for | Plans |
 | --- | --- | --- | --- |

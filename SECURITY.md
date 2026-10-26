@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-If you find a security issue, report it privately. That covers this repository, solarityai.com, the Solarity AI apps (Looks Max, IQ Max, Sleep Max, Fitness Max / Only Fitness), and the SaaS products (Engineering Max, Management Max, Marketing Max).
+If you find a security issue, report it privately. That covers this repository, solarityai.com, the Solarity AI apps (Looks Max, IQ Max, Sleep Max, Fitness Max, listed as Only Fitness), and the SaaS products (Engineering Max, Management Max, Marketing Max).
 
 - **Preferred:** [report it privately on GitHub](https://github.com/Solarity-AI/public-resources/security/advisories/new)
 - **Email:** [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) with the subject `Security report`

@@ -2,6 +2,16 @@
 
 Notable changes to Solarity AI's public resources.
 
+## 2026-10-26
+
+### Changed
+
+- Wording pass: counts use digits as on solarityai.com, and Fitness Max is written one way, "Fitness Max (listed as Only Fitness)"
+- Quick-download and press image links say what they open instead of showing repository paths
+- Clearer careers apply line, remote benefit, and job posters link
+- "Ahead" is now "Planned" in the company one-pager, the demo page is titled "Try the products", and the README title is sentence case
+- The correction form hint moved from the field label into its description
+
 ## 2026-10-25
 
 ### Added

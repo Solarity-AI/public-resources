@@ -1,6 +1,6 @@
 # Typography
 
-[solarityai.com](https://solarityai.com/) uses two typefaces. Both are free under the SIL Open Font License.
+[solarityai.com](https://solarityai.com/) uses 2 typefaces. Both are free under the SIL Open Font License.
 
 | Role | Typeface | Fallbacks | Get it |
 | --- | --- | --- | --- |

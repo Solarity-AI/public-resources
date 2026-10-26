@@ -2,7 +2,7 @@
   <a href="https://solarityai.com/"><img src="brand/banner/solarity-ai-banner-1280x640.png" alt="Solarity AI — Building for human potential." width="720"></a>
 </p>
 
-# Solarity AI – Public Resources
+# Solarity AI public resources
 
 Official, approved public materials for **Solarity AI LLC**: brand assets, press kit, company and product one-pagers, careers information, and links to our public policies.
 
@@ -12,15 +12,15 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 
 ## Quick downloads
 
-| Asset | File |
-| --- | --- |
-| Sun mark (PNG, 1024 × 1026, transparent) | [`brand/logos/solarity-sun-mark.png`](brand/logos/solarity-sun-mark.png) |
-| Sun mark on dark background (PNG, 1200 × 1200) | [`brand/logos/solarity-sun-mark-on-dark.png`](brand/logos/solarity-sun-mark-on-dark.png) |
-| Banner (PNG, 1280 × 640) | [`brand/banner/solarity-ai-banner-1280x640.png`](brand/banner/solarity-ai-banner-1280x640.png) |
-| Founder photo, Ata Turhan (JPEG, 800 × 800) | [`press-kit/images/ata-turhan-founder.jpg`](press-kit/images/ata-turhan-founder.jpg) |
-| App icons (PNG, 1024 × 1024) | [`press-kit/images/app-icons/`](press-kit/images/app-icons/) |
-| Product screens (JPEG) | [`press-kit/images/screens/`](press-kit/images/screens/) |
-| Full press kit (ZIP, 3.1 MB) | [solarityai.com/assets/press/solarity-ai-press-kit.zip](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) |
+| Asset | Format | Link |
+| --- | --- | --- |
+| Sun mark | PNG, 1024 × 1026, transparent | [Download sun mark](brand/logos/solarity-sun-mark.png) |
+| Sun mark on dark background | PNG, 1200 × 1200 | [Download sun mark on dark](brand/logos/solarity-sun-mark-on-dark.png) |
+| Banner | PNG, 1280 × 640 | [Download banner](brand/banner/solarity-ai-banner-1280x640.png) |
+| Founder photo, Ata Turhan | JPEG, 800 × 800 | [Download founder photo](press-kit/images/ata-turhan-founder.jpg) |
+| App icons | PNG, 1024 × 1024 | [Browse app icons](press-kit/images/app-icons/) |
+| Product screens | JPEG | [Browse product screens](press-kit/images/screens/) |
+| Full press kit | ZIP, 3.1 MB | [Download press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) |
 
 ## What's inside
 
@@ -42,7 +42,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/)**, the sourc
 | **Company** | Solarity AI LLC, Dallas, Texas, United States |
 | **Founder & CEO** | [Ata Turhan](press-kit/founder-bio/) · [ataturhan.com](https://ataturhan.com/) |
 | **Team** | 7 people, founder-led |
-| **Mobile apps** | Looks Max, IQ Max, Sleep Max, Fitness Max (listed as *Only Fitness*), all on the App Store and Google Play. 4 apps in 12 weeks, from June 23, 2026 |
+| **Mobile apps** | Looks Max, IQ Max, Sleep Max, Fitness Max (listed as Only Fitness), all on the App Store and Google Play. 4 apps in 12 weeks, from June 23, 2026 |
 | **SaaS products** | Engineering Max, Management Max, Marketing Max (all in early access) |
 
 ## Contact
