@@ -4,6 +4,11 @@ Notable changes to Solarity AI's public resources.
 
 ## 2026-10-27
 
+### Added
+
+- Tests for `scripts/check.py` (a failed step fails CI, and a missing Node.js says what to install), the font download failure path, thumbnails, the logo navy background, the press kit ZIP contents, and the size and folder-name rules of `scripts/check_docs.py` (#107, #109, #110, #113, #114, #116)
+- `tests/test_content.py` guards brand rules: the title is Founder, Solarity AI is two words, Only Fitness always appears with Fitness Max, swatches match their documented colors, every master image has a thumbnail, and table images set width and height (#108, #111, #112, #113, #115)
+
 ### Changed
 
 - Pull requests no longer need an approving review: the **Docs check** must pass, and only the founder can merge. README, CONTRIBUTING, CODEOWNERS, and `CLAUDE.md` say so (#104)

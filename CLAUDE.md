@@ -16,6 +16,7 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 - Write **Solarity AI** (two words). Write "Fitness Max (listed as Only Fitness)" inline.
 - Counts use digits ("4 apps", "3 SaaS products"), as on the website.
 - The website palette (Night `#0F0D0B`, Cream, Stone, Gold) and the fonts (Newsreader, Manrope) are documented in `brand/colors/` and `brand/typography/`.
+- The tests in `tests/` guard the navy background, the title, both names, the swatch colors, thumbnails, and image sizes in tables, so `python scripts/check.py` fails when one of these regresses.
 
 ## Conventions
 

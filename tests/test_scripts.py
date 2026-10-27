@@ -1,5 +1,7 @@
 """Tests for the repository scripts. Run: python -m unittest discover -s tests"""
+import contextlib
 import hashlib
+import io
 import os
 import shutil
 import subprocess
@@ -7,6 +9,7 @@ import sys
 import tempfile
 import unittest
 import zipfile
+from unittest import mock
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRIPTS = os.path.join(ROOT, "scripts")
@@ -181,6 +184,74 @@ class CheckDocsTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("brand/README.md: doesn't list banner.png", r.stdout)
 
+    def test_files_over_1_mb_are_flagged(self):
+        # #114
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + "[Poster](poster.png)\n")
+            write(d, "brand/poster.png", "x" * 1_000_001)
+            r = check_docs(d)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("brand/poster.png: 1,000,001 bytes; put files over 1 MB in a GitHub Release", r.stdout)
+            write(d, "brand/poster.png", "x" * 1_000_000)
+            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+
+    def test_folder_names_must_be_kebab_case(self):
+        # #114
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README)
+            write(d, "brand/Old_Logos/README.md", GOOD_README + "[Logo](logo.png)\n")
+            write(d, "brand/Old_Logos/logo.png")
+            r = check_docs(d)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("brand/Old_Logos/logo.png: folder 'Old_Logos' must be lowercase kebab-case", r.stdout)
+
+
+class CheckPyTest(unittest.TestCase):
+    """scripts/check.py is the one command CI runs, so any failed step must fail the run (#107)."""
+
+    def check(self, d, npx_exit=None, readme="", test_body="pass"):
+        copy_script(d, "check.py")
+        copy_script(d, "check_docs.py")
+        write(d, "brand/README.md", GOOD_README + readme)
+        write(d, "tests/test_ok.py", f"import unittest\n\n\nclass T(unittest.TestCase):\n    def test_it(self):\n        {test_body}\n")
+        bin_dir = os.path.join(d, "bin")
+        os.makedirs(bin_dir)
+        if npx_exit is not None:  # a stand-in for npx, so the test needs neither Node nor the network
+            if os.name == "nt":
+                write(bin_dir, "npx.cmd", f"@exit /b {npx_exit}\n")
+            else:
+                write(bin_dir, "npx", f"#!/bin/sh\nexit {npx_exit}\n")
+                os.chmod(os.path.join(bin_dir, "npx"), 0o755)
+        return subprocess.run([sys.executable, os.path.join(d, "scripts", "check.py")], cwd=d,
+                              env=dict(os.environ, PATH=bin_dir), capture_output=True, text=True)
+
+    def test_passes_when_every_step_passes(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = self.check(d, npx_exit=0)
+            self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+            self.assertIn("All checks passed.", r.stdout)
+
+    def test_any_failed_step_fails_the_run(self):
+        cases = {
+            "Markdown lint": dict(npx_exit=1),
+            "Links, file names, sizes, and READMEs": dict(npx_exit=0, readme="[Missing](nope.md)\n"),
+            "Script tests": dict(npx_exit=0, test_body="self.fail('broken')"),
+        }
+        for step, kwargs in cases.items():
+            with self.subTest(step), tempfile.TemporaryDirectory() as d:
+                r = self.check(d, **kwargs)
+                self.assertEqual(r.returncode, 1, r.stdout)
+                self.assertIn(f"Failed: {step}", r.stdout)
+
+    def test_missing_node_says_what_to_install_and_runs_the_rest(self):
+        # #75
+        with tempfile.TemporaryDirectory() as d:
+            r = self.check(d)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("npx not found. Install Node.js 22 (see .nvmrc)", r.stdout)
+            self.assertIn("== Script tests", r.stdout)
+            self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
+
 
 class MarkdownLintConfigTest(unittest.TestCase):
     def test_lint_skips_what_gitignore_excludes(self):
@@ -243,12 +314,53 @@ class BuildPressKitTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("Usage", r.stderr)
 
+    def test_zip_holds_every_asset_type_and_nothing_else(self):
+        # #116: one file for each pattern, so a typo that drops a whole asset type fails here
+        assets = ["brand/logos/a.png", "brand/banner/a.png", "brand/typography/a.png", "brand/social-media/a.jpg",
+                  "brand/colors/swatches/a.png", "press-kit/images/a.jpg", "press-kit/images/app-icons/a.png",
+                  "press-kit/images/screens/a.jpg"]
+        with tempfile.TemporaryDirectory() as d:
+            for rel in assets + ["brand/logos/README.md", "press-kit/images/notes.txt"]:
+                write(d, rel)
+            self.assertEqual(run("build_press_kit.py", d, "9999.01").returncode, 0)
+            with zipfile.ZipFile(os.path.join(d, "dist", "solarity-ai-brand-and-press-kit-9999.01.zip")) as z:
+                names = set(z.namelist())
+            root = "solarity-ai-brand-and-press-kit/"
+            self.assertEqual(names, {root + "README.txt"} | {root + a for a in assets})
+
+    def test_no_assets_is_a_clear_error(self):
+        # #116: run from the wrong folder
+        with tempfile.TemporaryDirectory() as d:
+            r = run("build_press_kit.py", d, "9999.01")
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("No assets found. Run this from the repository root.", r.stderr)
+            self.assertFalse(os.path.exists(os.path.join(d, "dist")))
+
 
 try:
-    import PIL  # noqa: F401
+    from PIL import Image
     HAVE_PIL = True
 except ImportError:
     HAVE_PIL = False
+
+
+def assets_module():
+    if SCRIPTS not in sys.path:
+        sys.path.insert(0, SCRIPTS)
+    import generate_assets
+    return generate_assets
+
+
+@contextlib.contextmanager
+def inside(d):
+    """Run generate_assets functions, which write repo-relative paths, in a temp folder."""
+    cwd = os.getcwd()
+    os.chdir(d)
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            yield
+    finally:
+        os.chdir(cwd)
 
 
 @unittest.skipUnless(HAVE_PIL, "Pillow not installed (pip install -r requirements.txt)")
@@ -278,6 +390,88 @@ class FontVerificationTest(unittest.TestCase):
             r = subprocess.run([sys.executable, script], cwd=os.path.dirname(script), capture_output=True, text=True)
             self.assertIn("SHA-256 mismatch", r.stderr)
             self.assertFalse(os.path.exists(os.path.join(d, "scripts", ".cache")))
+
+
+class BrokenDownload(io.BytesIO):
+    def read(self, *args):
+        raise OSError("connection reset")
+
+
+@unittest.skipUnless(HAVE_PIL, "Pillow not installed (pip install -r requirements.txt)")
+class FontDownloadTest(unittest.TestCase):
+    """The download path, with urlopen stubbed: no network in tests (#110)."""
+
+    def setUp(self):
+        self.g = assets_module()
+        self.dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.dir)
+        fonts = {"Test.ttf": ("https://example.invalid/Test.ttf", hashlib.sha256(b"font bytes").hexdigest())}
+        for name, value in (("FONT_DIR", self.dir), ("FONTS", fonts)):
+            patcher = mock.patch.object(self.g, name, value)
+            patcher.start()
+            self.addCleanup(patcher.stop)
+
+    def test_download_is_verified_and_kept(self):
+        with mock.patch("urllib.request.urlopen", return_value=io.BytesIO(b"font bytes")) as urlopen, \
+                contextlib.redirect_stdout(io.StringIO()):
+            self.g.fetch_fonts()
+        urlopen.assert_called_once_with("https://example.invalid/Test.ttf", timeout=30)
+        self.assertEqual(os.listdir(self.dir), ["Test.ttf"])
+
+    def test_failed_download_says_what_to_do_and_leaves_no_partial_file(self):
+        # #76: a clear message instead of a traceback, and no half-written font
+        for name, stub in (("on connect", dict(side_effect=OSError("timed out"))),
+                           ("mid-download", dict(return_value=BrokenDownload()))):
+            with self.subTest(name), mock.patch("urllib.request.urlopen", **stub), \
+                    contextlib.redirect_stdout(io.StringIO()):
+                with self.assertRaises(SystemExit) as e:
+                    self.g.fetch_fonts()
+                self.assertIn("Couldn't download Test.ttf", str(e.exception))
+                self.assertIn("Check your connection, or save https://example.invalid/Test.ttf", str(e.exception))
+                self.assertEqual(os.listdir(self.dir), [])
+
+
+@unittest.skipUnless(HAVE_PIL, "Pillow not installed (pip install -r requirements.txt)")
+class GeneratedImagesTest(unittest.TestCase):
+    def test_glow_runs_from_navy_to_deep_navy(self):
+        # #109: brand/colors documents Navy #1F225C at the center and Deep navy #0D1120 toward the edges
+        g = assets_module()
+        self.assertEqual(g.navy_color(0), (0x1F, 0x22, 0x5C))
+        self.assertEqual(g.navy_color(0.86), (0x0D, 0x11, 0x20))
+        self.assertEqual(g.navy_color(3), g.navy_color(1))
+
+    def test_sun_mark_sits_on_logo_navy_not_the_website_black(self):
+        # #109: CLAUDE.md lists this as easy to regress; Night #0F0D0B is warm, the logo navy is blue
+        g = assets_module()
+        with tempfile.TemporaryDirectory() as d:
+            os.makedirs(os.path.join(d, "brand", "logos"))
+            with inside(d):
+                g.logos(Image.new("RGBA", (64, 64)))  # a transparent mark, so only the background shows
+            with Image.open(os.path.join(d, "brand/logos/solarity-sun-mark-on-navy.png")) as im:
+                size, center, corner = im.size, im.getpixel((600, 600)), im.getpixel((0, 0))
+            self.assertEqual(size, (1200, 1200))
+            self.assertTrue(all(abs(a - b) <= 3 for a, b in zip(center, (0x1F, 0x22, 0x5C))), center)
+            r, gr, b = corner
+            self.assertTrue(b > r + 15 and b > gr + 15 and max(corner) < 64, f"corner {corner} isn't dark navy")
+            for s in (512, 192):
+                with Image.open(os.path.join(d, f"brand/logos/solarity-sun-mark-on-navy-{s}.png")) as im:
+                    self.assertEqual(im.size, (s, s))
+
+    def test_thumbnails_are_96_px_icons_and_300_px_wide_screens(self):
+        # #113
+        g = assets_module()
+        with tempfile.TemporaryDirectory() as d:
+            images = os.path.join(d, "press-kit", "images")
+            for sub in ("app-icons/thumbs", "screens/thumbs"):
+                os.makedirs(os.path.join(images, sub))
+            Image.new("RGBA", (200, 200), (255, 0, 0, 255)).save(os.path.join(images, "app-icons", "demo-icon.png"))
+            Image.new("RGB", (600, 1300), (0, 0, 255)).save(os.path.join(images, "screens", "demo-screen.jpg"))
+            with inside(d):
+                g.thumbnails()
+            with Image.open(os.path.join(images, "app-icons", "thumbs", "demo-icon-96.png")) as im:
+                self.assertEqual((im.size, im.mode), ((96, 96), "RGBA"))
+            with Image.open(os.path.join(images, "screens", "thumbs", "demo-screen-300.jpg")) as im:
+                self.assertEqual(im.size, (300, 650))
 
 
 if __name__ == "__main__":
