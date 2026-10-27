@@ -1,0 +1,11 @@
+{
+  "name": "solarity-ai-public-resources",
+  "private": true,
+  "description": "Markdown lint for scripts/check.py. Install with npm ci; Dependabot keeps it current.",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.23.3"
+  }
+}

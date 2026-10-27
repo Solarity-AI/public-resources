@@ -2,6 +2,7 @@
 import contextlib
 import hashlib
 import io
+import json
 import os
 import shutil
 import subprocess
@@ -209,10 +210,12 @@ class CheckDocsTest(unittest.TestCase):
 class CheckPyTest(unittest.TestCase):
     """scripts/check.py is the one command CI runs, so any failed step must fail the run (#107)."""
 
-    def check(self, d, npx_exit=None, readme="", test_body="pass"):
+    def check(self, d, npx_exit=None, readme="", test_body="pass", installed=True):
         copy_script(d, "check.py")
         copy_script(d, "check_docs.py")
         write(d, "brand/README.md", GOOD_README + readme)
+        if installed:  # what npm ci leaves behind
+            os.makedirs(os.path.join(d, "node_modules", "markdownlint-cli2"))
         write(d, "tests/test_ok.py", f"import unittest\n\n\nclass T(unittest.TestCase):\n    def test_it(self):\n        {test_body}\n")
         bin_dir = os.path.join(d, "bin")
         os.makedirs(bin_dir)
@@ -252,8 +255,26 @@ class CheckPyTest(unittest.TestCase):
             self.assertIn("== Script tests", r.stdout)
             self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
 
+    def test_missing_lint_install_says_to_run_npm_ci_and_runs_the_rest(self):
+        # #120: lint runs only the locked version, so a checkout without npm ci gets told what to do
+        with tempfile.TemporaryDirectory() as d:
+            r = self.check(d, npx_exit=0, installed=False)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("markdownlint-cli2 isn't installed. Run npm ci", r.stdout)
+            self.assertIn("== Script tests", r.stdout)
+            self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
+
 
 class MarkdownLintConfigTest(unittest.TestCase):
+    def test_lint_tool_is_pinned_and_locked(self):
+        # #120: an exact pin in package.json, the same version in package-lock.json, so Dependabot can move both
+        with open(os.path.join(ROOT, "package.json"), encoding="utf-8") as f:
+            pinned = json.load(f)["devDependencies"]["markdownlint-cli2"]
+        with open(os.path.join(ROOT, "package-lock.json"), encoding="utf-8") as f:
+            locked = json.load(f)["packages"]["node_modules/markdownlint-cli2"]["version"]
+        self.assertRegex(pinned, r"^\d+\.\d+\.\d+$")
+        self.assertEqual(pinned, locked)
+
     def test_lint_skips_what_gitignore_excludes(self):
         # #97: a local .venv with Markdown files used to fail the lint step
         with open(os.path.join(ROOT, ".markdownlint-cli2.jsonc"), encoding="utf-8") as f:
