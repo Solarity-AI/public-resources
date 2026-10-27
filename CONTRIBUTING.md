@@ -32,7 +32,7 @@ If you're unsure whether something belongs here, ask before adding it.
 
 1. Create a branch: `type/short-description`, for example `brand/add-svg-logo` or `careers/update-roles`.
 2. Make the change and follow the rules below.
-3. Run the checks locally: `python scripts/check.py`. On Windows, use `py -3.12 scripts/check.py` if `python` isn't found. This runs exactly what CI runs: Markdown lint, `scripts/check_docs.py` (links, file names, file sizes, a README in every folder, decorative images, and campaign tags on website links), and the script tests in `tests/`. Install `requirements.txt` to run the image-generation test as well. You need Node.js 22 (`.nvmrc`) for `npx` and Python 3.12 (`.python-version`).
+3. Run the checks locally: `python scripts/check.py`. On Windows, use `py -3.12 scripts/check.py` if `python` isn't found. This runs exactly what CI runs: Markdown lint, `scripts/check_docs.py` (links and their #anchors, file names, file sizes, a README in every folder that lists its files, decorative images, and campaign tags on website links), and the script tests in `tests/`. Install `requirements.txt` to run the image-generation test as well. You need Node.js 22 (`.nvmrc`) for `npx` and Python 3.12 (`.python-version`).
 4. Add a line to [CHANGELOG.md](CHANGELOG.md).
 5. Open a pull request using the template. The **Docs check** workflow must pass before it is merged into `main`. The founder is the sole code owner and approves every merge.
 
