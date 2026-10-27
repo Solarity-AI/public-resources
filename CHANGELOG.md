@@ -15,6 +15,10 @@ Notable changes to Solarity AI's public resources.
 - Markdown lint runs markdownlint-cli2 0.23.3 instead of 0.18.1, whose line had no release since May 2025 (#119)
 - markdownlint-cli2 is installed from `package.json` and `package-lock.json` (run `npm ci` once), so its dependencies are locked and Dependabot proposes its updates, at least 7 days after each release (#120)
 
+### Security
+
+- markdownlint-cli2 0.24.0, plus a `katex` override to 0.18.11, clears the 6 `npm audit` advisories in the linter's dependencies (markdown-it, smol-toml, katex). They only affected how the linter parses this repository's own Markdown (#124)
+
 ## 2026-10-26
 
 ### Added
