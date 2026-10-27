@@ -31,6 +31,14 @@ Notable changes to Solarity AI's public resources.
 - README and CONTRIBUTING describe the actual review model: required automated checks, and the founder as sole code owner
 - Hardened the CI workflow and scripts: actions are pinned to commit SHAs, the checkout token isn't persisted, npx skips install scripts, downloaded fonts are verified against SHA-256 hashes, release ZIPs get a `.sha256` checksum, and Dependabot watches GitHub Actions and pip
 
+### Fixed
+
+- The release ZIP is byte-for-byte reproducible: the same files give the same SHA-256 on any checkout (#82)
+- `scripts/check_docs.py` checks the repository wherever it is run from, skips anything `.gitignore` excludes (such as a local `.venv/`), and now also requires a README in every folder, flags decorative images that GitHub would turn into unnamed links, and flags solarityai.com page links without campaign tags (#83, #85, #84, #88, #89)
+- `scripts/generate_assets.py` works from any folder instead of downloading fonts into the wrong place and crashing (#86); `scripts/build_press_kit.py` accepts only versions like `2026.10` (#87)
+- Swatches and app icon previews no longer become links with no name for screen readers (#84)
+- READMEs for the swatch, app icon, and screen folders (#88), and campaign tags on the remaining solarityai.com page links (#89)
+
 ## 2026-10-25
 
 ### Added
