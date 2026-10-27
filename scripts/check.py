@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import sys
 
-MARKDOWNLINT = "markdownlint-cli2@0.18.1"
+MARKDOWNLINT = "markdownlint-cli2@0.23.3"
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
