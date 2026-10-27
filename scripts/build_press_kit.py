@@ -6,6 +6,7 @@ Example: python scripts/build_press_kit.py 2026.10 → dist/solarity-ai-brand-an
 import glob
 import hashlib
 import os
+import re
 import sys
 import zipfile
 
@@ -14,6 +15,9 @@ PATTERNS = [
     "brand/colors/swatches/*.png", "press-kit/images/*.jpg", "press-kit/images/app-icons/*.png",
     "press-kit/images/screens/*.jpg",
 ]
+VERSION = re.compile(r"^\d{4}\.\d{2}(?:\.\d+)?$")
+# A fixed time and mode for every entry, so the same files always give the same ZIP and SHA-256
+STAMP = (2026, 1, 1, 0, 0, 0)
 
 README = """Solarity AI brand and press kit, {version}
 =============================================
@@ -39,8 +43,15 @@ Contact: ata.turhan@solarityai.com
 """
 
 
+def add(z, name, data):
+    info = zipfile.ZipInfo(name, STAMP)
+    info.external_attr = 0o644 << 16
+    info.compress_type = zipfile.ZIP_DEFLATED
+    z.writestr(info, data)
+
+
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 2 or not VERSION.match(sys.argv[1]):
         sys.exit("Usage: python scripts/build_press_kit.py <version>   (for example 2026.10)")
     version = sys.argv[1]
     files = [f for pat in PATTERNS for f in sorted(glob.glob(pat))]
@@ -50,9 +61,10 @@ def main():
     out = os.path.join("dist", f"solarity-ai-brand-and-press-kit-{version}.zip")
     root = "solarity-ai-brand-and-press-kit"
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        z.writestr(f"{root}/README.txt", README.format(version=version))
+        add(z, f"{root}/README.txt", README.format(version=version).encode("utf-8"))
         for f in files:
-            z.write(f, f"{root}/" + f.replace(os.sep, "/"))
+            with open(f, "rb") as src:
+                add(z, f"{root}/" + f.replace(os.sep, "/"), src.read())
     with open(out, "rb") as f:
         digest = hashlib.sha256(f.read()).hexdigest()
     with open(out + ".sha256", "w", encoding="utf-8", newline="\n") as f:

@@ -51,7 +51,7 @@ Performance, consciousness, entrepreneurship, and the future of AI. Ata Turhan i
 | Topic | Where |
 | --- | --- |
 | Media, podcasts, speaking, personal messages | [the.ata.turhan@solarityai.com](mailto:the.ata.turhan@solarityai.com) · [ataturhan.com/contact](https://ataturhan.com/contact) · [schedule a meeting](https://calendar.app.google/WRPnwfHAyckeVMLj8) |
-| Solarity AI investor, partnership, and press inquiries | [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) · [solarityai.com/contact](https://solarityai.com/contact/) |
+| Solarity AI investor, partnership, and press inquiries | [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) · [solarityai.com/contact](https://solarityai.com/contact/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit-founder-bio) |
 
 ## Profiles
 
@@ -65,7 +65,7 @@ Performance, consciousness, entrepreneurship, and the future of AI. Ata Turhan i
 - [Spotify](https://open.spotify.com/user/kuantum21fizik)
 - [Grokipedia](https://grokipedia.com/page/Ata_Turhan)
 
-Source: [ataturhan.com](https://ataturhan.com/), including its [journey](https://ataturhan.com/story), [achievements](https://ataturhan.com/achievements), and [contact](https://ataturhan.com/contact) pages. Company facts come from [solarityai.com](https://solarityai.com/company/).
+Source: [ataturhan.com](https://ataturhan.com/), including its [journey](https://ataturhan.com/story), [achievements](https://ataturhan.com/achievements), and [contact](https://ataturhan.com/contact) pages. Company facts come from [solarityai.com](https://solarityai.com/company/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit-founder-bio).
 
 ---
 

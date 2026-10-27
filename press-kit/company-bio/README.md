@@ -20,7 +20,7 @@
 | **Team** | Hasan Ak, Ali Yılmaz, Emrecan Özkan, Eren Öz, Melik Kaplan, Batuhan Yücetürk |
 | **Mobile apps** | 4 on the App Store and Google Play, launched in 12 weeks from June 23, 2026 |
 | **SaaS products** | Engineering Max (early access), Management Max (early access), Marketing Max (early access) |
-| **Website** | [solarityai.com](https://solarityai.com/) |
+| **Website** | [solarityai.com](https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit-company-bio) |
 | **Press contact** | [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com) |
 
 ## Shipping record
@@ -46,7 +46,7 @@ Dates are App Store release dates. Every app is also on Google Play.
 | Melik Kaplan | Marketing engineer |
 | Batuhan Yücetürk | Marketing engineer |
 
-Source: [solarityai.com/press](https://solarityai.com/press/) and [solarityai.com/company](https://solarityai.com/company/).
+Source: [solarityai.com/press](https://solarityai.com/press/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit-company-bio) and [solarityai.com/company](https://solarityai.com/company/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit-company-bio).
 
 ---
 

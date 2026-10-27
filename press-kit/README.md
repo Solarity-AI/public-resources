@@ -1,6 +1,6 @@
 # Press kit
 
-Approved descriptions, company facts, and images for articles, program pages, and event listings. This is the same content as [solarityai.com/press](https://solarityai.com/press/).
+Approved descriptions, company facts, and images for articles, program pages, and event listings. This is the same content as [solarityai.com/press](https://solarityai.com/press/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit).
 
 **Download everything:** [solarity-ai-press-kit.zip](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) (3.1 MB)
 
@@ -28,7 +28,7 @@ Approved descriptions, company facts, and images for articles, program pages, an
 - Write the name as **Solarity AI**: two words, with "AI" in capitals.
 - Use the sun mark as supplied. Don't recolor, stretch, or redraw it.
 - Fitness Max appears in the app stores as **Only Fitness**. Name both when you link to its listing.
-- Describe products with the facts on [solarityai.com](https://solarityai.com/). **Ask before stating numbers, users, or results.**
+- Describe products with the facts on [solarityai.com](https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit). **Ask before stating numbers, users, or results.**
 
 ---
 

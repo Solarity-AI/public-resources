@@ -23,7 +23,7 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 - Every folder has a non-empty `README.md` ending with the "← All public resources · Questions?" footer.
 - Images inside tables need both `width` and `height`, or GitHub collapses them on phones.
 - Links from READMEs to solarityai.com pages carry `utm_source=github&utm_medium=public-resources&utm_campaign=<page>`.
-- Accessibility: descriptive link text, real headers on tables, and alt text that describes the image (decorative images get `alt=""`).
+- Accessibility: descriptive link text, real headers on tables, and alt text that describes the image (decorative images get `alt=""` and are wrapped in `<picture>`, or GitHub turns them into links with no name). `scripts/check_docs.py` enforces the README, `<picture>`, and campaign-tag rules.
 
 ## Commands
 

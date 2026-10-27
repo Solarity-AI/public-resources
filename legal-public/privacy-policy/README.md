@@ -1,6 +1,6 @@
 # Privacy policy
 
-**The current policy is at [solarityai.com/privacy](https://solarityai.com/privacy/)** (effective October 23, 2026). It is the only authoritative version.
+**The current policy is at [solarityai.com/privacy](https://solarityai.com/privacy/?utm_source=github&utm_medium=public-resources&utm_campaign=legal-public-privacy-policy)** (effective October 23, 2026). It is the only authoritative version.
 
 ## Summary
 

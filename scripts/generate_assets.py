@@ -1,6 +1,6 @@
 """Regenerate every derived image from the masters.
 
-Run from the repository root: python scripts/generate_assets.py
+Run: python scripts/generate_assets.py   (from any folder; paths are relative to the repository root)
 Needs Pillow (pip install -r requirements.txt). Fonts are downloaded once, from a pinned
 google/fonts commit, into .cache/fonts/.
 
@@ -169,6 +169,7 @@ def thumbnails():
 
 
 if __name__ == "__main__":
+    os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))  # every path below is repo-relative
     fetch_fonts()
     mark = Image.open("brand/logos/solarity-sun-mark.png").convert("RGBA")
     logos(mark)

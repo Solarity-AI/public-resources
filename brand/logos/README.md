@@ -1,6 +1,6 @@
 # Logos
 
-The **Solarity AI sun mark** is the company's logo. The master file is the official press-kit file from [solarityai.com/press](https://solarityai.com/press/).
+The **Solarity AI sun mark** is the company's logo. The master file is the official press-kit file from [solarityai.com/press](https://solarityai.com/press/?utm_source=github&utm_medium=public-resources&utm_campaign=brand-logos).
 
 <img src="solarity-sun-mark-on-navy-512.png" alt="The Solarity AI sun mark, a yellow sun with a lightning bolt, on its navy background" width="160" height="160">
 
