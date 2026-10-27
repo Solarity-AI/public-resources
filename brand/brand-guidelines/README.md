@@ -1,6 +1,6 @@
 # Brand guidelines
 
-These rules come from the [solarityai.com press kit](https://solarityai.com/press/).
+These rules come from the [solarityai.com press kit](https://solarityai.com/press/?utm_source=github&utm_medium=public-resources&utm_campaign=brand-brand-guidelines).
 
 ## The name
 
@@ -29,7 +29,7 @@ These rules come from the [solarityai.com press kit](https://solarityai.com/pres
 ## Describing Solarity AI
 
 - Use the approved descriptions in [`../../press-kit/`](../../press-kit/).
-- Describe products only with the facts on [solarityai.com](https://solarityai.com/).
+- Describe products only with the facts on [solarityai.com](https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=brand-brand-guidelines).
 - **Ask before stating numbers, users, or results** that aren't on the website. Email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
 
 ## Visual style

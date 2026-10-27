@@ -3,6 +3,10 @@
 dist/
 __pycache__/
 
+# Local Python environments
+.venv/
+venv/
+
 # Tooling and OS files
 node_modules/
 .DS_Store

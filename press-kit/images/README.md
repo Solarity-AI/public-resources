@@ -1,6 +1,6 @@
 # Press images
 
-These are the official files from the [solarityai.com press kit](https://solarityai.com/press/). Use them as supplied.
+These are the official files from the [solarityai.com press kit](https://solarityai.com/press/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit-images). Use them as supplied.
 
 ## People and logo
 
@@ -15,10 +15,10 @@ These are the official files from the [solarityai.com press kit](https://solarit
 
 | App | File |
 | --- | --- |
-| <img src="app-icons/thumbs/looks-max-icon-96.png" width="48" height="48" alt=""><br>Looks Max | [`looks-max-icon.png`](app-icons/looks-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/thumbs/iq-max-icon-96.png" width="48" height="48" alt=""><br>IQ Max | [`iq-max-icon.png`](app-icons/iq-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/thumbs/sleep-max-icon-96.png" width="48" height="48" alt=""><br>Sleep Max | [`sleep-max-icon.png`](app-icons/sleep-max-icon.png) · PNG · 1024 × 1024 |
-| <img src="app-icons/thumbs/fitness-max-icon-96.png" width="48" height="48" alt=""><br>Fitness Max (listed as Only Fitness) | [`fitness-max-icon.png`](app-icons/fitness-max-icon.png) · PNG · 1024 × 1024 |
+| <picture><img src="app-icons/thumbs/looks-max-icon-96.png" width="48" height="48" alt=""></picture><br>Looks Max | [`looks-max-icon.png`](app-icons/looks-max-icon.png) · PNG · 1024 × 1024 |
+| <picture><img src="app-icons/thumbs/iq-max-icon-96.png" width="48" height="48" alt=""></picture><br>IQ Max | [`iq-max-icon.png`](app-icons/iq-max-icon.png) · PNG · 1024 × 1024 |
+| <picture><img src="app-icons/thumbs/sleep-max-icon-96.png" width="48" height="48" alt=""></picture><br>Sleep Max | [`sleep-max-icon.png`](app-icons/sleep-max-icon.png) · PNG · 1024 × 1024 |
+| <picture><img src="app-icons/thumbs/fitness-max-icon-96.png" width="48" height="48" alt=""></picture><br>Fitness Max (listed as Only Fitness) | [`fitness-max-icon.png`](app-icons/fitness-max-icon.png) · PNG · 1024 × 1024 |
 
 The 96 × 96 previews in [`app-icons/thumbs/`](app-icons/thumbs/) are for embedding in pages. For anything else, use the 1024 px masters.
 

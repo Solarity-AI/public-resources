@@ -4,10 +4,10 @@
 
 | App | Focus | What it does |
 | --- | --- | --- |
-| <img src="../../press-kit/images/app-icons/thumbs/looks-max-icon-96.png" width="40" height="40" alt=""><br>**Looks Max**<br>On the App Store since June 23, 2026 | Appearance & self-care | Personalized appearance insights, daily habits, and a place to follow your progress. |
-| <img src="../../press-kit/images/app-icons/thumbs/iq-max-icon-96.png" width="40" height="40" alt=""><br>**IQ Max**<br>On the App Store since September 11, 2026 | Cognitive practice | Focused cognitive exercises, adaptive difficulty, and a daily routine you control. |
-| <img src="../../press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" width="40" height="40" alt=""><br>**Sleep Max**<br>On the App Store since September 16, 2026 | Sleep & daily routines | A sleep diary, habit tracking, and coaching to support a more consistent routine. |
-| <img src="../../press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" width="40" height="40" alt=""><br>**Fitness Max** (listed as Only Fitness)<br>On the App Store since August 15, 2026 | Fitness & nutrition | Meal insights, training logs, and AI coaching to help you follow your fitness routine. |
+| <picture><img src="../../press-kit/images/app-icons/thumbs/looks-max-icon-96.png" width="40" height="40" alt=""></picture><br>**Looks Max**<br>On the App Store since June 23, 2026 | Appearance & self-care | Personalized appearance insights, daily habits, and a place to follow your progress. |
+| <picture><img src="../../press-kit/images/app-icons/thumbs/iq-max-icon-96.png" width="40" height="40" alt=""></picture><br>**IQ Max**<br>On the App Store since September 11, 2026 | Cognitive practice | Focused cognitive exercises, adaptive difficulty, and a daily routine you control. |
+| <picture><img src="../../press-kit/images/app-icons/thumbs/sleep-max-icon-96.png" width="40" height="40" alt=""></picture><br>**Sleep Max**<br>On the App Store since September 16, 2026 | Sleep & daily routines | A sleep diary, habit tracking, and coaching to support a more consistent routine. |
+| <picture><img src="../../press-kit/images/app-icons/thumbs/fitness-max-icon-96.png" width="40" height="40" alt=""></picture><br>**Fitness Max** (listed as Only Fitness)<br>On the App Store since August 15, 2026 | Fitness & nutrition | Meal insights, training logs, and AI coaching to help you follow your fitness routine. |
 
 ## Key features
 

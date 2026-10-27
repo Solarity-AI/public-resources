@@ -10,7 +10,7 @@ solarityai.com is designed and tested to meet the **Web Content Accessibility Gu
 - Reduced motion support: with that setting on, every animation stops
 - Support for Windows high contrast and increased-contrast settings
 
-Full statement and known limitations: [solarityai.com/accessibility](https://solarityai.com/accessibility/). To report a problem, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
+Full statement and known limitations: [solarityai.com/accessibility](https://solarityai.com/accessibility/?utm_source=github&utm_medium=public-resources&utm_campaign=legal-public-compliance). To report a problem, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
 
 ## Website data
 
@@ -19,7 +19,7 @@ Full statement and known limitations: [solarityai.com/accessibility](https://sol
 - Links to the app stores and SaaS products may carry a campaign tag naming the website page. The tag says nothing about you.
 - Contact links open your own email app, and booking and forms open Google services
 
-Full details: [solarityai.com/website-data](https://solarityai.com/website-data/).
+Full details: [solarityai.com/website-data](https://solarityai.com/website-data/?utm_source=github&utm_medium=public-resources&utm_campaign=legal-public-compliance).
 
 ## Privacy
 
