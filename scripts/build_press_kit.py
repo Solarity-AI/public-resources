@@ -15,7 +15,7 @@ PATTERNS = [
     "brand/colors/swatches/*.png", "press-kit/images/*.jpg", "press-kit/images/app-icons/*.png",
     "press-kit/images/screens/*.jpg",
 ]
-VERSION = re.compile(r"^\d{4}\.\d{2}(?:\.\d+)?$")
+VERSION = re.compile(r"\d{4}\.(?:0[1-9]|1[0-2])(?:\.\d+)?")  # YYYY.MM, optionally .N; used with fullmatch
 # A fixed time and mode for every entry, so the same files always give the same ZIP and SHA-256
 STAMP = (2026, 1, 1, 0, 0, 0)
 
@@ -47,11 +47,12 @@ def add(z, name, data):
     info = zipfile.ZipInfo(name, STAMP)
     info.external_attr = 0o644 << 16
     info.compress_type = zipfile.ZIP_DEFLATED
+    info.create_system = 3  # Python records the building OS (0 on Windows); pin it so every OS gives one hash
     z.writestr(info, data)
 
 
 def main():
-    if len(sys.argv) != 2 or not VERSION.match(sys.argv[1]):
+    if len(sys.argv) != 2 or not VERSION.fullmatch(sys.argv[1]):
         sys.exit("Usage: python scripts/build_press_kit.py <version>   (for example 2026.10)")
     version = sys.argv[1]
     files = [f for pat in PATTERNS for f in sorted(glob.glob(pat))]

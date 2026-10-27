@@ -114,8 +114,93 @@ class CheckDocsTest(unittest.TestCase):
                   "[ZIP](https://solarityai.com/assets/press/kit.zip)\n")
             self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
 
+    def test_href_titled_and_reference_links_are_checked(self):
+        # #94: these link forms used to be skipped, so a broken one passed
+        for link in ('<a href="missing.png">Missing</a>', '[Missing](missing.png "A title")',
+                     "[Missing][ref]\n\n[ref]: missing.png"):
+            with tempfile.TemporaryDirectory() as d:
+                write(d, "brand/README.md", GOOD_README + link + "\n")
+                r = check_docs(d)
+                self.assertEqual(r.returncode, 1, link)
+                self.assertIn("broken link to missing.png", r.stdout, link)
+
+    def test_anchors_must_match_a_heading(self):
+        # #95: a link to a missing heading lands at the top of the page on GitHub
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + "## Logo files\n\n[Below](#logo-files)\n")
+            write(d, "careers/README.md", GOOD_README + "[Logos](../brand/#logo-files)\n")
+            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            write(d, "careers/README.md", GOOD_README + "[Logos](../brand/#no-such-heading)\n[Here](#nope)\n")
+            r = check_docs(d)
+            self.assertIn("broken link to ../brand/#no-such-heading", r.stdout)
+            self.assertIn("broken link to #nope", r.stdout)
+
+    def test_link_case_must_match_exactly(self):
+        # #96: Windows and macOS ignore case, GitHub and CI don't
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/logo.png")
+            write(d, "brand/README.md", GOOD_README + "[Logo](Logo.png) logo.png\n")
+            self.assertIn("broken link to Logo.png", check_docs(d).stdout)
+
+    def test_markdown_that_is_not_utf8_is_reported(self):
+        # #98: used to crash with a UnicodeDecodeError traceback
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README)
+            os.makedirs(os.path.join(d, "careers"))
+            with open(os.path.join(d, "careers", "README.md"), "wb") as f:
+                f.write("# Café\n\nSaved in Latin-1 instead of UTF-8, as an editor might.\n".encode("latin-1"))
+            r = check_docs(d)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("careers/README.md: not UTF-8", r.stdout)
+            self.assertNotIn("Traceback", r.stderr)
+
+    def test_picture_with_source_passes_and_single_quoted_alt_is_flagged(self):
+        # #100
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/logo.png")
+            write(d, "brand/README.md", GOOD_README + '<picture><source srcset="logo.png">'
+                  '<img src="logo.png" width="24" height="24" alt=""></picture> Logo\n')
+            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            write(d, "brand/README.md", GOOD_README + "<img src='logo.png' width='24' height='24' alt=''> Logo\n")
+            self.assertIn("wrap it in <picture>", check_docs(d).stdout)
+
+    def test_website_links_without_slash_or_with_www_need_tags(self):
+        # #101
+        for url in ("https://solarityai.com", "https://www.solarityai.com/press/"):
+            with tempfile.TemporaryDirectory() as d:
+                write(d, "brand/README.md", GOOD_README + f"[Site]({url})\n")
+                self.assertIn(f"{url} needs utm_source", check_docs(d).stdout, url)
+
+    def test_readme_lists_every_file_in_its_folder(self):
+        # #102: CONTRIBUTING says every folder's README lists its files
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + "[Logo](logo.png)\n")
+            write(d, "brand/logo.png")
+            write(d, "brand/banner.png")
+            r = check_docs(d)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("brand/README.md: doesn't list banner.png", r.stdout)
+
+
+class MarkdownLintConfigTest(unittest.TestCase):
+    def test_lint_skips_what_gitignore_excludes(self):
+        # #97: a local .venv with Markdown files used to fail the lint step
+        with open(os.path.join(ROOT, ".markdownlint-cli2.jsonc"), encoding="utf-8") as f:
+            text = f.read()
+        self.assertRegex(text, r'"gitignore"\s*:\s*true')
+
 
 class BuildPressKitTest(unittest.TestCase):
+    def test_zip_entries_have_the_same_metadata_on_every_os(self):
+        # #92: Python records the creating OS in each entry (0 on Windows, 3 elsewhere)
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/logos/solarity-sun-mark.png", "png")
+            self.assertEqual(run("build_press_kit.py", d, "9999.01").returncode, 0)
+            with zipfile.ZipFile(os.path.join(d, "dist", "solarity-ai-brand-and-press-kit-9999.01.zip")) as z:
+                for info in z.infolist():
+                    self.assertEqual((info.create_system, info.date_time, info.external_attr >> 16),
+                                     (3, (2026, 1, 1, 0, 0, 0), 0o644), info.filename)
+
     def test_same_files_give_the_same_zip(self):
         # QA-01 (#82): file times from the checkout used to change the hash
         digests = []
@@ -130,7 +215,7 @@ class BuildPressKitTest(unittest.TestCase):
 
     def test_rejects_versions_that_are_not_year_and_month(self):
         # QA-05 (#87)
-        for bad in ("", "../escaped", "2026.10/x", "latest"):
+        for bad in ("", "../escaped", "2026.10/x", "latest", "2026.13", "2026.00", "2026.10\n"):  # #99: last 3
             with tempfile.TemporaryDirectory() as d:
                 write(d, "brand/logos/solarity-sun-mark.png", "png")
                 r = run("build_press_kit.py", d, bad)
