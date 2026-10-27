@@ -38,6 +38,11 @@ Notable changes to Solarity AI's public resources.
 - `scripts/generate_assets.py` works from any folder instead of downloading fonts into the wrong place and crashing (#86); `scripts/build_press_kit.py` accepts only versions like `2026.10` (#87)
 - Swatches and app icon previews no longer become links with no name for screen readers (#84)
 - READMEs for the swatch, app icon, and screen folders (#88), and campaign tags on the remaining solarityai.com page links (#89)
+- The release ZIP gives the same SHA-256 on Windows, macOS, and Linux, not just on one machine (#92); `scripts/build_press_kit.py` rejects impossible months such as `2026.13` (#99)
+- The privacy summary and legal index match the policy on solarityai.com: effective October 26, 2026, and careers applications go through FormSubmit after a Google reCAPTCHA check (#93)
+- `scripts/check_docs.py` checks `href` links, links with titles, reference links, and `#anchors` (#94, #95); matches link case exactly, as GitHub does, on every OS (#96); reports a non-UTF-8 file instead of crashing (#98); accepts `<picture>` with `<source>` and catches `alt=''` (#100); catches untagged `https://solarityai.com` and `www.` links (#101); and requires each README to list its folder's files (#102)
+- Markdown lint skips what `.gitignore` excludes, such as a local `.venv/` (#97)
+- The thumbnail folder READMEs list their files (#102)
 
 ## 2026-10-25
 

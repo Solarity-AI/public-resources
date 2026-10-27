@@ -18,6 +18,7 @@ Full statement and known limitations: [solarityai.com/accessibility](https://sol
 - Cloudflare Web Analytics counts page views without cookies, and there are no other analytics, advertising, or tracking scripts
 - Links to the app stores and SaaS products may carry a campaign tag naming the website page. The tag says nothing about you.
 - Contact links open your own email app, and booking and forms open Google services
+- The careers form sends your application through FormSubmit, a form-forwarding service, after a Google reCAPTCHA check that sees your IP address and browser details
 
 Full details: [solarityai.com/website-data](https://solarityai.com/website-data/?utm_source=github&utm_medium=public-resources&utm_campaign=legal-public-compliance).
 

@@ -7,5 +7,6 @@
     "MD041": false, // root README opens with the banner
     "MD024": { "siblings_only": true } // CHANGELOG repeats Added/Changed per release
   },
+  "gitignore": true, // skip what .gitignore excludes, such as a local .venv/
   "ignores": ["node_modules/**"]
 }
