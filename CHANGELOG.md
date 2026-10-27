@@ -13,6 +13,7 @@ Notable changes to Solarity AI's public resources.
 
 - Pull requests no longer need an approving review: the **Docs check** must pass, and only the founder can merge. README, CONTRIBUTING, CODEOWNERS, and `CLAUDE.md` say so (#104)
 - Markdown lint runs markdownlint-cli2 0.23.3 instead of 0.18.1, whose line had no release since May 2025 (#119)
+- markdownlint-cli2 is installed from `package.json` and `package-lock.json` (run `npm ci` once), so its dependencies are locked and Dependabot proposes its updates, at least 7 days after each release (#120)
 
 ## 2026-10-26
 

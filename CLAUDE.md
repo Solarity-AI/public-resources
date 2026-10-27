@@ -29,13 +29,14 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 ## Commands
 
 ```sh
-python scripts/check.py                    # everything CI runs (Markdown lint + docs checker)
+npm ci                                     # once: markdownlint-cli2 at the version in package-lock.json
+python scripts/check.py                    # everything CI runs (Markdown lint, docs checker, tests)
 pip install -r requirements.txt            # Pillow, for the two scripts below
 python scripts/generate_assets.py          # regenerate exports, banners, thumbnails, specimen, swatches
 python scripts/build_press_kit.py 2026.10  # build dist/ ZIP for a release
 ```
 
-On Windows use `py -3.12` if `python` points elsewhere. Node 22 (`.nvmrc`) is needed for `npx`.
+On Windows use `py -3.12` if `python` points elsewhere. Node 22 (`.nvmrc`) is needed for `npm ci` and the lint. Dependabot proposes markdownlint-cli2 updates in `package.json`; don't pin it anywhere else.
 
 ## Workflow
 
