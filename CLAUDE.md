@@ -40,5 +40,5 @@ On Windows use `py -3.12` if `python` points elsewhere. Node 22 (`.nvmrc`) is ne
 
 1. Branch, change, run `python scripts/check.py`, and add a line to `CHANGELOG.md`.
 2. Open a PR. Commit messages and PR descriptions follow the session's attribution rules.
-3. The owner has authorized admin squash-merging PRs right after opening them: `gh pr merge <n> --admin --squash`. Don't merge over a failing check.
+3. The owner has authorized merging PRs without asking, once the `check` status passes on the PR's latest commit: `gh pr merge <n> --squash --delete-branch`. `main` requires no approving review, so never use `--admin`, and don't merge over a failing check.
 4. Repository and organization settings, releases, and anything public outside the repository need the owner's explicit approval each time.

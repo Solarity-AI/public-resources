@@ -2,6 +2,12 @@
 
 Notable changes to Solarity AI's public resources.
 
+## 2026-10-27
+
+### Changed
+
+- Pull requests no longer need an approving review: the **Docs check** must pass, and only the founder can merge. README, CONTRIBUTING, CODEOWNERS, and `CLAUDE.md` say so (#104)
+
 ## 2026-10-26
 
 ### Added

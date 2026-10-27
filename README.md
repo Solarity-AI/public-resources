@@ -65,4 +65,4 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 
 Press, partners, and program organizers may use the materials in `brand/` and `press-kit/` to write about Solarity AI, as long as they follow the [brand rules](brand/brand-guidelines/). Everything else is © Solarity AI LLC, all rights reserved. See [LICENSE.md](LICENSE.md).
 
-See what changed recently in the [changelog](CHANGELOG.md). Want to propose a change? Read [CONTRIBUTING.md](CONTRIBUTING.md). All changes go through a pull request that must pass the automated checks, and the founder approves every merge.
+See what changed recently in the [changelog](CHANGELOG.md). Want to propose a change? Read [CONTRIBUTING.md](CONTRIBUTING.md). All changes go through a pull request that must pass the automated checks, and only the founder can merge it.
