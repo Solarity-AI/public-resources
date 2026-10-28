@@ -75,6 +75,14 @@ class TableImageTest(unittest.TestCase):
         self.assertGreater(checked, 0)
         self.assertEqual(hits, [])
 
+    def test_every_image_sets_width_and_height(self):
+        # #146: with only a width, the browser can't reserve the height and the page shifts when the image loads
+        hits = [f"{rel}:{n}" for rel in repo_files(".md")
+                for n, line in enumerate(FENCE.sub(lambda m: "\n" * m.group().count("\n"), read(rel)).splitlines(), 1)
+                for tag in re.findall(r"<img\b[^>]*>", line)
+                if not (re.search(r"\bwidth=", tag) and re.search(r"\bheight=", tag))]
+        self.assertEqual(hits, [])
+
 
 try:
     from PIL import Image
