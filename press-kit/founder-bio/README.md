@@ -1,6 +1,6 @@
 # Founder bio
 
-<img src="../images/ata-turhan-founder.jpg" alt="Ata Turhan, founder of Solarity AI" width="200">
+<a href="../images/ata-turhan-founder.jpg"><img src="../images/thumbs/ata-turhan-founder-400.jpg" alt="Ata Turhan, founder of Solarity AI" width="200" height="200"></a>
 
 ## Ata Turhan, Founder
 

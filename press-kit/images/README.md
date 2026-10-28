@@ -4,12 +4,14 @@ These are the official files from the [solarityai.com press kit](https://solarit
 
 ## People and logo
 
-<img src="ata-turhan-founder.jpg" alt="Ata Turhan, founder of Solarity AI" width="120" height="120"> <img src="../../brand/logos/solarity-sun-mark-on-navy-192.png" alt="Solarity AI sun mark on its navy background" width="120" height="120">
+<a href="ata-turhan-founder.jpg"><img src="thumbs/ata-turhan-founder-400.jpg" alt="Ata Turhan, founder of Solarity AI" width="120" height="120"></a> <img src="../../brand/logos/solarity-sun-mark-on-navy-192.png" alt="Solarity AI sun mark on its navy background" width="120" height="120">
 
 | Image | File | Format |
 | --- | --- | --- |
 | Ata Turhan, founder | [`ata-turhan-founder.jpg`](ata-turhan-founder.jpg) | JPEG · 800 × 800 |
 | Solarity AI sun mark | [`solarity-sun-mark.png`](../../brand/logos/solarity-sun-mark.png) | PNG · 1024 × 1026 · transparent |
+
+The 400 px preview in [`thumbs/`](thumbs/) is for embedding in pages. For anything else, use the 800 px photo.
 
 ## App icons
 

@@ -607,8 +607,8 @@ class GeneratedImagesTest(unittest.TestCase):
                 with Image.open(os.path.join(d, f"brand/logos/solarity-sun-mark-on-navy-{s}.png")) as im:
                     self.assertEqual(im.size, (s, s))
 
-    def test_thumbnails_are_96_px_icons_and_300_px_wide_screens(self):
-        # #113
+    def test_thumbnails_are_96_px_icons_300_px_wide_screens_and_a_400_px_founder_photo(self):
+        # #113, #145
         g = assets_module()
         with tempfile.TemporaryDirectory() as d:
             images = os.path.join(d, "press-kit", "images")
@@ -616,12 +616,15 @@ class GeneratedImagesTest(unittest.TestCase):
                 os.makedirs(os.path.join(images, sub))
             Image.new("RGBA", (200, 200), (255, 0, 0, 255)).save(os.path.join(images, "app-icons", "demo-icon.png"))
             Image.new("RGB", (600, 1300), (0, 0, 255)).save(os.path.join(images, "screens", "demo-screen.jpg"))
+            Image.new("RGB", (800, 800), (0, 255, 0)).save(os.path.join(images, "ata-turhan-founder.jpg"))
             with inside(d):
                 g.thumbnails()
             with Image.open(os.path.join(images, "app-icons", "thumbs", "demo-icon-96.png")) as im:
                 self.assertEqual((im.size, im.mode), ((96, 96), "RGBA"))
             with Image.open(os.path.join(images, "screens", "thumbs", "demo-screen-300.jpg")) as im:
                 self.assertEqual(im.size, (300, 650))
+            with Image.open(os.path.join(images, "thumbs", "ata-turhan-founder-400.jpg")) as im:
+                self.assertEqual(im.size, (400, 400))
 
 
 if __name__ == "__main__":

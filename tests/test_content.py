@@ -112,6 +112,13 @@ class GeneratedAssetsTest(unittest.TestCase):
                     width, height = (96, 96) if suffix == "-icon.png" else (300, round(big.height * 300 / big.width))
                     self.assertEqual(small.size, (width, height), m)
 
+    def test_founder_photo_has_a_400_px_preview(self):
+        # #145: the pages show the photo at 120-200 px, so they load this instead of the 800 px master
+        with Image.open(os.path.join(ROOT, "press-kit/images/thumbs/ata-turhan-founder-400.jpg")) as small:
+            self.assertEqual(small.size, (400, 400))
+        for rel in ("press-kit/founder-bio/README.md", "press-kit/images/README.md"):
+            self.assertNotRegex(read(rel), r'<img src="[^"]*ata-turhan-founder\.jpg"', rel)
+
 
 if __name__ == "__main__":
     unittest.main()
