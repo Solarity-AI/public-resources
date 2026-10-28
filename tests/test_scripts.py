@@ -42,6 +42,10 @@ TAGS = "utm_source=github&utm_medium=public-resources&utm_campaign=brand"
 
 
 class CheckDocsTest(unittest.TestCase):
+    def assert_passes(self, d, msg=""):
+        r = check_docs(d)  # once, so the message shows the run that failed
+        self.assertEqual(r.returncode, 0, msg + r.stdout)
+
     def test_clean_tree_passes(self):
         with tempfile.TemporaryDirectory() as d:
             write(d, "brand/README.md", GOOD_README + "[Logo](logo.png)\n")
@@ -64,7 +68,7 @@ class CheckDocsTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             write(d, "brand/README.md", GOOD_README + "[Download](logo.png?raw=true)\n")
             write(d, "brand/logo.png")
-            self.assertEqual(check_docs(d).returncode, 0)
+            self.assert_passes(d)
 
     def test_checks_the_repository_when_run_from_another_folder(self):
         # QA-02 (#83): run from scripts/, it used to walk only scripts/ and pass
@@ -83,7 +87,7 @@ class CheckDocsTest(unittest.TestCase):
             write(d, ".gitignore", ".venv/\n")
             write(d, "brand/README.md", GOOD_README)
             write(d, ".venv/lib/README.md", GOOD_README + "[Missing](nope.md)\n")
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
             write(d, "careers/README.md", GOOD_README + "[New and untracked](gone.md)\n")
             self.assertIn("broken link to gone.md", check_docs(d).stdout)
 
@@ -96,7 +100,7 @@ class CheckDocsTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("wrap it in <picture>", r.stdout)
             write(d, "brand/README.md", GOOD_README + '<picture><img src="logo.png" width="24" height="24" alt=""></picture> Logo\n')
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
 
     def test_every_content_folder_needs_a_readme(self):
         # QA-07 (#88)
@@ -116,7 +120,7 @@ class CheckDocsTest(unittest.TestCase):
             self.assertIn("https://solarityai.com/press/ needs utm_source", r.stdout)
             write(d, "brand/README.md", GOOD_README + f"[Press](https://solarityai.com/press/?{TAGS})\n"
                   "[ZIP](https://solarityai.com/assets/press/kit.zip)\n")
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
 
     def test_href_titled_and_reference_links_are_checked(self):
         # #94: these link forms used to be skipped, so a broken one passed
@@ -133,7 +137,7 @@ class CheckDocsTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             write(d, "brand/README.md", GOOD_README + "## Logo files\n\n[Below](#logo-files)\n")
             write(d, "careers/README.md", GOOD_README + "[Logos](../brand/#logo-files)\n")
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
             write(d, "careers/README.md", GOOD_README + "[Logos](../brand/#no-such-heading)\n[Here](#nope)\n")
             r = check_docs(d)
             self.assertIn("broken link to ../brand/#no-such-heading", r.stdout)
@@ -164,7 +168,7 @@ class CheckDocsTest(unittest.TestCase):
             write(d, "brand/logo.png")
             write(d, "brand/README.md", GOOD_README + '<picture><source srcset="logo.png">'
                   '<img src="logo.png" width="24" height="24" alt=""></picture> Logo\n')
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
             write(d, "brand/README.md", GOOD_README + "<img src='logo.png' width='24' height='24' alt=''> Logo\n")
             self.assertIn("wrap it in <picture>", check_docs(d).stdout)
 
@@ -190,7 +194,7 @@ class CheckDocsTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             write(d, "brand/README.md", GOOD_README + f"[Contact](https://solarityai.com/contact/?type=Investor&{TAGS}#form)\n"
                   f'<a href="https://solarityai.com/?{TAGS.replace("&", "&amp;")}">Site</a>\n')
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
 
     def test_readme_lists_every_file_in_its_folder(self):
         # #102: CONTRIBUTING says every folder's README lists its files
@@ -211,7 +215,7 @@ class CheckDocsTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("brand/poster.png: 1,000,001 bytes; put files over 1 MB in a GitHub Release", r.stdout)
             write(d, "brand/poster.png", "x" * 1_000_000)
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
 
     def test_folder_names_must_be_kebab_case(self):
         # #114
@@ -232,7 +236,7 @@ class CheckDocsTest(unittest.TestCase):
             self.assertIn("brand/README.md: doesn't list gold.png", check_docs(d).stdout)
             for listed in ("[Gold](./gold.png)", "[Gold](/brand/gold.png)", "[Gold](../brand/gold.png)"):
                 write(d, "brand/README.md", GOOD_README + f"`light-gold.png` and {listed}\n")
-                self.assertEqual(check_docs(d).returncode, 0, listed + check_docs(d).stdout)
+                self.assert_passes(d, listed)
 
     def test_links_with_single_quoted_or_parenthesized_titles_are_checked(self):
         # #134: CommonMark allows "title", 'title' and (title); #94 covered only the first
@@ -246,7 +250,7 @@ class CheckDocsTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             write(d, "brand/README.md", GOOD_README + "Write links like `[text](other-file.md)`.\n\n"
                   "```md\n[text](other-file.md)\n```\n")
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
             write(d, "brand/README.md", GOOD_README + "`code` and then [text](other-file.md)\n")
             self.assertIn("broken link to other-file.md", check_docs(d).stdout)
 
@@ -256,7 +260,7 @@ class CheckDocsTest(unittest.TestCase):
             write(d, "brand/logo.png")
             write(d, "brand/README.md", GOOD_README + "[Logo](logo.png)\n")
             write(d, "careers/README.md", GOOD_README + "[Logo](/brand/logo.png) [Brand](/brand/)\n")
-            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            self.assert_passes(d)
             write(d, "careers/README.md", GOOD_README + "[Gone](/brand/gone.png)\n")
             self.assertIn("broken link to /brand/gone.png", check_docs(d).stdout)
 
@@ -491,8 +495,7 @@ def inside(d):
 @unittest.skipUnless(HAVE_PIL, "Pillow not installed (pip install -r requirements.txt)")
 class FontVerificationTest(unittest.TestCase):
     def test_tampered_font_is_rejected(self):
-        sys.path.insert(0, SCRIPTS)
-        import generate_assets as g
+        g = assets_module()
         with tempfile.TemporaryDirectory() as d:
             old = g.FONT_DIR
             g.FONT_DIR = d
