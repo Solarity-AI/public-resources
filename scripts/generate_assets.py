@@ -28,18 +28,19 @@ FONTS = {
 }
 FONT_DIR = os.path.join(".cache", "fonts")
 
-# Website palette (brand/colors)
-NIGHT = (15, 13, 11)
-CREAM = (245, 241, 232)
-STONE = (201, 192, 178)
-GOLD = (233, 181, 106)
-TAUPE = (169, 159, 145)
-UMBER = (42, 35, 28)
+# Website palette (brand/colors); the swatches and every drawing color come from this one table
 SWATCHES = {
     "night": "0F0D0B", "cream": "F5F1E8", "stone": "C9C0B2", "gold": "E9B56A", "light-gold": "FFCF7A",
     "sand": "D6BF9A", "taupe": "A99F91", "bronze": "9C7446", "umber": "2A231C", "ember": "1A140E",
     "navy": "1F225C", "navy-deep": "0D1120", "sun-yellow": "FFCD07",
 }
+
+
+def rgb(hexv):
+    return tuple(int(hexv[i:i + 2], 16) for i in (0, 2, 4))
+
+
+NIGHT, CREAM, STONE, GOLD, TAUPE, UMBER = (rgb(SWATCHES[n]) for n in ("night", "cream", "stone", "gold", "taupe", "umber"))
 
 # Logo navy: radial profile sampled from the original Solarity logo (centre → edge)
 NAVY_STOPS = [(0.00, (0x1F, 0x22, 0x5C)), (0.14, (0x1D, 0x20, 0x58)), (0.29, (0x19, 0x19, 0x4E)),
@@ -156,9 +157,8 @@ def specimen():
 
 def swatches():
     for name, hexv in SWATCHES.items():
-        c = tuple(int(hexv[i:i + 2], 16) for i in (0, 2, 4))
         im = Image.new("RGB", (48, 48), (136, 135, 128))
-        ImageDraw.Draw(im).rectangle((2, 2, 45, 45), fill=c)
+        ImageDraw.Draw(im).rectangle((2, 2, 45, 45), fill=rgb(hexv))
         save(im, f"brand/colors/swatches/{name}.png")
 
 
