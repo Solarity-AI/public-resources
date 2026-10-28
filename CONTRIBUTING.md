@@ -12,7 +12,7 @@ If you find something wrong, outdated, or broken, [open an issue](https://github
 
 | Included | Not included |
 | --- | --- |
-| Approved brand assets and press materials | Source code or internal tooling |
+| Approved brand assets and press materials | Product source code or internal tools (only the scripts that check and build this repository live here) |
 | One-pagers and investor materials marked public | Confidential or NDA-protected documents |
 | Careers information | Drafts or unapproved materials |
 | Links to public policies | Internal strategy, or financials not explicitly marked public |
@@ -32,7 +32,7 @@ If you're unsure whether something belongs here, ask before adding it.
 
 1. Create a branch: `type/short-description`, for example `brand/add-svg-logo` or `careers/update-roles`.
 2. Make the change and follow the rules below.
-3. Run the checks locally. The first time, run `npm ci` to install the Markdown linter at the version in `package-lock.json`. Run it again whenever `package-lock.json` changes; `scripts/check.py` tells you when. Then run `python scripts/check.py`. On Windows, use `py -3.12 scripts/check.py` if `python` isn't found. This runs exactly what CI runs: Markdown lint, `scripts/check_docs.py` (links and their #anchors, file names, file sizes, a README in every folder that lists its files, decorative images, and campaign tags on website links), and the tests in `tests/`, which cover the scripts and the brand rules that are easy to regress (the founder's title, the company and app names, the logo navy, swatch colors, thumbnails, and image sizes in tables). Install `requirements.txt` to run the image tests as well. You need Node.js 22 (`.nvmrc`) for `npm ci` and the lint, and Python 3.12 (`.python-version`).
+3. Run the checks locally. The first time, run `npm ci` to install the Markdown linter at the version in `package-lock.json`. Run it again whenever `package-lock.json` changes; `scripts/check.py` tells you when. Then run `python scripts/check.py`. On Windows, use `py -3.12 scripts/check.py` if `python` isn't found. This runs exactly what CI runs: Markdown lint, `scripts/check_docs.py` (links and their #anchors, file names, file sizes, a README in every folder that lists its files, decorative images, and campaign tags on website links), and the tests in `tests/`, which cover the scripts and the brand rules that are easy to regress (the founder's title, the company and app names, the logo navy, swatch colors, thumbnails, and the width and height of every image). Install `requirements.txt` to run the image tests as well. You need Node.js 22 (`.nvmrc`) for `npm ci` and the lint, and Python 3.12 (`.python-version`).
 4. Add a line to [CHANGELOG.md](CHANGELOG.md).
 5. Open a pull request using the template. The **Docs check** workflow must pass before it is merged into `main`. The founder is the sole code owner and the only person who can merge.
 
@@ -41,8 +41,9 @@ Use clear commit messages, such as `Add 512px sun mark export`. Avoid messages l
 ### File rules
 
 - **Names:** use lowercase kebab-case with no spaces. Example: `solarity-sun-mark-512.png`, not `Solarity AI - Logo.png`.
-- **Size:** keep web images under about 500 KB. Put print-resolution masters in a [GitHub Release](https://github.com/Solarity-AI/public-resources/releases), not in the repository.
+- **Size:** keep web images under about 500 KB; `scripts/check_docs.py` fails any file over 1 MB. Put print-resolution masters in a [GitHub Release](https://github.com/Solarity-AI/public-resources/releases), not in the repository.
 - **Formats:** PNG for logos and icons (transparent), JPEG or WebP for photos, PDF for documents, SVG for vector logos.
+- **Images in pages:** every `<img>` sets both `width` and `height`, or GitHub collapses images in tables on phones and the page shifts while they load.
 - **Every folder** has a `README.md` that lists its files and how to use them.
 - **Placeholders:** don't add empty folders or empty READMEs. Every README should say something useful, even if it's "None published yet."
 
