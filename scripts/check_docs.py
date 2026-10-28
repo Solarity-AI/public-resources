@@ -7,6 +7,7 @@ import os
 import re
 import subprocess
 import sys
+from urllib.parse import parse_qs, urlsplit
 
 CONTENT_DIRS = ["brand", "careers", "demos", "docs", "legal-public", "one-pagers", "pitch-decks", "press-kit"]
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+)+$")
@@ -91,6 +92,14 @@ def lists(readme, f):
     return any(target == f for _, target in local_links(readme, text))
 
 
+def has_campaign_tags(url):
+    """utm_source=github, utm_medium=public-resources and a non-empty utm_campaign, each once and by its exact name."""
+    query = parse_qs(urlsplit(url.replace("&amp;", "&")).query, keep_blank_values=True)  # &amp; is & in HTML
+    campaign = query.get("utm_campaign", [])
+    return (query.get("utm_source") == ["github"] and query.get("utm_medium") == ["public-resources"]
+            and len(campaign) == 1 and campaign[0].strip() != "")
+
+
 errors = []
 files = list_files()
 # Exact names, so a link whose case differs fails here as it does on GitHub, even on Windows and macOS
@@ -144,7 +153,7 @@ for rel in files:
         errors.append(f"{rel}: an image with empty alt text becomes a link with no name on GitHub; wrap it in <picture>")
     if name == "README.md":
         for url in WEBSITE_PAGE.findall(text):
-            if "utm_source=github" not in url:
+            if not has_campaign_tags(url):
                 errors.append(f"{rel}: {url} needs utm_source=github&utm_medium=public-resources&utm_campaign=<page>")
 
 for error in sorted(set(errors)):

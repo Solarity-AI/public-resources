@@ -175,6 +175,23 @@ class CheckDocsTest(unittest.TestCase):
                 write(d, "brand/README.md", GOOD_README + f"[Site]({url})\n")
                 self.assertIn(f"{url} needs utm_source", check_docs(d).stdout, url)
 
+    def test_website_links_need_every_attribution_tag_by_its_exact_name(self):
+        # #126: only utm_source=github was looked for, so a link missing the medium or campaign passed
+        for query in ("utm_source=github", "utm_source=github&utm_medium=public-resources",
+                      "utm_source=github&utm_campaign=brand", "utm_medium=public-resources&utm_campaign=brand",
+                      "utm_source=github&utm_medium=public-resources&utm_campaign=",
+                      "utm_source=github&utm_medium=email&utm_campaign=brand",
+                      "xutm_source=github&xutm_medium=public-resources&utm_campaign=brand"):
+            with tempfile.TemporaryDirectory() as d:
+                write(d, "brand/README.md", GOOD_README + f"[Press](https://solarityai.com/press/?{query})\n")
+                r = check_docs(d)
+                self.assertEqual(r.returncode, 1, query)
+                self.assertIn(f"https://solarityai.com/press/?{query} needs utm_source", r.stdout, query)
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + f"[Contact](https://solarityai.com/contact/?type=Investor&{TAGS}#form)\n"
+                  f'<a href="https://solarityai.com/?{TAGS.replace("&", "&amp;")}">Site</a>\n')
+            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+
     def test_readme_lists_every_file_in_its_folder(self):
         # #102: CONTRIBUTING says every folder's README lists its files
         with tempfile.TemporaryDirectory() as d:

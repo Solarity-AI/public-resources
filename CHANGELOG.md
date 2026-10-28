@@ -2,6 +2,12 @@
 
 Notable changes to Solarity AI's public resources.
 
+## 2026-10-28
+
+### Fixed
+
+- `scripts/check_docs.py` fails a solarityai.com link that lacks `utm_medium=public-resources` or a campaign, or that misspells a tag's name; it used to check only for `utm_source=github` (#126)
+
 ## 2026-10-27
 
 ### Added
