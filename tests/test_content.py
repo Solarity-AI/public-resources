@@ -75,6 +75,14 @@ class TableImageTest(unittest.TestCase):
         self.assertGreater(checked, 0)
         self.assertEqual(hits, [])
 
+    def test_every_image_sets_width_and_height(self):
+        # #146: with only a width, the browser can't reserve the height and the page shifts when the image loads
+        hits = [f"{rel}:{n}" for rel in repo_files(".md")
+                for n, line in enumerate(FENCE.sub(lambda m: "\n" * m.group().count("\n"), read(rel)).splitlines(), 1)
+                for tag in re.findall(r"<img\b[^>]*>", line)
+                if not (re.search(r"\bwidth=", tag) and re.search(r"\bheight=", tag))]
+        self.assertEqual(hits, [])
+
 
 try:
     from PIL import Image
@@ -111,6 +119,13 @@ class GeneratedAssetsTest(unittest.TestCase):
                         Image.open(os.path.join(path, "thumbs", m[:-len(suffix)] + thumb_suffix)) as small:
                     width, height = (96, 96) if suffix == "-icon.png" else (300, round(big.height * 300 / big.width))
                     self.assertEqual(small.size, (width, height), m)
+
+    def test_founder_photo_has_a_400_px_preview(self):
+        # #145: the pages show the photo at 120-200 px, so they load this instead of the 800 px master
+        with Image.open(os.path.join(ROOT, "press-kit/images/thumbs/ata-turhan-founder-400.jpg")) as small:
+            self.assertEqual(small.size, (400, 400))
+        for rel in ("press-kit/founder-bio/README.md", "press-kit/images/README.md"):
+            self.assertNotRegex(read(rel), r'<img src="[^"]*ata-turhan-founder\.jpg"', rel)
 
 
 if __name__ == "__main__":

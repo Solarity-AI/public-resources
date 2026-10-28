@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=readme"><img src="brand/banner/solarity-ai-banner-1280x640.png" alt="Solarity AI: Building for human potential. Visit solarityai.com" width="720"></a>
+  <a href="https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=readme"><img src="brand/banner/solarity-ai-banner-1280x640.png" alt="Solarity AI: Building for human potential. Visit solarityai.com" width="720" height="360"></a>
 </p>
 
 # Solarity AI public resources

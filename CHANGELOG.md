@@ -4,6 +4,11 @@ Notable changes to Solarity AI's public resources.
 
 ## 2026-10-28
 
+### Changed
+
+- The founder bio and press images pages show a 400 px preview of the founder photo (20 KB instead of the 94 KB master, which they still link to), built by `scripts/generate_assets.py` into `press-kit/images/thumbs/` (#145)
+- Every image sets both width and height, so pages don't shift while images load: the README banner, the company one-pager logo, and the founder photo gained a height, and a test checks it (#146)
+
 ### Fixed
 
 - `scripts/check_docs.py` fails a solarityai.com link that lacks `utm_medium=public-resources` or a campaign, or that misspells a tag's name; it used to check only for `utm_source=github` (#126)
