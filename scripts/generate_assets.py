@@ -11,9 +11,13 @@ import glob
 import hashlib
 import math
 import os
+import sys
 import urllib.request
 
-from PIL import Image, ImageDraw, ImageFont
+try:
+    from PIL import Image, ImageDraw, ImageFont
+except ImportError:  # checked when the script runs, so --help works without it
+    Image = None
 
 # (URL at a pinned google/fonts commit, expected SHA-256 of the file)
 FONTS = {
@@ -169,6 +173,11 @@ def thumbnails():
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1:  # no options: -h, --help, or anything else prints this instead of rewriting the images
+        print(__doc__)
+        sys.exit(0 if sys.argv[1] in ("-h", "--help") else 2)
+    if Image is None:
+        sys.exit("generate_assets.py needs Pillow. Run: pip install -r requirements.txt")
     os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))  # every path below is repo-relative
     fetch_fonts()
     mark = Image.open("brand/logos/solarity-sun-mark.png").convert("RGBA")

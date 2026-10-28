@@ -12,26 +12,35 @@ CONTENT_DIRS = ["brand", "careers", "demos", "docs", "legal-public", "one-pagers
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+)+$")
 ALLOWED_NAMES = {"README.md"}
 MAX_BYTES = 1_000_000
-# Inline links and images (with an optional title), reference definitions, and HTML src/href attributes
-LINK = re.compile(r"\]\(<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\)"
+# Inline links and images (with an optional "title", 'title' or (title)), reference definitions, and HTML src/href attributes
+LINK = re.compile(r"\]\(<?([^)\s>]+)>?(?:\s+(?:\"[^\"]*\"|'[^']*'|\([^)]*\)))?\)"
                   r"|^[ \t]*\[[^\]]+\]:[ \t]*<?([^\s>]+)"
                   r"|\b(?:src|href)=[\"']([^\"']+)[\"']", re.MULTILINE)
 HEADING = re.compile(r"^#{1,6}[ \t]+(.+?)[ \t]*#*[ \t]*$", re.MULTILINE)
 FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
+CODE_SPAN = re.compile(r"(`+)(?!`).+?(?<!`)\1(?!`)")  # GitHub shows code as text, so links in it aren't links
 # GitHub wraps every image that isn't already inside a link or <picture> in a link to the image file
 EMPTY_ALT_IMG = re.compile(r"<img\b[^>]*\balt=(?:\"\"|'')[^>]*>|(?<!\[)!\[\]\(")
 WRAPPER = re.compile(r"<picture\b.*?</picture>|<a\b[^>]*>.*?</a>|\[!\[[^\]]*\]\([^)]*\)\]\([^)]*\)", re.DOTALL)
 WEBSITE_PAGE = re.compile(r"https://(?:www\.)?solarityai\.com(?=[/?#\s)\"'<>\]]|$)(?!/assets/)[^\s)\"'<>]*")
 
+if sys.argv[1:2] in (["-h"], ["--help"]):
+    print(__doc__)
+    sys.exit(0)
 root = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+if not os.path.isdir(root):
+    sys.exit(f"{root}: no such folder. Run: python scripts/check_docs.py [root]")
 os.chdir(root)
+# A file name or link can hold any character; escape what the console can't show instead of crashing (Windows uses cp1252)
+sys.stdout.reconfigure(errors="backslashreplace")
 
 
 def list_files():
     """Tracked and new files, minus anything .gitignore excludes (a local .venv, dist/, .cache/)."""
     try:
+        # git writes paths as UTF-8 whatever the system code page is
         out = subprocess.run(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
-                             capture_output=True, text=True, check=True).stdout
+                             capture_output=True, encoding="utf-8", check=True).stdout
         return sorted(f for f in out.split("\0") if f and os.path.isfile(f))
     except (OSError, subprocess.CalledProcessError):
         pass  # not a git checkout, or git isn't installed
@@ -58,6 +67,30 @@ def anchors(text):
     return found | set(re.findall(r"\b(?:id|name)=[\"']([^\"']+)[\"']", text))
 
 
+def local_links(rel, text):
+    """(url, repo path it points at) for each local link in a Markdown file. Code is skipped: GitHub shows it as text."""
+    for match in LINK.finditer(CODE_SPAN.sub("", FENCE.sub("", text))):
+        url = match.group(1) or match.group(2) or match.group(3)
+        if url.startswith(("http://", "https://", "mailto:")):
+            continue
+        path = url.partition("#")[0].split("?")[0]
+        if not path:
+            yield url, rel
+            continue
+        # GitHub resolves a path that starts with / from the repository root
+        base = "" if path.startswith("/") else os.path.dirname(rel)
+        yield url, os.path.normpath(os.path.join(base, path.lstrip("/"))).replace(os.sep, "/")
+
+
+def lists(readme, f):
+    """True when the README links to the file or names it on its own, not as the end of a longer name
+    (gold.png inside light-gold.png)."""
+    text, name = texts.get(readme, ""), os.path.basename(f)
+    if re.search(r"(?<![\w./-])(?:\./)?" + re.escape(name) + r"(?![\w-])", text):
+        return True
+    return any(target == f for _, target in local_links(readme, text))
+
+
 errors = []
 files = list_files()
 # Exact names, so a link whose case differs fails here as it does on GitHub, even on Windows and macOS
@@ -78,7 +111,7 @@ for d in sorted({os.path.dirname(f) for f in files if f.split("/")[0] in CONTENT
         errors.append(f"{d}: folder has no README.md; say what its files are and how to use them")
         continue
     for f in files:
-        if os.path.dirname(f) == d and f != readme and os.path.basename(f) not in texts.get(readme, ""):
+        if os.path.dirname(f) == d and f != readme and not lists(readme, f):
             errors.append(f"{readme}: doesn't list {os.path.basename(f)}")
 
 for rel in files:
@@ -98,14 +131,8 @@ for rel in files:
     text = texts[rel]
     if name == "README.md" and len(text.strip()) < 40:
         errors.append(f"{rel}: README is empty or a placeholder")
-    for match in LINK.finditer(text):
-        url = match.group(1) or match.group(2) or match.group(3)
-        if url.startswith(("http://", "https://", "mailto:")):
-            continue
-        path, _, fragment = url.partition("#")
-        target = rel
-        if path:
-            target = os.path.normpath(os.path.join(os.path.dirname(rel), path.split("?")[0])).replace(os.sep, "/")
+    for url, target in local_links(rel, text):
+        fragment = url.partition("#")[2]
         if target not in known:
             errors.append(f"{rel}: broken link to {url}")
             continue

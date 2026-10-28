@@ -15,7 +15,8 @@ PATTERNS = [
     "brand/colors/swatches/*.png", "press-kit/images/*.jpg", "press-kit/images/app-icons/*.png",
     "press-kit/images/screens/*.jpg",
 ]
-VERSION = re.compile(r"\d{4}\.(?:0[1-9]|1[0-2])(?:\.\d+)?")  # YYYY.MM, optionally .N; used with fullmatch
+# YYYY.MM, optionally .N; used with fullmatch. [0-9], not \d, which also matches digits like ２ that only look like 2
+VERSION = re.compile(r"[0-9]{4}\.(?:0[1-9]|1[0-2])(?:\.[0-9]+)?")
 # A fixed time and mode for every entry, so the same files always give the same ZIP and SHA-256
 STAMP = (2026, 1, 1, 0, 0, 0)
 
