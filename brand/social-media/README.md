@@ -26,11 +26,11 @@ Ata Turhan, Founder: [ataturhan.com](https://ataturhan.com/) · [LinkedIn](https
 
 ## Images
 
-<img src="solarity-ai-og-default.jpg" alt="Default link preview: a person climbing mountain steps toward a golden sunrise above the clouds" width="480" height="252">
+<img src="solarity-ai-og-default.jpg" alt="Default link preview: the Solarity AI wordmark beside a person walking up a lit stairway above the clouds toward a rising sun" width="480" height="252">
 
 | File | Size | Use |
 | --- | --- | --- |
-| [`solarity-ai-og-default.jpg`](solarity-ai-og-default.jpg) | 1200 × 630 | The website's default link-preview image: a person climbing mountain steps toward a golden sunrise above the clouds |
+| [`solarity-ai-og-default.jpg`](solarity-ai-og-default.jpg) | 1200 × 630 | The website's default link-preview image: the Solarity AI wordmark beside a person walking up a lit stairway above the clouds toward a rising sun |
 | [`../logos/solarity-sun-mark-on-navy.png`](../logos/solarity-sun-mark-on-navy.png) | 1200 × 1200 | Profile picture |
 | [`../banner/solarity-ai-banner-1500x500.png`](../banner/solarity-ai-banner-1500x500.png) | 1500 × 500 | Profile header |
 
