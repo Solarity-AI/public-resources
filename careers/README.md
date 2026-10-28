@@ -22,7 +22,7 @@ Help connect products with the people they are built for. Share work that shows 
 ## Why join
 
 - **Generous profit sharing.** Share in the value you help create. We'll discuss the arrangement for your role during the hiring process.
-- **Fully remote.** Work from anywhere. We focus on your work and how you collaborate.
+- **Fully remote.** Contribute remotely, with the work and your collaboration at the center of the conversation.
 - **Respect for talent.** Bring your perspective, your skills, and the care you put into your work.
 
 ## How to apply

@@ -13,8 +13,9 @@ FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
 def repo_files(*suffixes):
     """Tracked and new files, minus anything .gitignore excludes, as scripts/check_docs.py lists them."""
     try:
+        # git writes paths as UTF-8 whatever the system code page is (#132)
         out = subprocess.run(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"], cwd=ROOT,
-                             capture_output=True, text=True, check=True).stdout
+                             capture_output=True, encoding="utf-8", check=True).stdout
         files = [f for f in out.split("\0") if f]
     except (OSError, subprocess.CalledProcessError):
         files = []

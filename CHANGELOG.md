@@ -19,6 +19,13 @@ Notable changes to Solarity AI's public resources.
 
 - markdownlint-cli2 0.24.0, plus a `katex` override to 0.18.11, clears the 6 `npm audit` advisories in the linter's dependencies (markdown-it, smol-toml, katex). They only affected how the linter parses this repository's own Markdown (#124)
 
+### Fixed
+
+- `scripts/check.py` says to run `npm ci` again when `node_modules` no longer matches `package-lock.json`, instead of linting with the old version (#131)
+- `scripts/check_docs.py` reads file names and prints messages with any characters on Windows (#132), counts a file as listed only by its whole name or a link to it (#133), checks links with `'title'` and `(title)` (#134), ignores link syntax inside code (#135), accepts links that start with `/` (#136), and answers `--help` and a missing folder with a message instead of a traceback (#137)
+- `scripts/generate_assets.py` prints its usage for `--help` instead of rewriting every image (#137) and says to install `requirements.txt` when Pillow is missing (#138); `scripts/build_press_kit.py` rejects versions written with non-ASCII digits (#139)
+- The careers page describes the remote benefit in the website's words (#130), the screenshots page says the Engineering Max screen is its scan of Sleep Max (#140), and the default share image's alt text names the Solarity AI wordmark it shows (#141)
+
 ## 2026-10-26
 
 ### Added

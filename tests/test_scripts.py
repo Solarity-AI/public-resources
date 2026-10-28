@@ -206,16 +206,84 @@ class CheckDocsTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("brand/Old_Logos/logo.png: folder 'Old_Logos' must be lowercase kebab-case", r.stdout)
 
+    def test_readme_must_list_the_whole_file_name(self):
+        # #133: gold.png counted as listed because light-gold.png contains it
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/gold.png")
+            write(d, "brand/light-gold.png")
+            write(d, "brand/README.md", GOOD_README + "`light-gold.png`\n")
+            self.assertIn("brand/README.md: doesn't list gold.png", check_docs(d).stdout)
+            for listed in ("[Gold](./gold.png)", "[Gold](/brand/gold.png)", "[Gold](../brand/gold.png)"):
+                write(d, "brand/README.md", GOOD_README + f"`light-gold.png` and {listed}\n")
+                self.assertEqual(check_docs(d).returncode, 0, listed + check_docs(d).stdout)
+
+    def test_links_with_single_quoted_or_parenthesized_titles_are_checked(self):
+        # #134: CommonMark allows "title", 'title' and (title); #94 covered only the first
+        for link in ("[Missing](missing.png 'A title')", "[Missing](missing.png (A title))"):
+            with tempfile.TemporaryDirectory() as d:
+                write(d, "brand/README.md", GOOD_README + link + "\n")
+                self.assertIn("broken link to missing.png", check_docs(d).stdout, link)
+
+    def test_link_syntax_inside_code_is_not_a_link(self):
+        # #135: GitHub shows code as text, so an example link can't be broken
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + "Write links like `[text](other-file.md)`.\n\n"
+                  "```md\n[text](other-file.md)\n```\n")
+            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            write(d, "brand/README.md", GOOD_README + "`code` and then [text](other-file.md)\n")
+            self.assertIn("broken link to other-file.md", check_docs(d).stdout)
+
+    def test_root_relative_links_resolve_from_the_repository_root(self):
+        # #136: GitHub resolves a link that starts with / from the repository root
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/logo.png")
+            write(d, "brand/README.md", GOOD_README + "[Logo](logo.png)\n")
+            write(d, "careers/README.md", GOOD_README + "[Logo](/brand/logo.png) [Brand](/brand/)\n")
+            self.assertEqual(check_docs(d).returncode, 0, check_docs(d).stdout)
+            write(d, "careers/README.md", GOOD_README + "[Gone](/brand/gone.png)\n")
+            self.assertIn("broken link to /brand/gone.png", check_docs(d).stdout)
+
+    @unittest.skipUnless(shutil.which("git"), "git not installed")
+    def test_non_ascii_names_and_text_are_reported_on_any_console(self):
+        # #132: on Windows, git's UTF-8 file list was read as cp1252 (files skipped or a crash),
+        # and a message with a character the console can't show crashed the check
+        with tempfile.TemporaryDirectory() as d:
+            subprocess.run(["git", "init", "-q", d], check=True)
+            write(d, "brand/README.md", GOOD_README + "[Logo](Café.png) [Mark](ā-mark.png) [Next](→next.md)\n")
+            write(d, "brand/Café.png")
+            write(d, "brand/ā-mark.png")
+            r = subprocess.run([sys.executable, os.path.join(SCRIPTS, "check_docs.py"), d], capture_output=True,
+                               env=dict(os.environ, PYTHONIOENCODING="ascii"))
+            out = r.stdout.decode("ascii", "replace")
+            self.assertNotIn(b"Traceback", r.stderr)
+            self.assertIn("brand/Caf\\xe9.png: file name must be lowercase kebab-case", out)
+            self.assertIn("brand/\\u0101-mark.png: file name must be lowercase kebab-case", out)
+            self.assertIn("broken link to \\u2192next.md", out)
+
+    def test_help_and_a_missing_folder_get_a_message_not_a_traceback(self):
+        # #137
+        r = run("check_docs.py", ROOT, "--help")
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn("Run: python scripts/check_docs.py [root]", r.stdout)
+        with tempfile.TemporaryDirectory() as d:
+            r = run("check_docs.py", d, os.path.join(d, "missing"))
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("missing: no such folder", r.stderr)
+            self.assertNotIn("Traceback", r.stderr)
+
 
 class CheckPyTest(unittest.TestCase):
     """scripts/check.py is the one command CI runs, so any failed step must fail the run (#107)."""
 
-    def check(self, d, npx_exit=None, readme="", test_body="pass", installed=True):
+    def check(self, d, npx_exit=None, readme="", test_body="pass", installed="1.0.0"):
         copy_script(d, "check.py")
         copy_script(d, "check_docs.py")
         write(d, "brand/README.md", GOOD_README + readme)
-        if installed:  # what npm ci leaves behind
-            os.makedirs(os.path.join(d, "node_modules", "markdownlint-cli2"))
+        write(d, "package-lock.json", json.dumps({"packages": {"": {}, "node_modules/markdownlint-cli2": {"version": "1.0.0"}}}))
+        if installed:  # what npm ci leaves behind, at the version it installed
+            write(d, "node_modules/markdownlint-cli2/package.json", "{}")
+            write(d, "node_modules/.package-lock.json",
+                  json.dumps({"packages": {"node_modules/markdownlint-cli2": {"version": installed}}}))
         write(d, "tests/test_ok.py", f"import unittest\n\n\nclass T(unittest.TestCase):\n    def test_it(self):\n        {test_body}\n")
         bin_dir = os.path.join(d, "bin")
         os.makedirs(bin_dir)
@@ -264,6 +332,24 @@ class CheckPyTest(unittest.TestCase):
             self.assertIn("== Script tests", r.stdout)
             self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
 
+    def test_install_that_differs_from_the_lockfile_says_to_run_npm_ci_again(self):
+        # #131: after a pull that bumped the linter, check.py linted with the old version and passed
+        with tempfile.TemporaryDirectory() as d:
+            r = self.check(d, npx_exit=0, installed="0.9.0")
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("node_modules doesn't match package-lock.json. Run npm ci again", r.stdout)
+            self.assertIn("== Script tests", r.stdout)
+            self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
+
+    def test_help_prints_usage_and_runs_no_check(self):
+        # #137: --help used to run every check
+        with tempfile.TemporaryDirectory() as d:
+            script = copy_script(d, "check.py")
+            r = subprocess.run([sys.executable, script, "--help"], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertIn("Run from the repository root: python scripts/check.py", r.stdout)
+            self.assertNotIn("==", r.stdout)
+
 
 class MarkdownLintConfigTest(unittest.TestCase):
     def test_lint_tool_is_pinned_and_locked(self):
@@ -307,7 +393,8 @@ class BuildPressKitTest(unittest.TestCase):
 
     def test_rejects_versions_that_are_not_year_and_month(self):
         # QA-05 (#87)
-        for bad in ("", "../escaped", "2026.10/x", "latest", "2026.13", "2026.00", "2026.10\n"):  # #99: last 3
+        # #99: 2026.13, 2026.00 and the newline; #139: full-width and Arabic-Indic digits that only look like 2026
+        for bad in ("", "../escaped", "2026.10/x", "latest", "2026.13", "2026.00", "2026.10\n", "２０２６.10", "٢٠٢٦.10"):
             with tempfile.TemporaryDirectory() as d:
                 write(d, "brand/logos/solarity-sun-mark.png", "png")
                 r = run("build_press_kit.py", d, bad)
@@ -411,6 +498,31 @@ class FontVerificationTest(unittest.TestCase):
             r = subprocess.run([sys.executable, script], cwd=os.path.dirname(script), capture_output=True, text=True)
             self.assertIn("SHA-256 mismatch", r.stderr)
             self.assertFalse(os.path.exists(os.path.join(d, "scripts", ".cache")))
+
+
+class GenerateAssetsCommandTest(unittest.TestCase):
+    """The command line, which needs neither Pillow nor the network."""
+
+    def test_help_prints_usage_and_writes_nothing(self):
+        # #137: --help used to download fonts and rewrite 34 images
+        with tempfile.TemporaryDirectory() as d:
+            script = copy_script(d, "generate_assets.py")
+            r = subprocess.run([sys.executable, script, "--help"], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertIn("Regenerate every derived image from the masters.", r.stdout)
+            self.assertEqual(os.listdir(d), ["scripts"])
+
+    def test_missing_pillow_says_what_to_install(self):
+        # #138: a stand-in PIL that fails to import, as on a Python without Pillow
+        with tempfile.TemporaryDirectory() as d:
+            script = copy_script(d, "generate_assets.py")
+            write(d, "fake/PIL/__init__.py", "raise ImportError(\"No module named 'PIL'\")\n")
+            r = subprocess.run([sys.executable, script], capture_output=True, text=True,
+                               env=dict(os.environ, PYTHONPATH=os.path.join(d, "fake")))
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("Run: pip install -r requirements.txt", r.stderr)
+            self.assertNotIn("Traceback", r.stderr)
+            self.assertEqual(sorted(os.listdir(d)), ["fake", "scripts"])
 
 
 class BrokenDownload(io.BytesIO):

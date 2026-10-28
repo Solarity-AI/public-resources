@@ -29,7 +29,7 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 ## Commands
 
 ```sh
-npm ci                                     # once: markdownlint-cli2 at the version in package-lock.json
+npm ci                                     # markdownlint-cli2 at the version in package-lock.json; again after it changes
 python scripts/check.py                    # everything CI runs (Markdown lint, docs checker, tests)
 pip install -r requirements.txt            # Pillow, for the two scripts below
 python scripts/generate_assets.py          # regenerate exports, banners, thumbnails, specimen, swatches
