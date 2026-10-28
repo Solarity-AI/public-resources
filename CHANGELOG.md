@@ -8,6 +8,7 @@ Notable changes to Solarity AI's public resources.
 
 - The founder bio and press images pages show a 400 px preview of the founder photo (20 KB instead of the 94 KB master, which they still link to), built by `scripts/generate_assets.py` into `press-kit/images/thumbs/` (#145)
 - Every image sets both width and height, so pages don't shift while images load: the README banner, the company one-pager logo, and the founder photo gained a height, and a test checks it (#146)
+- The script tests are split into one module per script, with shared helpers in `tests/support.py`; `scripts/check_docs.py` runs its checks from functions instead of top-level code; and `scripts/generate_assets.py` takes its drawing colors from the palette table (#149, #150, #151, #152, #153)
 
 ### Fixed
 
