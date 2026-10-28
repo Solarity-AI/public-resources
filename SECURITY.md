@@ -27,4 +27,4 @@ Please include:
 - Missing security headers with no demonstrated impact
 - Social engineering, physical attacks, and denial-of-service testing
 
-This repository holds documents and images only, with no executable code. If you find credentials or other sensitive data committed here by mistake, please report it.
+This repository holds documents and images, plus a few Python scripts that check them and build the press kit; nothing here runs as a service. If you find credentials or other sensitive data committed here by mistake, please report it.

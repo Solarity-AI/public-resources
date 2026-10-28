@@ -38,6 +38,7 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 | [`legal-public/`](legal-public/) | Privacy policy, website data, accessibility, and terms |
 | [`docs/standards/`](docs/standards/) | Internal standards for pitch decks and one-pagers |
 | [`scripts/`](scripts/) | Checks, image generation, and release tooling. See [CONTRIBUTING.md](CONTRIBUTING.md) |
+| [`tests/`](tests/) | Tests for the scripts and for the brand rules that are easy to regress |
 
 ## Solarity AI at a glance
 
