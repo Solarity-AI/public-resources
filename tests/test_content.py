@@ -8,6 +8,7 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 THIS = "tests/test_content.py"  # quotes the wrong forms it looks for, so it skips itself
 FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
+CODE_SPAN = re.compile(r"(`+)(?!`).+?(?<!`)\1(?!`)")
 
 
 def repo_files(*suffixes):
@@ -32,6 +33,11 @@ def read(rel):
 
 def lines(rel):
     return enumerate(read(rel).splitlines(), 1)
+
+
+def rendered(rel):
+    """What GitHub renders as Markdown and HTML: code blocks blanked (line numbers kept) and code spans dropped."""
+    return CODE_SPAN.sub("", FENCE.sub(lambda m: "\n" * m.group().count("\n"), read(rel)))
 
 
 class FounderTitleTest(unittest.TestCase):
@@ -62,8 +68,7 @@ class TableImageTest(unittest.TestCase):
         # #111: GitHub collapses an image in a table on phones unless it sets both (#29)
         hits, checked = [], 0
         for rel in repo_files(".md"):
-            text = FENCE.sub(lambda m: "\n" * m.group().count("\n"), read(rel))
-            for n, line in enumerate(text.splitlines(), 1):
+            for n, line in enumerate(rendered(rel).splitlines(), 1):
                 if not line.lstrip().startswith("|"):
                     continue
                 for tag in re.findall(r"<img\b[^>]*>", line):
@@ -78,7 +83,7 @@ class TableImageTest(unittest.TestCase):
     def test_every_image_sets_width_and_height(self):
         # #146: with only a width, the browser can't reserve the height and the page shifts when the image loads
         hits = [f"{rel}:{n}" for rel in repo_files(".md")
-                for n, line in enumerate(FENCE.sub(lambda m: "\n" * m.group().count("\n"), read(rel)).splitlines(), 1)
+                for n, line in enumerate(rendered(rel).splitlines(), 1)
                 for tag in re.findall(r"<img\b[^>]*>", line)
                 if not (re.search(r"\bwidth=", tag) and re.search(r"\bheight=", tag))]
         self.assertEqual(hits, [])
