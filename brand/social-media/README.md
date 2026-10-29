@@ -30,9 +30,9 @@ Ata Turhan, Founder: [ataturhan.com](https://ataturhan.com/) · [LinkedIn](https
 
 | File | Size | Use |
 | --- | --- | --- |
-| [`solarity-ai-og-default.jpg`](solarity-ai-og-default.jpg) | 1200 × 630 | The website's default link-preview image: the Solarity AI wordmark beside a person walking up a lit stairway above the clouds toward a rising sun |
-| [`../logos/solarity-sun-mark-on-navy.png`](../logos/solarity-sun-mark-on-navy.png) | 1200 × 1200 | Profile picture |
-| [`../banner/solarity-ai-banner-1500x500.png`](../banner/solarity-ai-banner-1500x500.png) | 1500 × 500 | Profile header |
+| [solarity-ai-og-default.jpg](solarity-ai-og-default.jpg) | 1200 × 630 | The website's default link-preview image: the Solarity AI wordmark beside a person walking up a lit stairway above the clouds toward a rising sun |
+| [../logos/solarity-sun-mark-on-navy.png](../logos/solarity-sun-mark-on-navy.png) | 1200 × 1200 | Profile picture |
+| [../banner/solarity-ai-banner-1500x500.png](../banner/solarity-ai-banner-1500x500.png) | 1500 × 500 | Profile header |
 
 ## Profile bio
 

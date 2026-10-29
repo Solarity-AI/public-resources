@@ -4,7 +4,7 @@ A 400 px JPEG preview of the [founder photo](../ata-turhan-founder.jpg), for emb
 
 | File | Image |
 | --- | --- |
-| [`ata-turhan-founder-400.jpg`](ata-turhan-founder-400.jpg) | Ata Turhan, founder |
+| [ata-turhan-founder-400.jpg](ata-turhan-founder-400.jpg) | Ata Turhan, founder |
 
 For articles, profiles, or print, use the full-size 800 × 800 photo in [`press-kit/images/`](../).
 

@@ -8,8 +8,8 @@ Wide banners in the [solarityai.com](https://solarityai.com/?utm_source=github&u
 
 | File | Size | Use |
 | --- | --- | --- |
-| [`solarity-ai-banner-1280x640.png`](solarity-ai-banner-1280x640.png) | 1280 × 640 | GitHub social preview, README headers, link previews |
-| [`solarity-ai-banner-1500x500.png`](solarity-ai-banner-1500x500.png) | 1500 × 500 | X (Twitter) header and other wide profile headers |
+| [solarity-ai-banner-1280x640.png](solarity-ai-banner-1280x640.png) | 1280 × 640 | GitHub social preview, README headers, link previews |
+| [solarity-ai-banner-1500x500.png](solarity-ai-banner-1500x500.png) | 1500 × 500 | X (Twitter) header and other wide profile headers |
 
 The tagline, *Building for human potential.*, is the headline on the solarityai.com home page.
 

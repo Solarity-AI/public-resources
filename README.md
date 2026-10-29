@@ -29,16 +29,16 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 
 | Folder | Contents |
 | --- | --- |
-| [`brand/`](brand/) | Logo, banner, colors, typography, social profiles, and brand rules |
-| [`press-kit/`](press-kit/) | Approved descriptions, company facts, founder bio, and images |
-| [`one-pagers/`](one-pagers/) | Company, product, and SaaS one-pagers |
-| [`pitch-decks/`](pitch-decks/) | Investor materials and how to request the current deck |
-| [`careers/`](careers/) | Open roles and how to apply |
-| [`demos/`](demos/) | Where to see the products: store listings, screens, and SaaS sites |
-| [`legal-public/`](legal-public/) | Privacy policy, website data, accessibility, and terms |
-| [`docs/standards/`](docs/standards/) | Internal standards for pitch decks and one-pagers |
-| [`scripts/`](scripts/) | Checks, image generation, and release tooling. See [CONTRIBUTING.md](CONTRIBUTING.md) |
-| [`tests/`](tests/) | Tests for the scripts and for the brand rules that are easy to regress |
+| [brand/](brand/) | Logo, banner, colors, typography, social profiles, and brand rules |
+| [press-kit/](press-kit/) | Approved descriptions, company facts, founder bio, and images |
+| [one-pagers/](one-pagers/) | Company, product, and SaaS one-pagers |
+| [pitch-decks/](pitch-decks/) | Investor materials and how to request the current deck |
+| [careers/](careers/) | Open roles and how to apply |
+| [demos/](demos/) | Where to see the products: store listings, screens, and SaaS sites |
+| [legal-public/](legal-public/) | Privacy policy, website data, accessibility, and terms |
+| [docs/standards/](docs/standards/) | Internal standards for pitch decks and one-pagers |
+| [scripts/](scripts/) | Checks, image generation, and release tooling. See [CONTRIBUTING.md](CONTRIBUTING.md) |
+| [tests/](tests/) | Tests for the scripts and for the brand rules that are easy to regress |
 
 ## Solarity AI at a glance
 

@@ -4,13 +4,13 @@
 
 | File | Product |
 | --- | --- |
-| [`looks-max-screen-300.jpg`](looks-max-screen-300.jpg) | Looks Max |
-| [`iq-max-screen-300.jpg`](iq-max-screen-300.jpg) | IQ Max |
-| [`sleep-max-screen-300.jpg`](sleep-max-screen-300.jpg) | Sleep Max |
-| [`fitness-max-screen-300.jpg`](fitness-max-screen-300.jpg) | Fitness Max (listed as Only Fitness) |
-| [`engineering-max-screen-300.jpg`](engineering-max-screen-300.jpg) | Engineering Max |
-| [`management-max-screen-300.jpg`](management-max-screen-300.jpg) | Management Max |
-| [`marketing-max-screen-300.jpg`](marketing-max-screen-300.jpg) | Marketing Max |
+| [looks-max-screen-300.jpg](looks-max-screen-300.jpg) | Looks Max |
+| [iq-max-screen-300.jpg](iq-max-screen-300.jpg) | IQ Max |
+| [sleep-max-screen-300.jpg](sleep-max-screen-300.jpg) | Sleep Max |
+| [fitness-max-screen-300.jpg](fitness-max-screen-300.jpg) | Fitness Max (listed as Only Fitness) |
+| [engineering-max-screen-300.jpg](engineering-max-screen-300.jpg) | Engineering Max |
+| [management-max-screen-300.jpg](management-max-screen-300.jpg) | Management Max |
+| [marketing-max-screen-300.jpg](marketing-max-screen-300.jpg) | Marketing Max |
 
 For articles or listings, use the full-size screens in [`screens/`](../).
 

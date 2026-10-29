@@ -31,7 +31,8 @@ FONT_DIR = os.path.join(".cache", "fonts")
 # Website palette (brand/colors); the swatches and every drawing color come from this one table
 SWATCHES = {
     "night": "0F0D0B", "cream": "F5F1E8", "stone": "C9C0B2", "gold": "E9B56A", "light-gold": "FFCF7A",
-    "sand": "D6BF9A", "taupe": "A99F91", "bronze": "9C7446", "umber": "2A231C", "ember": "1A140E",
+    "sand": "D6BF9A", "taupe": "A99F91", "bronze": "9C7446", "umber": "2A231C", "raised": "221C16", "ink": "1A140E",
+    "ember": "D9782F",
     "navy": "1F225C", "navy-deep": "0D1120", "sun-yellow": "FFCD07",
 }
 

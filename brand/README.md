@@ -4,12 +4,12 @@ Solarity AI's visual identity, as used on [solarityai.com](https://solarityai.co
 
 | Folder | What's there |
 | --- | --- |
-| [`logos/`](logos/) | The sun mark in several sizes, transparent and on navy |
-| [`banner/`](banner/) | Wide banners for headers and social profiles |
-| [`colors/`](colors/) | The color palette with HEX and RGB values |
-| [`typography/`](typography/) | Typefaces and how they are used |
-| [`social-media/`](social-media/) | Official social channels and the default share image |
-| [`brand-guidelines/`](brand-guidelines/) | Rules for using the name, mark, and descriptions |
+| [logos/](logos/) | The sun mark in several sizes, transparent and on navy |
+| [banner/](banner/) | Wide banners for headers and social profiles |
+| [colors/](colors/) | The color palette with HEX and RGB values |
+| [typography/](typography/) | Typefaces and how they are used |
+| [social-media/](social-media/) | Official social channels and the default share image |
+| [brand-guidelines/](brand-guidelines/) | Rules for using the name, mark, and descriptions |
 
 ## Rules in brief
 

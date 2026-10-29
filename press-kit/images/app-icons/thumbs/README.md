@@ -4,10 +4,10 @@
 
 | File | App |
 | --- | --- |
-| [`looks-max-icon-96.png`](looks-max-icon-96.png) | Looks Max |
-| [`iq-max-icon-96.png`](iq-max-icon-96.png) | IQ Max |
-| [`sleep-max-icon-96.png`](sleep-max-icon-96.png) | Sleep Max |
-| [`fitness-max-icon-96.png`](fitness-max-icon-96.png) | Fitness Max (listed as Only Fitness) |
+| [looks-max-icon-96.png](looks-max-icon-96.png) | Looks Max |
+| [iq-max-icon-96.png](iq-max-icon-96.png) | IQ Max |
+| [sleep-max-icon-96.png](sleep-max-icon-96.png) | Sleep Max |
+| [fitness-max-icon-96.png](fitness-max-icon-96.png) | Fitness Max (listed as Only Fitness) |
 
 For print, articles, or listings, use the full-size icons in [`app-icons/`](../).
 
