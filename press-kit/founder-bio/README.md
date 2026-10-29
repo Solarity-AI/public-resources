@@ -31,7 +31,7 @@ AI Engineer & Manager at HP · Founder, Solarity AI · Dallas, Texas
 | **Education** | B.S. in Artificial Intelligence Engineering, TOBB University of Economics and Technology (valedictorian, 4.0 GPA) · M.S. in Computer Science, Maharishi International University (valedictorian, 4.0 GPA) · Medicine, Istanbul Medeniyet University (2016–2019) |
 | **Expertise** | Artificial intelligence, machine learning, deep learning, large language models, retrieval-augmented generation, MLOps, computer vision, natural language processing, generative AI, AI strategy, entrepreneurship, personal development |
 | **Website** | [ataturhan.com](https://ataturhan.com/) |
-| **Photo** | [`ata-turhan-founder.jpg`](../images/ata-turhan-founder.jpg) (JPEG, 800 × 800) |
+| **Photo** | [ata-turhan-founder.jpg](../images/ata-turhan-founder.jpg) (JPEG, 800 × 800) |
 
 ## Achievements
 

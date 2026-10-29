@@ -7,7 +7,7 @@ import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 THIS = "tests/test_content.py"  # quotes the wrong forms it looks for, so it skips itself
-FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
+FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,}).*?(?:^ {0,3}\1[`~]*[ \t\r]*$|\Z)", re.MULTILINE | re.DOTALL)  # as in check_docs.py
 CODE_SPAN = re.compile(r"(`+)(?!`).+?(?<!`)\1(?!`)")
 
 
@@ -87,6 +87,36 @@ class TableImageTest(unittest.TestCase):
                 for tag in re.findall(r"<img\b[^>]*>", line)
                 if not (re.search(r"\bwidth=", tag) and re.search(r"\bheight=", tag))]
         self.assertEqual(hits, [])
+
+    def test_rendered_blanks_every_kind_of_code_fence(self):
+        # #165: only ``` fences were blanked, so ~~~ and longer fences were read as page content
+        text = "a\n~~~html\n<img src=x>\n~~~\nb\n````md\n```\n<img src=y>\n```\n````\nc\n"
+        out = CODE_SPAN.sub("", FENCE.sub(lambda m: "\n" * m.group().count("\n"), text))
+        self.assertNotIn("<img", out)
+        self.assertEqual(out.split("\n").index("b"), text.split("\n").index("b"))
+
+
+class TableLinkTest(unittest.TestCase):
+    def test_links_in_tables_are_not_code_formatted(self):
+        # #160: GitHub draws a code-formatted link on a grey box; in a striped table row that's 4.34:1, under WCAG's 4.5:1
+        hits = [f"{rel}:{n}" for rel in repo_files(".md")
+                for n, line in enumerate(FENCE.sub(lambda m: "\n" * m.group().count("\n"), read(rel)).splitlines(), 1)
+                if line.lstrip().startswith("|") and re.search(r"\[`[^`\]]+`\]\(", line)]
+        self.assertEqual(hits, [], "write [name](path), not a code-formatted name, inside tables")
+
+
+class SourceOfTruthTest(unittest.TestCase):
+    def test_colors_page_uses_the_website_names(self):
+        # #129: solarityai.com's :root (2026-10-28) has --ember: #d9782f and --ink: #1a140e; the page had them swapped
+        documented = {name: hexv for name, hexv in re.findall(r"\| ([A-Z][a-z]+(?: [a-z]+)?) \| `#([0-9A-F]{6})`", read("brand/colors/README.md"))}
+        for name, hexv in (("Ember", "D9782F"), ("Ink", "1A140E"), ("Raised", "221C16"), ("Light gold", "FFCF7A")):
+            self.assertEqual(documented.get(name), hexv, name)
+
+    def test_privacy_summary_covers_visits(self):
+        # #162: the policy's "What we receive" includes the IP address and browser type Cloudflare handles on every visit
+        summary = read("legal-public/privacy-policy/README.md")
+        self.assertNotIn("only what you choose to send", summary)
+        self.assertIn("IP address and browser type", summary)
 
 
 try:

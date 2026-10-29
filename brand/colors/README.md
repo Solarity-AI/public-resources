@@ -9,18 +9,20 @@ The palette used on [solarityai.com](https://solarityai.com/?utm_source=github&u
 | <picture><img src="swatches/night.png" width="24" height="24" alt=""></picture> | Night | `#0F0D0B`<br>RGB 15, 13, 11 | Page background, theme color |
 | <picture><img src="swatches/cream.png" width="24" height="24" alt=""></picture> | Cream | `#F5F1E8`<br>RGB 245, 241, 232 | Headings and body text |
 | <picture><img src="swatches/stone.png" width="24" height="24" alt=""></picture> | Stone | `#C9C0B2`<br>RGB 201, 192, 178 | Secondary text |
-| <picture><img src="swatches/gold.png" width="24" height="24" alt=""></picture> | Gold | `#E9B56A`<br>RGB 233, 181, 106 | Links, accents, calls to action |
+| <picture><img src="swatches/gold.png" width="24" height="24" alt=""></picture> | Gold | `#E9B56A`<br>RGB 233, 181, 106 | Links and accents |
 
 ## Supporting
 
 | Swatch | Name | Value | Use |
 | --- | --- | --- | --- |
-| <picture><img src="swatches/light-gold.png" width="24" height="24" alt=""></picture> | Light gold | `#FFCF7A`<br>RGB 255, 207, 122 | Hover and highlight |
+| <picture><img src="swatches/light-gold.png" width="24" height="24" alt=""></picture> | Light gold | `#FFCF7A`<br>RGB 255, 207, 122 | Primary buttons, focus ring, highlighted words |
 | <picture><img src="swatches/sand.png" width="24" height="24" alt=""></picture> | Sand | `#D6BF9A`<br>RGB 214, 191, 154 | Labels, eyebrow text |
 | <picture><img src="swatches/taupe.png" width="24" height="24" alt=""></picture> | Taupe | `#A99F91`<br>RGB 169, 159, 145 | Tertiary text, captions |
 | <picture><img src="swatches/bronze.png" width="24" height="24" alt=""></picture> | Bronze | `#9C7446`<br>RGB 156, 116, 70 | Subtle accents |
 | <picture><img src="swatches/umber.png" width="24" height="24" alt=""></picture> | Umber | `#2A231C`<br>RGB 42, 35, 28 | Borders, dividers |
-| <picture><img src="swatches/ember.png" width="24" height="24" alt=""></picture> | Ember | `#1A140E`<br>RGB 26, 20, 14 | Raised surfaces |
+| <picture><img src="swatches/raised.png" width="24" height="24" alt=""></picture> | Raised | `#221C16`<br>RGB 34, 28, 22 | Raised surfaces |
+| <picture><img src="swatches/ink.png" width="24" height="24" alt=""></picture> | Ink | `#1A140E`<br>RGB 26, 20, 14 | Text on Light gold buttons |
+| <picture><img src="swatches/ember.png" width="24" height="24" alt=""></picture> | Ember | `#D9782F`<br>RGB 217, 120, 47 | Warm glow in the page lighting |
 
 ## Logo navy
 
@@ -52,7 +54,9 @@ Sun yellow belongs to the logo. Use it in the mark only, not as an interface col
   --taupe: #A99F91;
   --bronze: #9C7446;
   --umber: #2A231C;
-  --ember: #1A140E;
+  --raised: #221C16;
+  --ink: #1A140E;
+  --ember: #D9782F;
   --navy: #1F225C;
   --navy-deep: #0D1120;
 }

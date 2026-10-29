@@ -16,7 +16,7 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 - Write **Solarity AI** (two words). Write "Fitness Max (listed as Only Fitness)" inline.
 - Counts use digits ("4 apps", "3 SaaS products"), as on the website.
 - The website palette (Night `#0F0D0B`, Cream, Stone, Gold) and the fonts (Newsreader, Manrope) are documented in `brand/colors/` and `brand/typography/`.
-- The tests in `tests/` guard the navy background, the title, both names, the swatch colors, thumbnails, and the width and height of every image, so `python scripts/check.py` fails when one of these regresses.
+- The tests in `tests/` guard the navy background, the title, both names, the swatch colors and their website names, thumbnails, the width and height of every image, plain links in tables, and the privacy summary's visit data, so `python scripts/check.py` fails when one of these regresses.
 
 ## Conventions
 
@@ -24,7 +24,7 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 - Every folder has a non-empty `README.md` ending with the "← All public resources · Questions?" footer.
 - Every `<img>` needs both `width` and `height`: GitHub collapses images in tables on phones without them, and pages shift while images load.
 - Links from READMEs to solarityai.com pages carry `utm_source=github&utm_medium=public-resources&utm_campaign=<page>`.
-- Accessibility: descriptive link text, real headers on tables, and alt text that describes the image (decorative images get `alt=""` and are wrapped in `<picture>`, or GitHub turns them into links with no name). `scripts/check_docs.py` enforces the README, `<picture>`, and campaign-tag rules.
+- Accessibility: descriptive link text, plain (not code-formatted) links in tables, real headers on tables, and alt text that describes the image (decorative images get `alt=""` and are wrapped in `<picture>`, or GitHub turns them into links with no name). `scripts/check_docs.py` enforces the README, `<picture>`, and campaign-tag rules.
 
 ## Commands
 

@@ -8,10 +8,10 @@ Approved descriptions, company facts, and images for articles, program pages, an
 
 | Folder | Contents |
 | --- | --- |
-| [`company-bio/`](company-bio/) | Approved descriptions and company facts |
-| [`founder-bio/`](founder-bio/) | Founder bios (1 line, short, long), facts, achievements, and contacts |
-| [`images/`](images/) | Founder photo, app icons, and product screens |
-| [`press-releases/`](press-releases/) | Press releases (none published yet) |
+| [company-bio/](company-bio/) | Approved descriptions and company facts |
+| [founder-bio/](founder-bio/) | Founder bios (1 line, short, long), facts, achievements, and contacts |
+| [images/](images/) | Founder photo, app icons, and product screens |
+| [press-releases/](press-releases/) | Press releases (none published yet) |
 
 ## Descriptions
 

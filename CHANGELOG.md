@@ -15,6 +15,12 @@ Notable changes to Solarity AI's public resources.
 ### Fixed
 
 - `scripts/check_docs.py` fails a solarityai.com link that lacks `utm_medium=public-resources` or a campaign, or that misspells a tag's name; it used to check only for `utm_source=github` (#126)
+- File-name links in tables are plain links instead of code, so they meet WCAG's 4.5:1 contrast in GitHub's striped table rows (they measured 4.34:1) (#160)
+- `docs/` has a README, and `scripts/check_docs.py` now requires one in folders that only hold other folders (#161)
+- The privacy summary no longer says Solarity AI receives only what you choose to send; like the policy, it mentions the IP address and browser type Cloudflare handles on every visit (#162)
+- The colors page uses the website's names: `#1A140E` is Ink (text on Light gold buttons), Ember is `#D9782F`, Raised `#221C16` is the raised-surface color, and Light gold is for primary buttons and focus. `ember.png` now shows the website's Ember; `ink.png` and `raised.png` are new (#129)
+- `scripts/check_docs.py` catches untagged website links written with http, a bare `www.` address, capitals, or punctuation after the address (#163); applies the 1 MB limit to every file (#164); treats `~~~` and longer fences as code (#165); finds the anchors of setext, indented, and emphasized headings (#166); accepts `//host` and percent-encoded links (#167); and no longer counts `kit.zip` as listed when only `kit.zip.sha256` is (#168)
+- `scripts/build_press_kit.py --help` prints its usage and exits 0, like the other scripts (#169)
 
 ## 2026-10-27
 

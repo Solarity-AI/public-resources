@@ -7,7 +7,7 @@ import os
 import re
 import subprocess
 import sys
-from urllib.parse import parse_qs, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
 
 CONTENT_DIRS = ["brand", "careers", "demos", "docs", "legal-public", "one-pagers", "pitch-decks", "press-kit"]
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+)+$")
@@ -17,13 +17,20 @@ MAX_BYTES = 1_000_000
 LINK = re.compile(r"\]\(<?([^)\s>]+)>?(?:\s+(?:\"[^\"]*\"|'[^']*'|\([^)]*\)))?\)"
                   r"|^[ \t]*\[[^\]]+\]:[ \t]*<?([^\s>]+)"
                   r"|\b(?:src|href)=[\"']([^\"']+)[\"']", re.MULTILINE)
-HEADING = re.compile(r"^#{1,6}[ \t]+(.+?)[ \t]*#*[ \t]*$", re.MULTILINE)
-FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
+# ATX headings, with up to 3 spaces before the #, and setext headings: one line of text underlined with = or -
+HEADING = re.compile(r"^ {0,3}#{1,6}[ \t]+(.+?)[ \t]*#*[ \t]*$"
+                     r"|^ {0,3}([^\s#>|-].*?)[ \t\r]*\n {0,3}(?:=+|-+)[ \t\r]*$", re.MULTILINE)
+# A code block fenced with 3 or more ` or ~, up to the same fence or the end of the file
+FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,}).*?(?:^ {0,3}\1[`~]*[ \t\r]*$|\Z)", re.MULTILINE | re.DOTALL)
 CODE_SPAN = re.compile(r"(`+)(?!`).+?(?<!`)\1(?!`)")  # GitHub shows code as text, so links in it aren't links
 # GitHub wraps every image that isn't already inside a link or <picture> in a link to the image file
 EMPTY_ALT_IMG = re.compile(r"<img\b[^>]*\balt=(?:\"\"|'')[^>]*>|(?<!\[)!\[\]\(")
 WRAPPER = re.compile(r"<picture\b.*?</picture>|<a\b[^>]*>.*?</a>|\[!\[[^\]]*\]\([^)]*\)\]\([^)]*\)", re.DOTALL)
-WEBSITE_PAGE = re.compile(r"https://(?:www\.)?solarityai\.com(?=[/?#\s)\"'<>\]]|$)(?!/assets/)[^\s)\"'<>]*")
+# GitHub links http, https and bare www. addresses in any letter case; solarityai.com.au or solarityai.community aren't ours
+WEBSITE_PAGE = re.compile(r"(?:https?://(?:www\.)?|(?<![\w./@-])www\.)solarityai\.com(?![\w-]|\.[\w-])(?!/assets/)"
+                          r"[^\s)\"'<>]*", re.IGNORECASE)
+TRAILING = ".,:;!?*_~"  # punctuation GitHub leaves out of the end of a bare link
+
 
 def list_files():
     """Tracked and new files, minus anything .gitignore excludes (a local .venv, dist/, .cache/)."""
@@ -44,13 +51,16 @@ def list_files():
 def slug(heading):
     """The anchor GitHub gives a heading: lowercase, punctuation dropped, spaces as hyphens."""
     text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", re.sub(r"<[^>]+>", "", heading))
+    # Underscores that mark emphasis aren't shown, so they aren't in the anchor; ones inside words and code are
+    parts = re.split(r"(`+[^`]*`+)", text)
+    text = "".join(p if p.startswith("`") else re.sub(r"(?<!\w)_+|_+(?!\w)", "", p) for p in parts)
     return re.sub(r"[^\w\- ]", "", text.lower()).replace(" ", "-")
 
 
 def anchors(text):
     found, seen = set(), {}
-    for heading in HEADING.findall(FENCE.sub("", text)):
-        base = slug(heading)
+    for atx, setext in HEADING.findall(FENCE.sub("", text)):
+        base = slug(atx or setext)
         n = seen.get(base, 0)
         seen[base] = n + 1
         found.add(base if n == 0 else f"{base}-{n}")
@@ -61,9 +71,9 @@ def local_links(rel, text):
     """(url, repo path it points at) for each local link in a Markdown file. Code is skipped: GitHub shows it as text."""
     for match in LINK.finditer(CODE_SPAN.sub("", FENCE.sub("", text))):
         url = match.group(1) or match.group(2) or match.group(3)
-        if url.startswith(("http://", "https://", "mailto:")):
+        if url.startswith(("http://", "https://", "//", "mailto:")):  # //host is another site on the page's protocol
             continue
-        path = url.partition("#")[0].split("?")[0]
+        path = unquote(url.partition("#")[0].split("?")[0])
         if not path:
             yield url, rel
             continue
@@ -73,10 +83,10 @@ def local_links(rel, text):
 
 
 def lists(readme, text, f):
-    """True when the README links to the file or names it on its own, not as the end of a longer name
-    (gold.png inside light-gold.png)."""
+    """True when the README links to the file or names it on its own, not as part of a longer name
+    (gold.png inside light-gold.png, kit.zip inside kit.zip.sha256)."""
     name = os.path.basename(f)
-    if re.search(r"(?<![\w./-])(?:\./)?" + re.escape(name) + r"(?![\w-])", text):
+    if re.search(r"(?<![\w./-])(?:\./)?" + re.escape(name) + r"(?!\.?[\w-])", text):
         return True
     return any(target == f for _, target in local_links(readme, text))
 
@@ -106,7 +116,9 @@ def read_markdown(files):
 def check_folders(files, known, texts):
     """Every content folder has a README.md that lists each of its files."""
     errors = []
-    for d in sorted({os.path.dirname(f) for f in files if f.split("/")[0] in CONTENT_DIRS}):
+    # Every folder on the way to a file, so one that only holds subfolders needs a README too
+    folders = {"/".join(f.split("/")[:i]) for f in files if f.split("/")[0] in CONTENT_DIRS for i in range(1, f.count("/") + 1)}
+    for d in sorted(folders):
         readme = f"{d}/README.md"
         if readme not in known:
             errors.append(f"{d}: folder has no README.md; say what its files are and how to use them")
@@ -117,23 +129,26 @@ def check_folders(files, known, texts):
     return errors
 
 
-def check_name_and_size(rel):
+def check_name(rel):
     name, errors = os.path.basename(rel), []
     if name not in ALLOWED_NAMES and not KEBAB.match(name):
         errors.append(f"{rel}: file name must be lowercase kebab-case")
     for part in rel.split("/")[:-1]:
         if not re.match(r"^[a-z0-9]+(?:-[a-z0-9]+)*$", part):
             errors.append(f"{rel}: folder '{part}' must be lowercase kebab-case")
-    if os.path.getsize(rel) > MAX_BYTES:
-        errors.append(f"{rel}: {os.path.getsize(rel):,} bytes; put files over 1 MB in a GitHub Release")
     return errors
+
+
+def check_size(rel):
+    size = os.path.getsize(rel)
+    return [f"{rel}: {size:,} bytes; put files over 1 MB in a GitHub Release"] if size > MAX_BYTES else []
 
 
 def check_links(rel, text, known, texts):
     """Every local link points at a file or folder, and every #anchor at a heading."""
     errors = []
     for url, target in local_links(rel, text):
-        fragment = url.partition("#")[2]
+        fragment = unquote(url.partition("#")[2])
         if target not in known:
             errors.append(f"{rel}: broken link to {url}")
             continue
@@ -153,6 +168,7 @@ def check_markdown(rel, text):
         errors.append(f"{rel}: an image with empty alt text becomes a link with no name on GitHub; wrap it in <picture>")
     if name == "README.md":
         for url in WEBSITE_PAGE.findall(text):
+            url = url.rstrip(TRAILING)
             if not has_campaign_tags(url):
                 errors.append(f"{rel}: {url} needs utm_source=github&utm_medium=public-resources&utm_campaign=<page>")
     return errors
@@ -180,8 +196,9 @@ def main():
     texts, errors = read_markdown(files)
     errors += check_folders(files, known, texts)
     for rel in files:
+        errors += check_size(rel)
         if rel.split("/")[0] in CONTENT_DIRS:
-            errors += check_name_and_size(rel)
+            errors += check_name(rel)
         if rel in texts:
             errors += check_links(rel, texts[rel], known, texts) + check_markdown(rel, texts[rel])
 

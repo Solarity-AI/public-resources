@@ -15,7 +15,9 @@ For the hex and RGB values and where each color is used, see the [colors page](.
 | `taupe.png` | Taupe `#A99F91` |
 | `bronze.png` | Bronze `#9C7446` |
 | `umber.png` | Umber `#2A231C` |
-| `ember.png` | Ember `#1A140E` |
+| `raised.png` | Raised `#221C16` |
+| `ink.png` | Ink `#1A140E` |
+| `ember.png` | Ember `#D9782F` |
 | `navy.png` | Navy `#1F225C` |
 | `navy-deep.png` | Deep navy `#0D1120` |
 | `sun-yellow.png` | Sun yellow `#FFCD07` |

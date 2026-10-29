@@ -84,6 +84,14 @@ class CheckDocsTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("brand/swatches: folder has no README.md", r.stdout)
 
+    def test_folders_that_only_hold_subfolders_need_a_readme_too(self):
+        # #161: only folders with files of their own were checked, so docs/ went without a README
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "docs/standards/README.md", GOOD_README)
+            self.assertIn("docs: folder has no README.md", check_docs(d).stdout)
+            write(d, "docs/README.md", GOOD_README + "[Standards](standards/)\n")
+            self.assert_passes(d)
+
     def test_website_page_links_carry_attribution_tags(self):
         # QA-08 (#89): page links need utm tags; file downloads under /assets/ don't
         with tempfile.TemporaryDirectory() as d:
@@ -152,6 +160,22 @@ class CheckDocsTest(unittest.TestCase):
                 write(d, "brand/README.md", GOOD_README + f"[Site]({url})\n")
                 self.assertIn(f"{url} needs utm_source", check_docs(d).stdout, url)
 
+    def test_every_website_link_github_renders_needs_tags(self):
+        # #163: GitHub links these too, but punctuation after the host, http, bare www. and capitals slipped through
+        for text, url in (("Visit https://solarityai.com.", "https://solarityai.com"),
+                          ("**https://solarityai.com**", "https://solarityai.com"),
+                          ("https://solarityai.com, then", "https://solarityai.com"),
+                          ("Visit www.solarityai.com/press for more", "www.solarityai.com/press"),
+                          ("[Press](http://solarityai.com/press)", "http://solarityai.com/press"),
+                          ("[Press](https://SolarityAI.com/press)", "https://SolarityAI.com/press")):
+            with tempfile.TemporaryDirectory() as d:
+                write(d, "brand/README.md", GOOD_README + text + "\n")
+                self.assertIn(f"{url} needs utm_source", check_docs(d).stdout, text)
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + f"See https://solarityai.com/press/?{TAGS}. Write to "
+                  "ata.turhan@solarityai.com. Not ours: https://solarityai.com.au and https://solarityai.community\n")
+            self.assert_passes(d)
+
     def test_website_links_need_every_attribution_tag_by_its_exact_name(self):
         # #126: only utm_source=github was looked for, so a link missing the medium or campaign passed
         for query in ("utm_source=github", "utm_source=github&utm_medium=public-resources",
@@ -190,6 +214,16 @@ class CheckDocsTest(unittest.TestCase):
             write(d, "brand/poster.png", "x" * 1_000_000)
             self.assert_passes(d)
 
+    def test_files_over_1_mb_are_flagged_outside_content_folders_too(self):
+        # #164: the size rule covers every file, not just the content folders
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README)
+            write(d, "poster.png", "x" * 1_000_001)
+            write(d, "scripts/data.bin", "x" * 1_000_001)
+            r = check_docs(d)
+            self.assertIn("poster.png: 1,000,001 bytes", r.stdout)
+            self.assertIn("scripts/data.bin: 1,000,001 bytes", r.stdout)
+
     def test_folder_names_must_be_kebab_case(self):
         # #114
         with tempfile.TemporaryDirectory() as d:
@@ -211,6 +245,16 @@ class CheckDocsTest(unittest.TestCase):
                 write(d, "brand/README.md", GOOD_README + f"`light-gold.png` and {listed}\n")
                 self.assert_passes(d, listed)
 
+    def test_a_longer_name_with_another_extension_does_not_list_the_file(self):
+        # #168: kit.zip counted as listed because kit.zip.sha256 starts with it
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/kit.zip")
+            write(d, "brand/kit.zip.sha256")
+            write(d, "brand/README.md", GOOD_README + "Checksum: `kit.zip.sha256`.\n")
+            self.assertIn("brand/README.md: doesn't list kit.zip", check_docs(d).stdout)
+            write(d, "brand/README.md", GOOD_README + "Checksum: `kit.zip.sha256`. Download kit.zip.\n")
+            self.assert_passes(d)
+
     def test_links_with_single_quoted_or_parenthesized_titles_are_checked(self):
         # #134: CommonMark allows "title", 'title' and (title); #94 covered only the first
         for link in ("[Missing](missing.png 'A title')", "[Missing](missing.png (A title))"):
@@ -227,6 +271,24 @@ class CheckDocsTest(unittest.TestCase):
             write(d, "brand/README.md", GOOD_README + "`code` and then [text](other-file.md)\n")
             self.assertIn("broken link to other-file.md", check_docs(d).stdout)
 
+    def test_tilde_and_longer_fences_are_code_too(self):
+        # #165: only ``` fences were skipped
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + "~~~md\n[text](other-file.md)\n~~~\n\n"
+                  "````md\n```\n[text](other-file.md)\n```\n````\n")
+            self.assert_passes(d)
+            write(d, "brand/README.md", GOOD_README + "~~~md\n[text](inside.md)\n~~~\n\n[text](after.md)\n")
+            r = check_docs(d)
+            self.assertIn("broken link to after.md", r.stdout)
+            self.assertNotIn("inside.md", r.stdout)
+
+    def test_anchors_of_every_github_heading_form(self):
+        # #166: setext headings, headings indented up to 3 spaces, and emphasis in headings
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README + "\nPart two\n--------\n\nText.\n\n  ## Indented\n\n"
+                  "## The _new_ plan for `snake_case`\n\n[A](#part-two) [B](#indented) [C](#the-new-plan-for-snake_case)\n")
+            self.assert_passes(d)
+
     def test_root_relative_links_resolve_from_the_repository_root(self):
         # #136: GitHub resolves a link that starts with / from the repository root
         with tempfile.TemporaryDirectory() as d:
@@ -236,6 +298,16 @@ class CheckDocsTest(unittest.TestCase):
             self.assert_passes(d)
             write(d, "careers/README.md", GOOD_README + "[Gone](/brand/gone.png)\n")
             self.assertIn("broken link to /brand/gone.png", check_docs(d).stdout)
+
+    def test_protocol_relative_and_percent_encoded_links(self):
+        # #167: //host is another site, and browsers decode %XX before matching a file or heading
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/logo-mark.png")
+            write(d, "brand/README.md", GOOD_README + "## Café\n\n[Site](//example.com/page) "
+                  "[Mark](logo%2Dmark.png) [Up](#caf%C3%A9)\n")
+            self.assert_passes(d)
+            write(d, "brand/README.md", GOOD_README + "logo-mark.png [Gone](gone%2Dfile.png)\n")
+            self.assertIn("broken link to gone%2Dfile.png", check_docs(d).stdout)
 
     @unittest.skipUnless(shutil.which("git"), "git not installed")
     def test_non_ascii_names_and_text_are_reported_on_any_console(self):
