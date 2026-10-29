@@ -41,7 +41,7 @@ Use clear commit messages, such as `Add 512px sun mark export`. Avoid messages l
 ### File rules
 
 - **Names:** use lowercase kebab-case with no spaces. Example: `solarity-sun-mark-512.png`, not `Solarity AI - Logo.png`.
-- **Size:** keep web images under about 500 KB; `scripts/check_docs.py` fails any file over 1 MB. Put print-resolution masters in a [GitHub Release](https://github.com/Solarity-AI/public-resources/releases), not in the repository.
+- **Size:** `scripts/check_docs.py` fails any file over 1 MB. Images a page displays should stay under about 500 KB: show a thumbnail and link to the full-size file, which can be up to 1 MB. Put larger print-resolution masters in a [GitHub Release](https://github.com/Solarity-AI/public-resources/releases), not in the repository.
 - **Formats:** PNG for logos and icons (transparent), JPEG or WebP for photos, PDF for documents, SVG for vector logos.
 - **Images in pages:** every `<img>` sets both `width` and `height`, or GitHub collapses images in tables on phones and the page shifts while they load.
 - **Every folder** has a `README.md` that lists its files and how to use them.

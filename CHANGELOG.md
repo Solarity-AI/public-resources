@@ -10,6 +10,7 @@ Notable changes to Solarity AI's public resources.
 - Every image sets both width and height, so pages don't shift while images load: the README banner, the company one-pager logo, and the founder photo gained a height, and a test checks it (#146)
 - The script tests are split into one module per script, with shared helpers in `tests/support.py`; `scripts/check_docs.py` runs its checks from functions instead of top-level code; and `scripts/generate_assets.py` takes its drawing colors from the palette table (#149, #150, #151, #152, #153)
 - README, CONTRIBUTING, SECURITY, and `CLAUDE.md` match the scripts and tests again: every image needs width and height, the docs check fails files over 1 MB (aim for 500 KB), the repository holds a few check and build scripts, and the README lists `tests/` (#155)
+- The size rule is one rule everywhere: the docs check fails any file over 1 MB, and about 500 KB is guidance for images a page displays, not for downloadable masters. CLAUDE.md, CONTRIBUTING, and the pull request template say so (#157)
 
 ### Fixed
 
