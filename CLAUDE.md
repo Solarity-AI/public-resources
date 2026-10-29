@@ -20,7 +20,7 @@ Official public materials for Solarity AI LLC: brand assets, press kit, founder 
 
 ## Conventions
 
-- File and folder names are lowercase kebab-case. Keep web images under about 500 KB; `scripts/check_docs.py` fails any file over 1 MB, so larger masters go in a GitHub Release.
+- File and folder names are lowercase kebab-case. `scripts/check_docs.py` fails any file over 1 MB, the only enforced size limit, so larger masters go in a GitHub Release. Images a page displays should stay under about 500 KB (show a thumbnail and link the master); downloadable masters up to 1 MB, such as `iq-max-icon.png`, stay as they are and are never recompressed to fit.
 - Every folder has a non-empty `README.md` ending with the "← All public resources · Questions?" footer.
 - Every `<img>` needs both `width` and `height`: GitHub collapses images in tables on phones without them, and pages shift while images load.
 - Links from READMEs to solarityai.com pages carry `utm_source=github&utm_medium=public-resources&utm_campaign=<page>`.
