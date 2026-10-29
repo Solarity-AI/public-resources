@@ -1,7 +1,7 @@
 """Build the brand and press kit ZIP attached to each GitHub release.
 
 Run from the repository root: python scripts/build_press_kit.py <version>
-Example: python scripts/build_press_kit.py 2026.10 → dist/solarity-ai-brand-and-press-kit-2026.10.zip
+Example: python scripts/build_press_kit.py 2026.10 writes dist/solarity-ai-brand-and-press-kit-2026.10.zip
 """
 import glob
 import hashlib
@@ -53,6 +53,9 @@ def add(z, name, data):
 
 
 def main():
+    if sys.argv[1:] in (["-h"], ["--help"]):
+        print(__doc__)
+        sys.exit(0)
     if len(sys.argv) != 2 or not VERSION.fullmatch(sys.argv[1]):
         sys.exit("Usage: python scripts/build_press_kit.py <version>   (for example 2026.10)")
     version = sys.argv[1]

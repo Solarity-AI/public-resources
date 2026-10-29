@@ -90,6 +90,16 @@ class BuildPressKitTest(unittest.TestCase):
             self.assertIn("No assets found. Run this from the repository root.", r.stderr)
             self.assertFalse(os.path.exists(os.path.join(d, "dist")))
 
+    def test_help_prints_usage_and_builds_nothing(self):
+        # #169: --help exited 1 with an error, unlike the other scripts (#137)
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/logos/solarity-sun-mark.png", "png")
+            for flag in ("-h", "--help"):
+                r = run("build_press_kit.py", d, flag)
+                self.assertEqual(r.returncode, 0, flag + r.stderr)
+                self.assertIn("python scripts/build_press_kit.py <version>", r.stdout, flag)
+            self.assertFalse(os.path.exists(os.path.join(d, "dist")))
+
 
 if __name__ == "__main__":
     unittest.main()
