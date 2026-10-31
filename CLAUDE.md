@@ -36,7 +36,7 @@ python scripts/generate_assets.py          # regenerate exports, banners, thumbn
 python scripts/build_press_kit.py 2026.10  # build dist/ ZIP for a release
 ```
 
-On Windows use `py -3.12` if `python` points elsewhere. Node 22 (`.nvmrc`) is needed for `npm ci` and the lint. Dependabot proposes markdownlint-cli2 updates in `package.json`; don't pin it anywhere else. The `katex` override in `package.json` patches an advisory until micromark-extension-math accepts katex 0.18; when it does, remove the override and check that `npm audit` still finds 0.
+On Windows use `py -3.12` if `python` points elsewhere. Node 22 (`.nvmrc`) is needed for `npm ci` and the lint. Dependabot proposes markdownlint-cli2 updates in `package.json`; don't pin it anywhere else. The overrides in `package.json` patch advisories in the linter's dependencies: `katex` until micromark-extension-math accepts katex 0.18, and `re2js` until markdownlint depends on 2.8.7 or later. When one is no longer needed, remove it and check that `npm audit` still finds 0.
 
 ## Workflow
 
