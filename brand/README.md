@@ -17,7 +17,7 @@ Solarity AI's visual identity, as used on [solarityai.com](https://solarityai.co
 - Use the sun mark as supplied. Don't recolor, stretch, or redraw it.
 - Describe products only with the facts on [solarityai.com](https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=brand).
 
-Full rules are in [`brand-guidelines/`](brand-guidelines/).
+Full rules are in the [brand guidelines](brand-guidelines/).
 
 ---
 

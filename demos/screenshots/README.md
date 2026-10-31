@@ -1,6 +1,6 @@
 # Screenshots
 
-Official product screens live in the press kit so there is only one copy of each: **[`press-kit/images/screens/`](../../press-kit/images/screens/)**.
+Official product screens live in the press kit so there is only one copy of each: **[the press kit's screens folder](../../press-kit/images/screens/)**.
 
 <p>
   <a href="../../press-kit/images/screens/looks-max-screen.jpg"><img src="../../press-kit/images/screens/thumbs/looks-max-screen-300.jpg" alt="Looks Max screen headlined Deep Scan, Real Insights, with Overall Evaluation and Hair and Beard analysis cards" width="150" height="325"></a>
