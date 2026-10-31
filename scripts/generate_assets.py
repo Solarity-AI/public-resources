@@ -105,6 +105,7 @@ def navy(w, h, cx, cy, rx, ry):
 
 
 def save(img, path, **kw):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     img.save(path, optimize=True, **kw)
     print("wrote", path)
 
@@ -172,7 +173,6 @@ def thumbnails():
         out = os.path.join("press-kit/images/screens/thumbs", os.path.basename(p).replace(".jpg", "-300.jpg"))
         save(im.resize((300, round(im.height * 300 / im.width)), Image.LANCZOS), out, quality=82, progressive=True)
     # Pages show the founder photo at 120-200 px; 400 px covers 2x screens at a fifth of the master's bytes
-    os.makedirs("press-kit/images/thumbs", exist_ok=True)
     im = Image.open("press-kit/images/ata-turhan-founder.jpg").convert("RGB")
     save(im.resize((400, 400), Image.LANCZOS), "press-kit/images/thumbs/ata-turhan-founder-400.jpg", quality=82, progressive=True)
 
