@@ -1,4 +1,4 @@
-# Pitch Decks – Standards and Guidelines
+# Pitch decks: standards and guidelines
 
 This standard applies to **every official Solarity AI pitch deck**. Public investor materials are in [`pitch-decks/`](../../pitch-decks/).
 
@@ -8,7 +8,7 @@ Every pitch deck must follow the standards defined below.
 
 ---
 
-## Purpose of a Pitch Deck
+## Purpose of a pitch deck
 
 A Solarity AI pitch deck must:
 
@@ -22,7 +22,7 @@ A deck is not a document dump. It is a guided narrative.
 
 ---
 
-## What a Perfect Pitch Deck Looks Like
+## What a perfect pitch deck looks like
 
 A perfect pitch deck is:
 
@@ -36,7 +36,7 @@ Every slide must justify its existence.
 
 ---
 
-## Required Core Narrative
+## Required core narrative
 
 All pitch decks must answer these questions, in order:
 
@@ -52,7 +52,7 @@ All pitch decks must answer these questions, in order:
 
 ---
 
-## Standard Slide Structure
+## Standard slide structure
 
 While decks may vary by audience, the following structure is the baseline:
 
@@ -76,7 +76,7 @@ Not all decks need all slides, but deviations must be intentional.
 
 ---
 
-## Slide Design Rules
+## Slide design rules
 
 - One key message per slide
 - Headlines must state conclusions, not topics
@@ -89,7 +89,7 @@ If a slide requires explanation to be understood, it is poorly designed.
 
 ---
 
-## Tone and Content Guidelines
+## Tone and content guidelines
 
 - Confident, not aggressive
 - Precise, not vague
@@ -101,7 +101,7 @@ Assume a skeptical but open-minded audience.
 
 ---
 
-## Versioning and Audience Targeting
+## Versioning and audience targeting
 
 Pitch decks must be versioned by:
 
@@ -121,7 +121,7 @@ Never overwrite a deck that has been shared externally.
 
 ---
 
-## Approval Rule
+## Approval rule
 
 Only approved decks may be used externally.
 
@@ -132,3 +132,7 @@ A pitch deck represents:
 - The strategy
 
 Treat it accordingly.
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)

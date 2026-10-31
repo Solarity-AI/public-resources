@@ -1,14 +1,14 @@
-# One-Pagers – Standards and Guidelines
+# One-pagers: standards and guidelines
 
 This standard applies to **every official Solarity AI one-pager**. Published one-pagers are in [`one-pagers/`](../../one-pagers/).
 
-A one-pager is a **single-page, high-signal document** designed to communicate the essence of a product, solution, or the company itself in under two minutes of reading time.
+A one-pager is a **single-page, high-signal document** designed to communicate the essence of a product, solution, or the company itself in under 2 minutes of reading time.
 
 Every one-pager in this repository must meet the standards defined below.
 
 ---
 
-## Purpose of a One-Pager
+## Purpose of a one-pager
 
 A Solarity AI one-pager must:
 
@@ -22,7 +22,7 @@ If a document cannot be understood in under 2 minutes, it is not a one-pager.
 
 ---
 
-## What a Perfect One-Pager Looks Like
+## What a perfect one-pager looks like
 
 A perfect one-pager is:
 
@@ -42,7 +42,7 @@ It should answer the following questions immediately:
 
 ---
 
-## Required Structure
+## Required structure
 
 Every one-pager must follow this structure, in this order:
 
@@ -64,13 +64,13 @@ Every one-pager must follow this structure, in this order:
 - How it directly addresses the problem
 - Outcome-oriented language
 
-### 4. Key Value Propositions
+### 4. Key value propositions
 
 - 3 to 5 bullet points
 - Benefits, not features
 - Quantified where possible
 
-### 5. Target Audience
+### 5. Target audience
 
 - Explicitly stated
 - Narrow and specific
@@ -81,14 +81,14 @@ Every one-pager must follow this structure, in this order:
 - What makes this hard to replicate
 - No competitor name-dropping unless necessary
 
-### 7. Call to Action
+### 7. Call to action
 
 - What the reader should do next
 - Contact, demo, pilot, or follow-up
 
 ---
 
-## Style and Tone Guidelines
+## Style and tone guidelines
 
 - Professional and confident
 - Minimal adjectives
@@ -101,7 +101,7 @@ Assume the reader is intelligent but busy.
 
 ---
 
-## Design Guidelines
+## Design guidelines
 
 - One page only
 - Consistent brand colors and typography
@@ -113,7 +113,7 @@ Design should support clarity, not distract from it.
 
 ---
 
-## Versioning Rules
+## Versioning rules
 
 - Major content changes require a new version
 - Old versions must be preserved
@@ -128,7 +128,7 @@ company-one-pager-v2.pdf
 
 ---
 
-## Approval Rule
+## Approval rule
 
 No one-pager may be shared externally unless it is:
 
@@ -137,3 +137,7 @@ No one-pager may be shared externally unless it is:
 - Consistent with current company messaging
 
 Every one-pager represents Solarity AI publicly.
+
+---
+
+[← All public resources](../../) · Questions? [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)
