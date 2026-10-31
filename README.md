@@ -6,7 +6,7 @@
 
 Official, approved public materials for **Solarity AI LLC**, for press, partners, investors, and candidates: brand assets, press kit, company and product one-pagers, careers information, and links to our public policies.
 
-**Start here:** [Download the press kit (ZIP)](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) · [Full brand kit (release)](https://github.com/Solarity-AI/public-resources/releases/latest) · [Brand assets](brand/) · [Contact the founder](mailto:ata.turhan@solarityai.com)
+**Start here:** [Download the press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) (the 13 press images) · [Brand and press kit](https://github.com/Solarity-AI/public-resources/releases/latest) (every asset here, as a release ZIP) · [Brand assets](brand/) · [Contact the founder](mailto:ata.turhan@solarityai.com)
 
 > Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.
 
@@ -20,10 +20,12 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 | Sun mark on navy | PNG, 1200 × 1200 | [Download sun mark on navy](brand/logos/solarity-sun-mark-on-navy.png?raw=true) |
 | Banner | PNG, 1280 × 640 | [Download banner](brand/banner/solarity-ai-banner-1280x640.png?raw=true) |
 | Founder photo, Ata Turhan | JPEG, 800 × 800 | [Download founder photo](press-kit/images/ata-turhan-founder.jpg?raw=true) |
+| Founder bio, Ata Turhan | 1-line, short, and long versions | [Read the founder bio](press-kit/founder-bio/) |
 | App icons | PNG, 1024 × 1024 | [Browse app icons](press-kit/images/app-icons/) |
 | Product screens | JPEG | [Browse product screens](press-kit/images/screens/) |
 | Brand guidelines | Read before using the mark | [Read the brand rules](brand/brand-guidelines/) |
-| Full press kit | ZIP, 3.1 MB | [Download press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) |
+| Press kit ZIP | ZIP, 3.1 MB: the 13 press images | [Download press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) |
+| Brand and press kit | ZIP: the press images plus logo exports, banners, colors, and type | [Get it from the latest release](https://github.com/Solarity-AI/public-resources/releases/latest) |
 
 ## What's inside
 
