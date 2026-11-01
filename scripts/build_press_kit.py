@@ -23,7 +23,7 @@ STAMP = (2026, 1, 1, 0, 0, 0)
 README = """Solarity AI brand and press kit, {version}
 =============================================
 
-Source: https://github.com/Solarity-AI/public-resources (mirrors https://solarityai.com/press/)
+Source: https://github.com/Solarity-AI/public-resources (mirrors https://solarityai.com/press/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit-zip)
 
 1 line
 Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.

@@ -110,6 +110,13 @@ class SourceOfTruthTest(unittest.TestCase):
         for name, hexv in (("Ember", "D9782F"), ("Ink", "1A140E"), ("Raised", "221C16"), ("Light gold", "FFCF7A")):
             self.assertEqual(documented.get(name), hexv, name)
 
+    def test_website_links_outside_the_readmes_carry_campaign_tags(self):
+        # #180: check_docs.py covers READMEs; the issue chooser and the ZIP's README.txt link to solarityai.com too
+        for rel in (".github/ISSUE_TEMPLATE/config.yml", "scripts/build_press_kit.py"):
+            urls = [u.rstrip(check_docs.TRAILING) for u in check_docs.WEBSITE_PAGE.findall(read(rel))]
+            self.assertTrue(urls, rel)
+            self.assertEqual([u for u in urls if not check_docs.has_campaign_tags(u)], [], rel)
+
     def test_privacy_summary_covers_visits(self):
         # #162: the policy's "What we receive" includes the IP address and browser type Cloudflare handles on every visit
         summary = read("legal-public/privacy-policy/README.md")
