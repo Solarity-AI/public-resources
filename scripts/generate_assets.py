@@ -70,7 +70,9 @@ def fetch_fonts():
             os.replace(path + ".part", path)
         if sha256(path) != digest:
             os.remove(path)
-            raise SystemExit(f"{name}: SHA-256 mismatch, file deleted. Refusing to use an unverified font.")
+            raise SystemExit(f"{name}: SHA-256 mismatch, file deleted. Refusing to use an unverified font. Run the script "
+                             "again to download it fresh. If this keeps happening, the pinned file changed: report it rather "
+                             "than editing the hash.")
 
 
 def font(name, size, weight):
@@ -181,6 +183,8 @@ def thumbnails():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:  # no options: -h, --help, or anything else prints this instead of rewriting the images
+        if sys.argv[1] not in ("-h", "--help"):
+            print(f"Unknown option {sys.argv[1]}. generate_assets.py takes no options.\n", file=sys.stderr)
         print(__doc__)
         sys.exit(0 if sys.argv[1] in ("-h", "--help") else 2)
     if Image is None:

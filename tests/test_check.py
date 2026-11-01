@@ -13,6 +13,8 @@ if HERE not in sys.path:
 
 from support import GOOD_README, ROOT, copy_script, write
 
+NEXT = "Fix what's listed above, then run python scripts/check.py again."  # #188: the last line says what to do
+
 
 class CheckPyTest(unittest.TestCase):
     """scripts/check.py is the one command CI runs, so any failed step must fail the run (#107)."""
@@ -63,7 +65,7 @@ class CheckPyTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("npx not found. Install Node.js 22 (see .nvmrc)", r.stdout)
             self.assertIn("== Script tests", r.stdout)
-            self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
+            self.assertTrue(r.stdout.rstrip().endswith(f"Failed: Markdown lint. {NEXT}"), r.stdout)
 
     def test_missing_lint_install_says_to_run_npm_ci_and_runs_the_rest(self):
         # #120: lint runs only the locked version, so a checkout without npm ci gets told what to do
@@ -72,7 +74,7 @@ class CheckPyTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("markdownlint-cli2 isn't installed. Run npm ci", r.stdout)
             self.assertIn("== Script tests", r.stdout)
-            self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
+            self.assertTrue(r.stdout.rstrip().endswith(f"Failed: Markdown lint. {NEXT}"), r.stdout)
 
     def test_install_that_differs_from_the_lockfile_says_to_run_npm_ci_again(self):
         # #131: after a pull that bumped the linter, check.py linted with the old version and passed
@@ -81,7 +83,7 @@ class CheckPyTest(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("node_modules doesn't match package-lock.json. Run npm ci again", r.stdout)
             self.assertIn("== Script tests", r.stdout)
-            self.assertTrue(r.stdout.rstrip().endswith("Failed: Markdown lint"), r.stdout)
+            self.assertTrue(r.stdout.rstrip().endswith(f"Failed: Markdown lint. {NEXT}"), r.stdout)
 
     def test_help_prints_usage_and_runs_no_check(self):
         # #137: --help used to run every check
@@ -89,6 +91,15 @@ class CheckPyTest(unittest.TestCase):
             script = copy_script(d, "check.py")
             r = subprocess.run([sys.executable, script, "--help"], capture_output=True, text=True)
             self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertIn("Run from the repository root: python scripts/check.py", r.stdout)
+
+    def test_unknown_option_is_named(self):
+        # #190: a typo in an option printed the help text with no sign anything was wrong
+        with tempfile.TemporaryDirectory() as d:
+            script = copy_script(d, "check.py")
+            r = subprocess.run([sys.executable, script, "--bogus"], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 2)
+            self.assertIn("Unknown option --bogus. check.py takes no options.", r.stderr)
             self.assertIn("Run from the repository root: python scripts/check.py", r.stdout)
             self.assertNotIn("==", r.stdout)
 

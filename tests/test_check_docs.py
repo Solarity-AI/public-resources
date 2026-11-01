@@ -326,6 +326,33 @@ class CheckDocsTest(unittest.TestCase):
             self.assertIn("brand/\\u0101-mark.png: file name must be lowercase kebab-case", out)
             self.assertIn("broken link to \\u2192next.md", out)
 
+    def test_errors_say_how_to_fix_them(self):
+        # #185, #186, #191: each message says what was looked for or what would pass, not just what failed
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/logo.png")
+            write(d, "brand/Logo Final.png")
+            write(d, "brand/Old_Logos/README.md", GOOD_README + "Logo Final.png\n")
+            write(d, "brand/README.md", GOOD_README + "logo.png [Gone](gone.md) [Case](Logo.png) [Up](#nope)\n")
+            write(d, "careers/README.md", "# C")
+            out = check_docs(d).stdout
+            self.assertIn("brand/README.md: broken link to gone.md: nothing at brand/gone.md", out)
+            self.assertIn("broken link to Logo.png: nothing at brand/Logo.png; did you mean brand/logo.png? Names are case-sensitive", out)
+            self.assertIn("broken link to #nope: no heading in brand/README.md has that anchor", out)
+            self.assertIn("brand/Logo Final.png: file name must be lowercase kebab-case, like logo-final.png", out)
+            self.assertIn("folder 'Old_Logos' must be lowercase kebab-case, like old-logos", out)
+            self.assertIn("brand/README.md: doesn't list Logo Final.png; add a line or link that names it", out)
+            self.assertIn("careers/README.md: README is empty or too short; say what's in the folder and how to use it", out)
+
+    def test_problem_count_reads_as_a_sentence(self):
+        # #194: "1 problem(s) found" read as unfinished
+        with tempfile.TemporaryDirectory() as d:
+            write(d, "brand/README.md", GOOD_README)
+            self.assertTrue(check_docs(d).stdout.endswith("0 problems found\n"))
+            write(d, "brand/README.md", GOOD_README + "[Gone](gone.md)\n")
+            self.assertTrue(check_docs(d).stdout.endswith("\n1 problem found\n"))
+            write(d, "brand/README.md", GOOD_README + "[Gone](gone.md) [Also](also.md)\n")
+            self.assertTrue(check_docs(d).stdout.endswith("\n2 problems found\n"))
+
     def test_help_and_a_missing_folder_get_a_message_not_a_traceback(self):
         # #137
         r = run("check_docs.py", ROOT, "--help")

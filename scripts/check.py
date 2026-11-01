@@ -14,6 +14,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
 if len(sys.argv) > 1:  # no options: -h, --help, or anything else prints this
+    if sys.argv[1] not in ("-h", "--help"):
+        print(f"Unknown option {sys.argv[1]}. check.py takes no options.\n", file=sys.stderr)
     print(__doc__)
     sys.exit(0 if sys.argv[1] in ("-h", "--help") else 2)
 
@@ -57,5 +59,6 @@ for name, cmd, shell in steps:
     if subprocess.run(cmd, cwd=ROOT, shell=shell).returncode != 0:
         failed.append(name)
 
-print("\n" + ("All checks passed." if not failed else "Failed: " + ", ".join(failed)))
+print("\n" + ("All checks passed." if not failed else
+              "Failed: " + ", ".join(failed) + ". Fix what's listed above, then run python scripts/check.py again."))
 sys.exit(1 if failed else 0)
