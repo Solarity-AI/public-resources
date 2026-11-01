@@ -18,6 +18,7 @@ Notable changes to Solarity AI's public resources.
 
 ### Fixed
 
+- `scripts/generate_assets.py` draws text with Pillow's basic layout on every OS, so regenerating on Linux or macOS no longer rewrites the banners and type specimen with different pixels (#183)
 - The standards pages no longer mark their example file names with the invalid language `text`, which GitHub turned into `<pre lang="text">` (accessibility 92 → 100) (#181)
 
 ### Security

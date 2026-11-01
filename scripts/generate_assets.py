@@ -74,7 +74,9 @@ def fetch_fonts():
 
 
 def font(name, size, weight):
-    f = ImageFont.truetype(os.path.join(FONT_DIR, name), size)
+    # Basic layout, which every Pillow build has: Linux and macOS wheels would otherwise use libraqm and draw
+    # the text differently from Windows, so the same masters gave different banners (#183)
+    f = ImageFont.truetype(os.path.join(FONT_DIR, name), size, layout_engine=ImageFont.Layout.BASIC)
     vals = []
     for a in f.get_variation_axes():
         n = a.get("name", b"")
