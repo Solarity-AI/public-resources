@@ -16,6 +16,7 @@ Notable changes to Solarity AI's public resources.
 - Website links in the issue chooser and in the release ZIP's README.txt carry the campaign tags (#180)
 - The content tests use the docs checker's own Markdown patterns and file list instead of copies (#173)
 - The scripts' errors say how to fix the problem: broken links say where the check looked (and name a file that differs only in case), name-rule errors show a valid name, README errors say what would pass, a rejected release version is named, `check.py` ends with what to do next, a font hash mismatch says to run again, and unknown options are named. The docs check ends with "1 problem found" or "N problems found" (#185–#191, #194)
+- The legal-public Compliance page is titled "Accessibility and website data", and the SaaS one-pager moved from `one-pagers/solutions/` to `one-pagers/saas/`, so its folder matches what every page calls these products (#196, #197)
 - The README's opening is 2 sentences (who the repository is for, then what's inside), and the founder bio's contact rows say which subject goes to which address (#192, #193)
 
 ### Fixed
