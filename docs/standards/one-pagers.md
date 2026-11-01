@@ -121,10 +121,8 @@ Design should support clarity, not distract from it.
 
 Example:
 
-```text
-company-one-pager-v1.pdf
-company-one-pager-v2.pdf
-```
+- `company-one-pager-v1.pdf`
+- `company-one-pager-v2.pdf`
 
 ---
 

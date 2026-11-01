@@ -111,11 +111,9 @@ Pitch decks must be versioned by:
 
 Examples:
 
-```text
-investor-deck-v2.pdf
-partner-deck-enterprise-v1.pdf
-internal-strategy-deck-v3.pdf
-```
+- `investor-deck-v2.pdf`
+- `partner-deck-enterprise-v1.pdf`
+- `internal-strategy-deck-v3.pdf`
 
 Never overwrite a deck that has been shared externally.
 

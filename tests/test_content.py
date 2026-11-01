@@ -94,6 +94,16 @@ class TableImageTest(unittest.TestCase):
         self.assertEqual(out.split("\n").index("b"), text.split("\n").index("b"))
 
 
+class CodeFenceTest(unittest.TestCase):
+    def test_fence_languages_are_real_language_codes(self):
+        # #181: GitHub copies a fence's language into <pre lang="...">; "text" isn't a language, so screen readers
+        # and Lighthouse's valid-lang audit reject it. css and sh happen to be valid codes; check any new one first.
+        allowed = {"css", "sh"}
+        hits = [f"{rel}:{n}: {m.group(1)}" for rel in repo_files(".md") for n, line in lines(rel)
+                for m in [re.match(r" {0,3}(?:`{3,}|~{3,})\s*([\w+-]+)", line)] if m and m.group(1) not in allowed]
+        self.assertEqual(hits, [], "show examples as inline code or a list, or use a fence language that is a real language code")
+
+
 class TableLinkTest(unittest.TestCase):
     def test_links_in_tables_are_not_code_formatted(self):
         # #160: GitHub draws a code-formatted link on a grey box; in a striped table row that's 4.34:1, under WCAG's 4.5:1
