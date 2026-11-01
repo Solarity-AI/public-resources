@@ -7,10 +7,12 @@ import os
 import re
 import subprocess
 import sys
+import unicodedata
 from urllib.parse import parse_qs, unquote, urlsplit
 
 CONTENT_DIRS = ["brand", "careers", "demos", "docs", "legal-public", "one-pagers", "pitch-decks", "press-kit"]
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+)+$")
+FOLDER = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 ALLOWED_NAMES = {"README.md"}
 MAX_BYTES = 1_000_000
 # Inline links and images (with an optional "title", 'title' or (title)), reference definitions, and HTML src/href attributes
@@ -125,17 +127,30 @@ def check_folders(files, known, texts):
             continue
         for f in files:
             if os.path.dirname(f) == d and f != readme and not lists(readme, texts.get(readme, ""), f):
-                errors.append(f"{readme}: doesn't list {os.path.basename(f)}")
+                errors.append(f"{readme}: doesn't list {os.path.basename(f)}; add a line or link that names it")
     return errors
+
+
+def kebab(name):
+    """The name in lowercase kebab-case, to suggest in an error: Logo Final.png → logo-final.png, Café.png → cafe.png."""
+    stem, *exts = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().split(".")
+    exts = [re.sub(r"[^a-z0-9]", "", e.lower()) for e in exts]
+    return re.sub(r"[^a-z0-9]+", "-", stem.lower()).strip("-") + "".join(f".{e}" for e in exts if e)
+
+
+def like(name, pattern):
+    """', like <suggestion>' when the converted name passes the rule, so the message shows a name that works."""
+    suggestion = kebab(name)
+    return f", like {suggestion}" if pattern.match(suggestion) else ""
 
 
 def check_name(rel):
     name, errors = os.path.basename(rel), []
     if name not in ALLOWED_NAMES and not KEBAB.match(name):
-        errors.append(f"{rel}: file name must be lowercase kebab-case")
+        errors.append(f"{rel}: file name must be lowercase kebab-case{like(name, KEBAB)}")
     for part in rel.split("/")[:-1]:
-        if not re.match(r"^[a-z0-9]+(?:-[a-z0-9]+)*$", part):
-            errors.append(f"{rel}: folder '{part}' must be lowercase kebab-case")
+        if not FOLDER.match(part):
+            errors.append(f"{rel}: folder '{part}' must be lowercase kebab-case{like(part, FOLDER)}")
     return errors
 
 
@@ -150,11 +165,14 @@ def check_links(rel, text, known, texts):
     for url, target in local_links(rel, text):
         fragment = unquote(url.partition("#")[2])
         if target not in known:
-            errors.append(f"{rel}: broken link to {url}")
+            # Say where it looked, and name a file that differs only in case: Windows and macOS hide that mistake
+            near = next((k for k in sorted(known) if k.lower() == target.lower()), None)
+            hint = f"; did you mean {near}? Names are case-sensitive" if near else ""
+            errors.append(f"{rel}: broken link to {url}: nothing at {target}{hint}")
             continue
         page = target if target.endswith(".md") else ("README.md" if target == "." else f"{target}/README.md")
         if fragment and page in texts and fragment not in anchors(texts[page]):
-            errors.append(f"{rel}: broken link to {url} (no heading with that anchor)")
+            errors.append(f"{rel}: broken link to {url}: no heading in {page} has that anchor")
     return errors
 
 
@@ -162,7 +180,7 @@ def check_markdown(rel, text):
     """Placeholder READMEs, unnamed image links, and campaign tags on website links."""
     name, errors = os.path.basename(rel), []
     if name == "README.md" and len(text.strip()) < 40:
-        errors.append(f"{rel}: README is empty or a placeholder")
+        errors.append(f"{rel}: README is empty or too short; say what's in the folder and how to use it")
     wrappers = [m.span() for m in WRAPPER.finditer(text)]
     if any(not any(a <= m.start() < b for a, b in wrappers) for m in EMPTY_ALT_IMG.finditer(text)):
         errors.append(f"{rel}: an image with empty alt text becomes a link with no name on GitHub; wrap it in <picture>")
@@ -204,7 +222,8 @@ def main():
 
     for error in sorted(set(errors)):
         print(f"::error::{error}")
-    print(f"{len(set(errors))} problem(s) found")
+    count = len(set(errors))
+    print(f"{count} problem{'' if count == 1 else 's'} found")
     sys.exit(1 if errors else 0)
 
 
