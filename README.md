@@ -6,7 +6,7 @@
 
 Official, approved public materials from **Solarity AI LLC**, for press, partners, investors, and candidates. Inside: brand assets, the press kit, company and product one-pagers, careers information, and links to our public policies.
 
-**Start here:** [Download the press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) (the 13 press images) · [Brand and press kit](https://github.com/Solarity-AI/public-resources/releases/latest) (every asset here, as a release ZIP) · [Brand assets](brand/) · [Contact the founder](mailto:ata.turhan@solarityai.com)
+**Start here:** [Download the press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) (the 13 press images) · [Brand and press kit](https://github.com/Solarity-AI/public-resources/releases/latest) (every asset here, as a release ZIP) · [Brand assets](brand/) · [Investors and partners](pitch-decks/) · [Careers](careers/) · [Contact the founder](mailto:ata.turhan@solarityai.com)
 
 > Solarity AI builds AI self-improvement apps and the tools that let its small team ship them fast.
 
