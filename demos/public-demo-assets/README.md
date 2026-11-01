@@ -11,11 +11,11 @@ You can try all 4 apps today. Of the SaaS products, Management Max has a free pl
 
 ## SaaS products (web, early access)
 
-| Product | Site | Access |
-| --- | --- | --- |
-| Engineering Max | [engineeringmax.solarityai.com](https://engineeringmax.solarityai.com/) | Request access on its site (free during early access) |
-| Management Max | [managementmax.solarityai.com](https://managementmax.solarityai.com/) | Free plan for 1 app and 2 seats |
-| Marketing Max | [marketingmax.solarityai.com](https://marketingmax.solarityai.com/) | Request access on its site |
+| Product (opens its site) | Access |
+| --- | --- |
+| [Engineering Max](https://engineeringmax.solarityai.com/) | Request access on its site (free during early access) |
+| [Management Max](https://managementmax.solarityai.com/) | Free plan for 1 app and 2 seats |
+| [Marketing Max](https://marketingmax.solarityai.com/) | Request access on its site |
 
 For a guided demo, email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
 

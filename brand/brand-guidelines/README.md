@@ -10,9 +10,9 @@ These rules come from the [solarityai.com press kit](https://solarityai.com/pres
 
 ## The sun mark
 
-- Use it as supplied, from [`../logos/`](../logos/).
+- Use it as supplied, from the [logos page](../logos/).
 - Don't recolor, stretch, rotate, outline, add effects to, or redraw it.
-- Its background is the navy glow (`#1F225C` to `#0D1120`). Use the navy versions from [`../logos/`](../logos/) rather than placing the mark on light or busy backgrounds.
+- Its background is the navy glow (`#1F225C` to `#0D1120`). Use the navy versions from the [logos page](../logos/) rather than placing the mark on light or busy backgrounds.
 
 ## Product names
 
@@ -28,15 +28,15 @@ These rules come from the [solarityai.com press kit](https://solarityai.com/pres
 
 ## Describing Solarity AI
 
-- Use the approved descriptions in [`../../press-kit/`](../../press-kit/).
+- Use the approved descriptions in the [press kit](../../press-kit/).
 - Describe products only with the facts on [solarityai.com](https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=brand-brand-guidelines).
 - **Ask before stating numbers, users, or results** that aren't on the website. Email [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com).
 
 ## Visual style
 
 - Logo, banners, and profile pictures: the sun mark on the navy glow.
-- Website: a dark, warm background (`#0F0D0B`), cream text, and gold accents. See [`../colors/`](../colors/).
-- Newsreader for headlines and Manrope for text. See [`../typography/`](../typography/).
+- Website: a dark, warm background (`#0F0D0B`), cream text, and gold accents. See the [colors page](../colors/).
+- Newsreader for headlines and Manrope for text. See the [typography page](../typography/).
 - Calm and direct. Short headlines, plain sentences, no hype.
 
 ---

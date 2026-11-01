@@ -1,10 +1,10 @@
 blank_issues_enabled: false
 contact_links:
   - name: Investor, partnership, or press inquiry
-    url: https://solarityai.com/contact/
+    url: https://solarityai.com/contact/?utm_source=github&utm_medium=public-resources&utm_campaign=issue-chooser
     about: Write to the founder directly or book a conversation.
   - name: Careers
-    url: https://solarityai.com/careers/
+    url: https://solarityai.com/careers/?utm_source=github&utm_medium=public-resources&utm_campaign=issue-chooser
     about: See open roles and apply.
   - name: Report a security issue
     url: https://github.com/Solarity-AI/public-resources/security/advisories/new

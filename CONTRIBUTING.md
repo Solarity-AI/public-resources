@@ -57,7 +57,7 @@ pip install -r requirements.txt
 python scripts/generate_assets.py
 ```
 
-The script downloads Newsreader and Manrope once, from a pinned Google Fonts commit, into `.cache/fonts/`. To change a color, the navy glow, or a banner layout, edit the script, re-run it, and commit the images it changes.
+The script downloads Newsreader and Manrope once, from a pinned Google Fonts commit, into `.cache/fonts/`. To change a color, the navy glow, or a banner layout, edit the script, re-run it, and commit the images it changes. A test regenerates every image from the masters and fails if a committed one differs; it runs on CI, and locally once the fonts are in `.cache/fonts/` (until then it's skipped).
 
 ### Cutting a release
 

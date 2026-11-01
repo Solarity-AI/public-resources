@@ -2,7 +2,7 @@
 
 Approved descriptions, company facts, and images for articles, program pages, and event listings. This is the same content as [solarityai.com/press](https://solarityai.com/press/?utm_source=github&utm_medium=public-resources&utm_campaign=press-kit).
 
-**Download everything:** [solarity-ai-press-kit.zip](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) (3.1 MB)
+**Download:** the [press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) has the 13 press images (3.1 MB). The [brand and press kit](https://github.com/Solarity-AI/public-resources/releases/latest) adds logo exports, banners, colors, and type.
 
 **Press contact:** [ata.turhan@solarityai.com](mailto:ata.turhan@solarityai.com)
 

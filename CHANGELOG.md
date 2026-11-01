@@ -2,6 +2,29 @@
 
 Notable changes to Solarity AI's public resources.
 
+## 2026-10-31
+
+### Added
+
+- A test that regenerates every derived image from the masters and fails if a committed image differs; CI downloads the pinned fonts first (#174)
+- Quick downloads lists the founder bio, and related pages link to each other: the company one-pager to the apps and SaaS one-pagers, and careers to the company one-pager (#175, #177)
+
+### Changed
+
+- The two kit downloads have one name each: the press kit ZIP (13 press images, from solarityai.com) and the brand and press kit (every asset, from the latest release) (#172)
+- Links say where they go instead of "Details" or a folder path; the SaaS table on the try-the-products page fits on phones; the standards pages use sentence case and end with the shared footer (#176, #178, #179)
+- Website links in the issue chooser and in the release ZIP's README.txt carry the campaign tags (#180)
+- The content tests use the docs checker's own Markdown patterns and file list instead of copies (#173)
+
+### Fixed
+
+- `scripts/generate_assets.py` draws text with Pillow's basic layout on every OS, so regenerating on Linux or macOS no longer rewrites the banners and type specimen with different pixels (#183)
+- The standards pages no longer mark their example file names with the invalid language `text`, which GitHub turned into `<pre lang="text">` (accessibility 92 → 100) (#181)
+
+### Security
+
+- A `re2js` override clears the npm audit advisory in the Markdown linter's dependencies; it only affected how the linter reads this repository's own files
+
 ## 2026-10-28
 
 ### Changed

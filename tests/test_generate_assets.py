@@ -1,5 +1,6 @@
 """Tests for scripts/generate_assets.py. Run: python -m unittest discover -s tests"""
 import contextlib
+import glob
 import hashlib
 import io
 import os
@@ -15,7 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
-from support import assets_module, copy_script, inside, write
+from support import ROOT, assets_module, copy_script, inside, write
 
 try:
     from PIL import Image
@@ -160,6 +161,37 @@ class GeneratedImagesTest(unittest.TestCase):
                 self.assertEqual(im.size, (300, 650))
             with Image.open(os.path.join(images, "thumbs", "ata-turhan-founder-400.jpg")) as im:
                 self.assertEqual(im.size, (400, 400))
+
+
+MASTERS = ["brand/logos/solarity-sun-mark.png", "press-kit/images/ata-turhan-founder.jpg",
+           "press-kit/images/app-icons/*-icon.png", "press-kit/images/screens/*.jpg"]
+
+
+@unittest.skipUnless(HAVE_PIL, "Pillow not installed (pip install -r requirements.txt)")
+class CommittedImagesTest(unittest.TestCase):
+    def test_committed_images_match_what_the_script_makes(self):
+        # #174: a change to the script, the palette or a master could leave stale images, and nothing failed.
+        # Tests don't download (#110): CI fetches the pinned fonts first; locally, generate_assets.py does.
+        fonts = os.path.join(ROOT, ".cache", "fonts")
+        if not all(os.path.exists(os.path.join(fonts, name)) for name in assets_module().FONTS):
+            if os.environ.get("CI"):
+                self.fail("The fonts aren't in .cache/fonts; the Docs check workflow downloads them before the tests")
+            self.skipTest("fonts not downloaded yet: run python scripts/generate_assets.py once")
+        with tempfile.TemporaryDirectory() as d:
+            script = copy_script(d, "generate_assets.py")
+            shutil.copytree(fonts, os.path.join(d, ".cache", "fonts"))
+            for path in (p for pattern in MASTERS for p in glob.glob(os.path.join(ROOT, pattern))):
+                rel = os.path.relpath(path, ROOT)
+                os.makedirs(os.path.join(d, os.path.dirname(rel)), exist_ok=True)
+                shutil.copy(path, os.path.join(d, rel))
+            r = subprocess.run([sys.executable, script], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            written = [line[len("wrote "):].replace("\\", "/") for line in r.stdout.splitlines() if line.startswith("wrote ")]
+            self.assertGreater(len(written), 30)
+            for rel in written:
+                with self.subTest(rel), Image.open(os.path.join(d, rel)) as new, Image.open(os.path.join(ROOT, rel)) as old:
+                    self.assertEqual((new.mode, new.size), (old.mode, old.size))
+                    self.assertTrue(new.tobytes() == old.tobytes(), "pixels differ: run python scripts/generate_assets.py and commit the images")
 
 
 if __name__ == "__main__":

@@ -1,29 +1,27 @@
 """Brand and content rules from CLAUDE.md that are easy to regress. Run: python -m unittest discover -s tests"""
 import os
 import re
-import subprocess
 import sys
 import unittest
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+# One copy of what counts as code and which files count, shared with the docs check (#173)
+import check_docs
+from check_docs import CODE_SPAN, FENCE
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 THIS = "tests/test_content.py"  # quotes the wrong forms it looks for, so it skips itself
-FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,}).*?(?:^ {0,3}\1[`~]*[ \t\r]*$|\Z)", re.MULTILINE | re.DOTALL)  # as in check_docs.py
-CODE_SPAN = re.compile(r"(`+)(?!`).+?(?<!`)\1(?!`)")
 
 
 def repo_files(*suffixes):
     """Tracked and new files, minus anything .gitignore excludes, as scripts/check_docs.py lists them."""
+    cwd = os.getcwd()
+    os.chdir(ROOT)  # list_files() lists the current folder
     try:
-        # git writes paths as UTF-8 whatever the system code page is (#132)
-        out = subprocess.run(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"], cwd=ROOT,
-                             capture_output=True, encoding="utf-8", check=True).stdout
-        files = [f for f in out.split("\0") if f]
-    except (OSError, subprocess.CalledProcessError):
-        files = []
-        for top, dirs, names in os.walk(ROOT):
-            dirs[:] = [d for d in dirs if not d.startswith(".") and d not in {"node_modules", "dist"}]
-            files += [os.path.relpath(os.path.join(top, n), ROOT).replace(os.sep, "/") for n in names]
-    return sorted(f for f in files if f.endswith(suffixes) and f != THIS and os.path.isfile(os.path.join(ROOT, f)))
+        files = check_docs.list_files()
+    finally:
+        os.chdir(cwd)
+    return sorted(f for f in files if f.endswith(suffixes) and f != THIS)
 
 
 def read(rel):
@@ -96,6 +94,16 @@ class TableImageTest(unittest.TestCase):
         self.assertEqual(out.split("\n").index("b"), text.split("\n").index("b"))
 
 
+class CodeFenceTest(unittest.TestCase):
+    def test_fence_languages_are_real_language_codes(self):
+        # #181: GitHub copies a fence's language into <pre lang="...">; "text" isn't a language, so screen readers
+        # and Lighthouse's valid-lang audit reject it. css and sh happen to be valid codes; check any new one first.
+        allowed = {"css", "sh"}
+        hits = [f"{rel}:{n}: {m.group(1)}" for rel in repo_files(".md") for n, line in lines(rel)
+                for m in [re.match(r" {0,3}(?:`{3,}|~{3,})\s*([\w+-]+)", line)] if m and m.group(1) not in allowed]
+        self.assertEqual(hits, [], "show examples as inline code or a list, or use a fence language that is a real language code")
+
+
 class TableLinkTest(unittest.TestCase):
     def test_links_in_tables_are_not_code_formatted(self):
         # #160: GitHub draws a code-formatted link on a grey box; in a striped table row that's 4.34:1, under WCAG's 4.5:1
@@ -111,6 +119,13 @@ class SourceOfTruthTest(unittest.TestCase):
         documented = {name: hexv for name, hexv in re.findall(r"\| ([A-Z][a-z]+(?: [a-z]+)?) \| `#([0-9A-F]{6})`", read("brand/colors/README.md"))}
         for name, hexv in (("Ember", "D9782F"), ("Ink", "1A140E"), ("Raised", "221C16"), ("Light gold", "FFCF7A")):
             self.assertEqual(documented.get(name), hexv, name)
+
+    def test_website_links_outside_the_readmes_carry_campaign_tags(self):
+        # #180: check_docs.py covers READMEs; the issue chooser and the ZIP's README.txt link to solarityai.com too
+        for rel in (".github/ISSUE_TEMPLATE/config.yml", "scripts/build_press_kit.py"):
+            urls = [u.rstrip(check_docs.TRAILING) for u in check_docs.WEBSITE_PAGE.findall(read(rel))]
+            self.assertTrue(urls, rel)
+            self.assertEqual([u for u in urls if not check_docs.has_campaign_tags(u)], [], rel)
 
     def test_privacy_summary_covers_visits(self):
         # #162: the policy's "What we receive" includes the IP address and browser type Cloudflare handles on every visit
@@ -129,8 +144,7 @@ except ImportError:
 class GeneratedAssetsTest(unittest.TestCase):
     def test_swatches_match_the_documented_colors(self):
         # #112: the hex in brand/colors/README.md, SWATCHES in generate_assets.py, and the PNG all agree
-        sys.path.insert(0, os.path.join(ROOT, "scripts"))
-        import generate_assets
+        import generate_assets  # scripts/ is on sys.path (top of this file)
         documented = dict(re.findall(r"swatches/([a-z-]+)\.png.*?`#([0-9A-F]{6})`", read("brand/colors/README.md")))
         self.assertEqual(documented, generate_assets.SWATCHES)
         folder = os.path.join(ROOT, "brand", "colors", "swatches")

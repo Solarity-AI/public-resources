@@ -2,7 +2,7 @@
 
 **Good work. Shared ambition.** Help build focused products for human potential. Bring your craft to engineering or marketing at Solarity AI, full-time, part-time, or as an intern.
 
-**Apply** on [solarityai.com/careers](https://solarityai.com/careers/?utm_source=github&utm_medium=public-resources&utm_campaign=careers) or email [careers@solarityai.com](mailto:careers@solarityai.com).
+**Apply** on [solarityai.com/careers](https://solarityai.com/careers/?utm_source=github&utm_medium=public-resources&utm_campaign=careers) or email [careers@solarityai.com](mailto:careers@solarityai.com). New to Solarity AI? Start with the [company one-pager](../one-pagers/company/).
 
 ## Open roles
 
