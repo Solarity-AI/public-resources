@@ -7,7 +7,7 @@
 ## What we do
 
 - **4 consumer apps** for self-care, cognitive practice, sleep, and fitness, all live on iOS and Android. See the [mobile apps one-pager](../products/).
-- **3 SaaS products** for the engineering, management, and marketing work behind mobile apps, built alongside our own apps. See the [SaaS products one-pager](../solutions/).
+- **3 SaaS products** for the engineering, management, and marketing work behind mobile apps, built alongside our own apps. See the [SaaS products one-pager](../saas/).
 
 ## Track record
 

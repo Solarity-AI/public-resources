@@ -6,7 +6,7 @@ Short overviews you can read in 2 minutes.
 | --- | --- |
 | [Company](company/) | Who Solarity AI is, what it has shipped, and how to reach us |
 | [Mobile apps](products/) | Looks Max, IQ Max, Sleep Max, and Fitness Max |
-| [SaaS products](solutions/) | Engineering Max, Management Max, and Marketing Max |
+| [SaaS products](saas/) | Engineering Max, Management Max, and Marketing Max |
 
 For a version you can print or save as PDF, open [solarityai.com/investors-partners](https://solarityai.com/investors-partners/?utm_source=github&utm_medium=public-resources&utm_campaign=one-pagers) and choose **Print or save as PDF**.
 
