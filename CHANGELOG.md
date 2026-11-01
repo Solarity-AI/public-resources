@@ -16,6 +16,10 @@ Notable changes to Solarity AI's public resources.
 - Website links in the issue chooser and in the release ZIP's README.txt carry the campaign tags (#180)
 - The content tests use the docs checker's own Markdown patterns and file list instead of copies (#173)
 
+### Fixed
+
+- The standards pages no longer mark their example file names with the invalid language `text`, which GitHub turned into `<pre lang="text">` (accessibility 92 → 100) (#181)
+
 ### Security
 
 - A `re2js` override clears the npm audit advisory in the Markdown linter's dependencies; it only affected how the linter reads this repository's own files
