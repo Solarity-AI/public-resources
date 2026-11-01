@@ -8,6 +8,8 @@ Notable changes to Solarity AI's public resources.
 
 - A test that regenerates every derived image from the masters and fails if a committed image differs; CI downloads the pinned fonts first (#174)
 - Quick downloads lists the founder bio, and related pages link to each other: the company one-pager to the apps and SaaS one-pagers, and careers to the company one-pager (#175, #177)
+- Start here links investors and partners to the pitch deck page and candidates to careers, alongside the press downloads (#200)
+- The [brand and press kit 2026.11](https://github.com/Solarity-AI/public-resources/releases/tag/brand-press-kit-2026.11) release, with the Ink and Raised swatches, Ember's corrected color, and the reproducible ZIP (#203)
 
 ### Changed
 
@@ -16,6 +18,8 @@ Notable changes to Solarity AI's public resources.
 - Website links in the issue chooser and in the release ZIP's README.txt carry the campaign tags (#180)
 - The content tests use the docs checker's own Markdown patterns and file list instead of copies (#173)
 - The scripts' errors say how to fix the problem: broken links say where the check looked (and name a file that differs only in case), name-rule errors show a valid name, README errors say what would pass, a rejected release version is named, `check.py` ends with what to do next, a font hash mismatch says to run again, and unknown options are named. The docs check ends with "1 problem found" or "N problems found" (#185–#191, #194)
+- The one-pager standards are a checklist of what to cover; the published one-pagers and solarityai.com take precedence over them (#201)
+- The solarityai.com link in LICENSE.md carries the campaign tags; the license text is unchanged (#202)
 - The legal-public Compliance page is titled "Accessibility and website data", and the SaaS one-pager moved from `one-pagers/solutions/` to `one-pagers/saas/`, so its folder matches what every page calls these products (#196, #197)
 - The README's opening is 2 sentences (who the repository is for, then what's inside), and the founder bio's contact rows say which subject goes to which address (#192, #193)
 

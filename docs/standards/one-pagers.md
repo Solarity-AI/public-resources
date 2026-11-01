@@ -4,7 +4,7 @@ This standard applies to **every official Solarity AI one-pager**. Published one
 
 A one-pager is a **single-page, high-signal document** designed to communicate the essence of a product, solution, or the company itself in under 2 minutes of reading time.
 
-Every one-pager in this repository must meet the standards defined below.
+The sections below are a checklist of what a one-pager should cover. The published one-pagers show how to adapt it to each audience; when this page and a published one-pager or solarityai.com differ, they take precedence.
 
 ---
 
@@ -42,9 +42,9 @@ It should answer the following questions immediately:
 
 ---
 
-## Required structure
+## What to cover
 
-Every one-pager must follow this structure, in this order:
+Cover these, in an order that suits the audience:
 
 ### 1. Header
 

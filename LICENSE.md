@@ -8,7 +8,7 @@ Solarity AI LLC lets journalists, event and program organizers, partners, and in
 
 1. The materials are used as supplied, following the [brand guidelines](brand/brand-guidelines/). Logos, app icons, and photos may be resized proportionally but not recolored, cropped into new marks, combined with other marks, or otherwise altered.
 2. Nothing suggests that Solarity AI sponsors, endorses, or partners with you unless it has agreed to that in writing.
-3. Product facts match [solarityai.com](https://solarityai.com/). Any numbers, user counts, or results not published there must first be confirmed with Solarity AI.
+3. Product facts match [solarityai.com](https://solarityai.com/?utm_source=github&utm_medium=public-resources&utm_campaign=license). Any numbers, user counts, or results not published there must first be confirmed with Solarity AI.
 4. The founder photo is used only to illustrate content about Solarity AI or its founder.
 
 This permission is non-exclusive, revocable, and non-transferable. It grants no trademark rights.
