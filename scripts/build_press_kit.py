@@ -56,8 +56,11 @@ def main():
     if sys.argv[1:] in (["-h"], ["--help"]):
         print(__doc__)
         sys.exit(0)
-    if len(sys.argv) != 2 or not VERSION.fullmatch(sys.argv[1]):
-        sys.exit("Usage: python scripts/build_press_kit.py <version>   (for example 2026.10)")
+    usage = "Usage: python scripts/build_press_kit.py <version>   (for example 2026.10)"
+    if len(sys.argv) != 2:
+        sys.exit(usage)
+    if not VERSION.fullmatch(sys.argv[1]):
+        sys.exit(f"{sys.argv[1]!r} isn't a version: use the year and month, like 2026.10.\n{usage}")
     version = sys.argv[1]
     files = [f for pat in PATTERNS for f in sorted(glob.glob(pat))]
     if not files:

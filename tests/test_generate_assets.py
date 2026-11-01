@@ -38,6 +38,7 @@ class FontVerificationTest(unittest.TestCase):
                 with self.assertRaises(SystemExit) as e:
                     g.fetch_fonts()
                 self.assertIn("SHA-256 mismatch", str(e.exception))
+                self.assertIn("Run the script again to download it fresh", str(e.exception))  # #189
                 self.assertFalse(os.path.exists(os.path.join(d, next(iter(g.FONTS)))))
             finally:
                 g.FONT_DIR = old
@@ -63,6 +64,15 @@ class GenerateAssetsCommandTest(unittest.TestCase):
             r = subprocess.run([sys.executable, script, "--help"], capture_output=True, text=True)
             self.assertEqual(r.returncode, 0, r.stderr)
             self.assertIn("Regenerate every derived image from the masters.", r.stdout)
+            self.assertEqual(os.listdir(d), ["scripts"])
+
+    def test_unknown_option_is_named_and_writes_nothing(self):
+        # #190: a typo in an option printed the help text with no sign anything was wrong
+        with tempfile.TemporaryDirectory() as d:
+            script = copy_script(d, "generate_assets.py")
+            r = subprocess.run([sys.executable, script, "--fonts"], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 2)
+            self.assertIn("Unknown option --fonts. generate_assets.py takes no options.", r.stderr)
             self.assertEqual(os.listdir(d), ["scripts"])
 
     def test_missing_pillow_says_what_to_install(self):

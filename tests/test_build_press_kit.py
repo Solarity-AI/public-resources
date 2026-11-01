@@ -46,6 +46,7 @@ class BuildPressKitTest(unittest.TestCase):
                 r = run("build_press_kit.py", d, bad)
                 self.assertEqual(r.returncode, 1, bad)
                 self.assertIn("Usage", r.stderr)
+                self.assertIn("isn't a version: use the year and month, like 2026.10", r.stderr, bad)  # #187
                 self.assertFalse(os.path.exists(os.path.join(d, "dist")), bad)
 
     def test_zip_and_checksum(self):
