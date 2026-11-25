@@ -1,0 +1,15 @@
+# Groups the auto-generated notes of a GitHub Release by pull request label.
+changelog:
+  exclude:
+    labels: [duplicate, invalid, wontfix]
+  categories:
+    - title: New
+      labels: [enhancement, asset-request]
+    - title: Fixed
+      labels: [bug, correction]
+    - title: Docs
+      labels: [documentation]
+    - title: Dependencies
+      labels: [dependencies, github_actions, javascript]
+    - title: Other changes
+      labels: ["*"]
