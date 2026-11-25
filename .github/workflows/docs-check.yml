@@ -17,9 +17,9 @@ concurrency:
 jobs:
   check:
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
-    # The org's self-hosted runners for this repository's own branches. Pull requests from forks of this public
-    # repository stay on GitHub-hosted runners (free for public repositories), so outside code never runs on ours.
-    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-latest' || fromJSON('["self-hosted","solarity","docker"]') }}
+    # Hosted runner on purpose: this repo is public, the org's self-hosted runners do not take public-repo jobs (a job
+    # sent to them stays queued), and fork pull requests must not run on owner machines.
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       # npm ci installs markdownlint-cli2 from package-lock.json: never run package install scripts
