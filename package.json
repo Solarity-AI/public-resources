@@ -6,7 +6,7 @@
     "node": ">=22"
   },
   "devDependencies": {
-    "markdownlint-cli2": "0.24.0"
+    "markdownlint-cli2": "0.24.1"
   },
   "overrides": {
     "katex": "0.18.11",
