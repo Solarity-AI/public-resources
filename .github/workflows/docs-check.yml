@@ -1,10 +1,12 @@
 name: Docs check
 
-# Pull requests and manual runs only: a push run repeated the pull request's run. A draft runs nothing;
-# marking it ready for review runs the check.
+# Pull requests, manual runs and a weekly run (outside links go stale between changes); no push run, which repeated
+# the pull request's run. A draft runs nothing; marking it ready for review runs the check.
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+  schedule:
+    - cron: "17 13 * * 1"
   workflow_dispatch:
 
 permissions:
