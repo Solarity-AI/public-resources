@@ -25,7 +25,15 @@ Everything here mirrors **[solarityai.com](https://solarityai.com/?utm_source=gi
 | Product screens | JPEG | [Browse product screens](press-kit/images/screens/) |
 | Brand guidelines | Read before using the mark | [Read the brand rules](brand/brand-guidelines/) |
 | Press kit ZIP | ZIP, 3.1 MB: the 13 press images | [Download press kit ZIP](https://solarityai.com/assets/press/solarity-ai-press-kit.zip) |
+| Logo pack | ZIP: the sun mark and the sun mark on navy, every size | [Download logo pack](https://github.com/Solarity-AI/public-resources/releases/latest/download/solarity-ai-logo-pack.zip) |
 | Brand and press kit | ZIP: the press images plus logo exports, banners, colors, and type | [Get it from the latest release](https://github.com/Solarity-AI/public-resources/releases/latest) |
+
+Logo variants, from left: the sun mark on a transparent background, and the sun mark on navy. More sizes in [brand/logos/](brand/logos/).
+
+<p>
+  <img src="brand/logos/solarity-sun-mark-192.png" alt="The Solarity AI sun mark, a yellow sun with a lightning bolt, on a transparent background" width="96" height="96">
+  <img src="brand/logos/solarity-sun-mark-on-navy-192.png" alt="The Solarity AI sun mark on its navy background" width="96" height="96">
+</p>
 
 ## What's inside
 

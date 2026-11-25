@@ -65,6 +65,10 @@ The script downloads Newsreader and Manrope once, from a pinned Google Fonts com
 2. Build the kit: `python scripts/build_press_kit.py <version>`, for example `2026.11`. This writes `dist/solarity-ai-brand-and-press-kit-<version>.zip` and its `.sha256` checksum file.
 3. Add a `CHANGELOG.md` entry for the release.
 4. Publish it with the founder's approval: `gh release create brand-press-kit-<version> dist/solarity-ai-brand-and-press-kit-<version>.zip dist/solarity-ai-brand-and-press-kit-<version>.zip.sha256 --latest --title "Brand and press kit, <Month Year>"`, and quote the SHA-256 in the release notes.
+5. Attach the 2 stable downloads the README links through `releases/latest/download/`, with the same names every month:
+   `solarity-ai-logo-pack.zip` (every `brand/logos/*.png` in a `solarity-ai-logo-pack/` folder) and
+   `solarity-ai-press-kit.zip` (the website's press kit ZIP), each with a `.sha256` file, using
+   `gh release upload brand-press-kit-<version> <files>`.
 
 ### Standards
 
