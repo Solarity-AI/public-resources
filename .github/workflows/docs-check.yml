@@ -1,21 +1,26 @@
 name: Docs check
 
+# Pull requests and manual runs only: a push run repeated the pull request's run. A draft runs nothing;
+# marking it ready for review runs the check.
 on:
   pull_request:
-  push:
-    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  cancel-in-progress: true
 
 jobs:
   check:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    # The org's self-hosted runners for this repository's own branches. Pull requests from forks of this public
+    # repository stay on GitHub-hosted runners (free for public repositories), so outside code never runs on ours.
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-latest' || fromJSON('["self-hosted","solarity","docker"]') }}
+    timeout-minutes: 10
     env:
       # npm ci installs markdownlint-cli2 from package-lock.json: never run package install scripts
       npm_config_ignore_scripts: "true"

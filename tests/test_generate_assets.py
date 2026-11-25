@@ -137,7 +137,7 @@ class GeneratedImagesTest(unittest.TestCase):
         self.assertEqual(g.navy_color(3), g.navy_color(1))
 
     def test_sun_mark_sits_on_logo_navy_not_the_website_black(self):
-        # #109: CLAUDE.md lists this as easy to regress; Night #0F0D0B is warm, the logo navy is blue
+        # #109: AGENTS.md lists this as easy to regress; Night #0F0D0B is warm, the logo navy is blue
         g = assets_module()
         with tempfile.TemporaryDirectory() as d:
             os.makedirs(os.path.join(d, "brand", "logos"))
