@@ -6,7 +6,7 @@
 
 <!-- The command you ran and its result (paste the summary line). -->
 
-```text
+```sh
 command: python scripts/check.py
 result:
 ```
