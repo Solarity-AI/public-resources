@@ -4,6 +4,10 @@ Notable changes to Solarity AI's public resources.
 
 ## Unreleased
 
+### Added
+
+- The latest release carries 2 stable downloads, `solarity-ai-logo-pack.zip` and `solarity-ai-press-kit.zip`; the README links the logo pack and shows the logo variants, and CONTRIBUTING attaches both on each release; `.github/release.yml` groups generated release notes; the Docs check also runs weekly (#210)
+
 ### Changed
 
 - The agent guide is `AGENTS.md` (was `CLAUDE.md`, now the 1 line `@AGENTS.md`) and names the verify command; `.claude/settings.json` allows the checks and denies merging past checks, releases and destructive commands; the Docs check runs only on ready pull requests and manual runs, on a GitHub-hosted runner (#208)
