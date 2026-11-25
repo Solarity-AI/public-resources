@@ -40,9 +40,9 @@ def rendered(rel):
 
 class FounderTitleTest(unittest.TestCase):
     def test_title_is_founder_never_ceo(self):
-        # #108: the founder's request (2026-10-26). CHANGELOG.md keeps the history; CLAUDE.md states the rule.
+        # #108: the founder's request (2026-10-26). CHANGELOG.md keeps the history; AGENTS.md states the rule.
         hits = [f"{rel}:{n}" for rel in repo_files(".md", ".py", ".txt", ".yml")
-                if rel not in ("CHANGELOG.md", "CLAUDE.md")
+                if rel not in ("CHANGELOG.md", "AGENTS.md")
                 for n, line in lines(rel) if re.search(r"\bCEO\b", line)]
         self.assertEqual(hits, [], "Ata Turhan's title is Founder")
 

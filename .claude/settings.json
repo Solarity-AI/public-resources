@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/check.py)",
+      "Bash(py -3.12 scripts/check.py)",
+      "Bash(python scripts/check_docs.py:*)",
+      "Bash(python -m unittest:*)",
+      "Bash(npm ci)",
+      "Bash(npx --no markdownlint-cli2:*)",
+      "Bash(python scripts/generate_assets.py)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh run list:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Bash(gh pr merge --admin:*)",
+      "Bash(gh pr merge * --admin:*)",
+      "Bash(gh release:*)",
+      "Bash(gh repo edit:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean -f:*)",
+      "Bash(rm -rf:*)",
+      "Bash(gh repo delete:*)",
+      "Bash(gh issue delete:*)"
+    ]
+  }
+}

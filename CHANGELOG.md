@@ -2,6 +2,12 @@
 
 Notable changes to Solarity AI's public resources.
 
+## Unreleased
+
+### Changed
+
+- The agent guide is `AGENTS.md` (was `CLAUDE.md`, now the 1 line `@AGENTS.md`) and names the verify command; `.claude/settings.json` allows the checks and denies merging past checks, releases and destructive commands; the Docs check runs only on ready pull requests and manual runs, on a GitHub-hosted runner (#208)
+
 ## 2026-10-31
 
 ### Added
